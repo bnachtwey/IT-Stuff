@@ -61,7 +61,7 @@ Jaguar drive speed matching data rates (MB/s) depend on the media and the genera
 | JB @ G4 	| – | 	– 	| 74 – 203 MBps | 	1.6 TB| 
 | JB @ G3 	| – | 	– 	| 41 – 163 MBps | 	1 TB| 
 
-Sources:<br>
+Sources:(all vanished in the meanwhile)<br>
 - [1] https://www.ibm.com/us-en/marketplace/ts1140/specifications
 - [2] https://www.ibm.com/us-en/marketplace/ts1150/specifications
 - [3] https://www.ibm.com/us-en/marketplace/ts1155/specifications
