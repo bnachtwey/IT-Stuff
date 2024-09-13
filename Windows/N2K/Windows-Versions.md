@@ -12,7 +12,7 @@ start the `winver`, e.g. by typing `<WINDOWS-KEY>`+`<R>` and the `winver`+`<ENTE
       Microsoft Windows [Version 10.0.22631.4037]
       ```
   - Powershell:
-    - issue `[System.Environment]::OSVersion`<br>
+    - issue `[System.Environment]::OSVersion`
       ```
       > [System.Environment]::OSVersion.Version
       
