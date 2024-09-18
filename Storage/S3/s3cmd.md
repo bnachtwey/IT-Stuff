@@ -4,7 +4,10 @@
 
 ## sub commands / options
 
+## 
+
 ## Examples
 ## further information 
   - [Manpage](https://linux.die.net/man/1/s3cmd)
   - [Discussion on `askubuntu`](https://askubuntu.com/questions/202072/what-is-a-good-amazon-s3-client)
+  - [`.s3cfg` Example](https://s3tools.org/kb/item14.htm)
