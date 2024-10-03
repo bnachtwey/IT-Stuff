@@ -78,4 +78,3 @@ MAILTO="sysadmin@corp2.domain-name-here"
 MAILTO=""
 @monthly /path/to/script/logs.sh > /var/log/monthly.log
 ```
-```
