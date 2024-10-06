@@ -1,5 +1,5 @@
 # Running WireHole on a VPS using docker
-
+documentation will follow, do start with some helpfull / important remarks:
 ## remarks
 1) by docker overrides your firewall settings, especially if you use `ufw`. So **all** port provided by your containers are accessible from the internet, neglection your security settings!<br>
    An explanation you can find [at techrepublic](https://www.techrepublic.com/article/how-to-fix-the-docker-and-ufw-security-flaw/).<br>
