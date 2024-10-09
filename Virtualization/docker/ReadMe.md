@@ -1,5 +1,12 @@
 # Docker Nice2Know
 
+## you should consider ...
+- not be always `root` on your dockerhost!
+- to add your main user to the docker group, so you can run the most common commands without being / becoming `root`<br>
+  ```
+  sudo usermod -aG docker $USER
+  ```
+  
 ## Docker and UFW security flaw 
 It has been discovered the Docker doesn't always honor UFW rules. Indeed, with an ordinary configuration, docker defines a bunch of rules for your containers, that bypass your *ufw* settings, including the `ufw default deny incoming` 😱
 
