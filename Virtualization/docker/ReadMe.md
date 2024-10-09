@@ -6,6 +6,9 @@
   ```
   sudo usermod -aG docker $USER
   ```
+## Nice2Know
+- The using `docker-compose` the `.yml` file needs no `version: "3"` any more
+
   
 ## Docker and UFW security flaw 
 It has been discovered the Docker doesn't always honor UFW rules. Indeed, with an ordinary configuration, docker defines a bunch of rules for your containers, that bypass your *ufw* settings, including the `ufw default deny incoming` 😱
