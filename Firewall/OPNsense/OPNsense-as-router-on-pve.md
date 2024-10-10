@@ -21,3 +21,8 @@ This approach should also work for other setups besides *Proxmox Virtual Environ
       iptables -t nat -A PREROUTING  -p tcp --dport 22995 -j DNAT --to-destination 172.16.0.1:22
       iptables -t nat -A POSTROUTING -p tcp --sport 22    -j SNAT --to-source      10.3.1.120:22995
       ```
+    - example for OPNsense-GUI on a vm "995" with internal ip `172.16.0.1` and host `10.3.1.120`, accessable on hostport `8995`:
+      ```
+      iptables -t nat -A PREROUTING  -p tcp --dport 8995  -j DNAT --to-destination 172.16.0.1:80
+      iptables -t nat -A POSTROUTING -p tcp --sport 80    -j SNAT --to-source      10.3.1.120:8995
+      ```
