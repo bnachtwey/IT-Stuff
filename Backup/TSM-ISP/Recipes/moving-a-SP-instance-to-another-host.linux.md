@@ -54,7 +54,7 @@ This manual assumes that the host is already prepared for TSM/ISP, i.e.
 Whereever you manage your IP settings ;-)
 
 > [!TIP]
-> I suggest a value of **60** (seconds) instead of default (3600 aka one 1 hour).
+> I suggest a value of **60** (seconds) instead of default (3600 aka 1 hour).
 
 If you use an a-record instead of an c-name, you've to change that.
 
