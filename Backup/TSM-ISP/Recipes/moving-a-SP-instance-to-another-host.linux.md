@@ -124,16 +124,18 @@ su -c "mkdir /sm$uid/config/planfiles -p" -l sm$uid
     - UID  => `sm$uid `
     - Instance Directory: => `/sm$uid/config`
     - The database directories are listed in this file: => `/sm$uid/dbdirs.txt` 
-    - Active log size (GB): => `16`  (16 GB is enough for the installation, can be changed later)
+    - Active log size (GB): => `16`  <br> 
+      💡 16 GB is enough for the installation, can be changed later
     - Active log directory:  => `/actlog/sm$uid `
     - Primary Archive log directory:  => `/archlog/sm$uid`
     - Active log mirror directory:  => *keep empty*
     - Secondary archive log directory:  => *keep empty*
     - Server Name: => `SM$uid` 
     - When the machine boots: 
-      => `Start the server automatically using the instance user ID` (this creates `initd`-scripts and/or systemd services)
-    - Administrator Name : => `<some user, that should have SYSTEM privileges>` 
-      (useful to take one that will be used in production, too)
+      => `Start the server automatically using the instance user ID` <br>
+      💡 this creates `initd`-scripts and/or systemd services
+    - Administrator Name : => `<some user, that should have SYSTEM privileges>` <br>
+      💡 useful to take one that will be used in production, too
 - manually or by playbook
   - 🚧 T.B.D. 🚧
  
@@ -524,7 +526,6 @@ The IBM description of the  `ANR0340E` message assumess, you do a DB restore *po
 
 *run this on **NEW server** inside TSM*
 
-e.g.
 ```dsmadmc
 enable replication
 ```
@@ -536,7 +537,9 @@ enable replication
 *run this on **OLD server***
 
 - delete copied data from network share, e.g.
-  `rm -rf $imf/sm$uid`
+  ```bash
+  rm -rf $imf/sm$uid
+  ```
 
 - delete Data from former host
   - remove DB2 instance from DB2 host
@@ -572,9 +575,11 @@ enable replication
 
 *run this on **NEW server***
 
-- delete temporary RECOVDir
-  `rm -rf /rst/sm$uid/*`
+- delete temporary `RECOVDir`
+  ```bash
+  rm -rf /rst/sm$uid/*
+  ```
 
-### [ TODO ] Increase TTL for CName to ordinary value
+### [ TODO ] Increase TTL for CName a-record to ordinary value
 
 Whereever you manage your IP settings ;-)
