@@ -3,6 +3,8 @@
 ##############################################################################
 # changelog
 # date          version remark
+# 2024-10-12    0.0.3.1 some indents fixed, "beautifications"
+#               0.0.3.2 added SQL statement generating commands to lock all "non-system" admin
 # 2024-10-11    0.0.3   moved to my personal github repo, some smaller typos fixed
 #                       added step for reenabling repliction after DB restore
 #                       added some markdown hacks
@@ -16,7 +18,7 @@
 #   A template for the workflow of moving an TSM instance to another host -- Linux Version
 #
 #   The Author:
-#   (C) 2020 -- 2024 Bjørn Nachtwey, tsm@bjoernsoe.net
+#   (C) 2020 --      Bjørn Nachtwey, tsm@bjoernsoe.net
 #
 #   Grateful Thanks to the Companies, who allowed to do the development
 #   (C) 2023 --      Cristie Data Gmbh, www.cristie.de
@@ -48,7 +50,7 @@ This manual assumes that the host is already prepared for TSM/ISP, i.e.
 - also the appropriate BA client
 - the basic directory structure (e.g. `/actlog/`,`/archlog/`,`/db[x]/`) is created
 - a common share accessible from both servers exists (in this example `/tsmmove`)
-- the tape drives incl. LinTape driver are already configured
+- the tape drives incl. `LinTape` driver are already configured
 
 ### [ TODO / WIP / DONE ] Decrease TTL of CName for Instance
 
@@ -124,7 +126,7 @@ su -c "mkdir /sm$uid/config/planfiles -p" -l sm$uid
     - UID  => `sm$uid `
     - Instance Directory: => `/sm$uid/config`
     - The database directories are listed in this file: => `/sm$uid/dbdirs.txt` 
-    - Active log size (GB): => `16`  <br> 
+    - Active log size (GB): => `16`<br> 
       💡 16 GB is enough for the installation, can be changed later
     - Active log directory:  => `/actlog/sm$uid `
     - Primary Archive log directory:  => `/archlog/sm$uid`
@@ -132,9 +134,9 @@ su -c "mkdir /sm$uid/config/planfiles -p" -l sm$uid
     - Secondary archive log directory:  => *keep empty*
     - Server Name: => `SM$uid` 
     - When the machine boots: 
-      => `Start the server automatically using the instance user ID` <br>
+      => `Start the server automatically using the instance user ID`<br>
       💡 this creates `initd`-scripts and/or systemd services
-    - Administrator Name : => `<some user, that should have SYSTEM privileges>` <br>
+    - Administrator Name : => `<some user, that should have SYSTEM privileges>`<br>
       💡 useful to take one that will be used in production, too
 - manually or by playbook
   - 🚧 T.B.D. 🚧
@@ -147,19 +149,19 @@ su -c "mkdir /sm$uid/config/planfiles -p" -l sm$uid
 ```bash
 uid=215
 
-echo ""                          >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo ""                                                                    >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "* *****************************************************************" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "* *****************************************************************" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "*    admin stanza for SM$uid" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys  
+echo "*    admin stanza for SM$uid"                                        >> /opt/tivoli/tsm/client/ba/bin/dsm.sys  
 echo "* *****************************************************************" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "* *****************************************************************" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "SErvername              sm$uid" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "TCPPort                 2$uid"  >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "TCPADMINPort            4$uid"  >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "TCPServeraddress        127.0.0.1" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "ERRORLOGName            /tsm/sm$uid.errorlog" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "ERRORLOGRetention       30" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "ENABLEINSTRUMENTATION   No" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "SErvername              sm$uid"                                      >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "TCPPort                 2$uid"                                       >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "TCPADMINPort            4$uid"                                       >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "TCPServeraddress        127.0.0.1"                                   >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "ERRORLOGName            /tsm/sm$uid.errorlog"                        >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "ERRORLOGRetention       30"                                          >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "ENABLEINSTRUMENTATION   No"                                          >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 ```
 
 ### [ TODO ] stop (temporary) SP instance
@@ -197,7 +199,7 @@ for example
 
 ---
 
-## ON DAY OF MIGRATION
+## DAY OF MIGRATION
 
 ### [ TODO ] disable access to old instance and lock admin users
 
@@ -206,10 +208,18 @@ for example
 e.g. 
 ```dsmadmc
 DISable SEssion
-LOCK ADMIN storadm
-LOCK ADMIN poladm
-LOCK ADMIN sysadm
+LOCK ADMIN <Admin1>
+LOCK ADMIN <Admin2>
+LOCK ADMIN <Admin3>
 ```
+Assuming you've set up a RBAC, so monitoring admins, Sysop Admin, etc **are not using SYSTEM privileges**, you can just lock *all admins not having SYSTEM privileges*.
+
+🚧 I have to check the SQL statement! 🚧
+
+```dsmadmc
+select 'LOCK ADMIN' || ADMIN_NAME from ADMINS where SYSTEM_PRIV='NO'
+```
+
 
 ### [ TODO ] cleanup staging pools
 
@@ -541,14 +551,14 @@ enable replication
   rm -rf $imf/sm$uid
   ```
 
-- delete Data from former host
-  - remove DB2 instance from DB2 host
+- delete deprecated data from former host
+  - remove DB2 instance
 	```bash
 	su - <inst user>
 	# first remove db inside TSM
 	dsmserv remove db
 	
-	# second remove it from the DB2 host
+	# second, remove it from the DB2 host
 	# get all instances
 	/opt/tivoli/tsm/db2/instance/db2ilist
 	
@@ -556,15 +566,25 @@ enable replication
 	/opt/tivoli/tsm/db2/instance/db2idrop <instance name>
 	```
   - delete DB folders
-    `for d in $(ls /db*/sm$uid -d); do rm -rf $d; done `
+    ```bash
+    for d in $(ls /db*/sm$uid -d); do rm -rf $d; done 
+    ```
   - delete Actlog folder
-    `rm -rf /actlog/sm$uid`
+    ```bash
+    rm -rf /actlog/sm$uid
+    ```
   - delete Archlog folder
-    `rm -rf /archlog/sm$uid`
+    ```bash
+    rm -rf /archlog/sm$uid
+    ```
   - delete staging folders (if not located on network share)
-    `rm -rf /stage*/sm{$uid}*`
+    ```bash
+    rm -rf /stage*/sm{$uid}*
+    ```
   - delete user and group association
-    `deluser --force --remove-home <UID>`
+    ```bash
+    deluser --force --remove-home <UID>
+    ```
   - delete init scripts and systemd services
     ```bash
     rm /etc/init.d/sm$uid
@@ -580,6 +600,6 @@ enable replication
   rm -rf /rst/sm$uid/*
   ```
 
-### [ TODO ] Increase TTL for CName a-record to ordinary value
+### [ TODO ] Increase TTL for CName or A-Record to former value
 
 Whereever you manage your IP settings ;-)
