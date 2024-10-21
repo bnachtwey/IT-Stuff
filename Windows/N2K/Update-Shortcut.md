@@ -1,7 +1,7 @@
 # Creating a shortcut to access the windows update diaglogue directly
 As part of the improved *user experiance* Microsoft moves many functions from well known menues to *somewhere in the machine*, so accessing basic function such as "doing updates" requires a higher level of expertise to do.
 
-Creating a shortcut, that allows to access the update process directly bypasses Redmond' plan ;-)
+Creating a shortcut, that allows to access the update process directly bypasses Redmond's plan ;-)
 
 To participate in this do
 
