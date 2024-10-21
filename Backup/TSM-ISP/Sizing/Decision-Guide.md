@@ -1,4 +1,5 @@
 # Guide for Deciding the "correct size" of your SP Instance
+👷
 Due to the *IBM Blueprints V5.1*
 
 ## Sizing inputs
