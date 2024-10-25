@@ -1,7 +1,13 @@
 # Collecting everything according TSM / ISP
 
-## dsmci
-has moved to it's on [repository](https://github.com/bnachtwey/dsmci)
+> [!TIP]
+> **dsmci** ..
+> .. has moved to it's on [repository](https://github.com/bnachtwey/dsmci)
+
+> [!IMPORTANT]
+> ## Security Information on SP
+> - CVE issues fixed in given versions (also includes a list of APARs):<br>
+>   https://www.ibm.com/support/pages/node/6447173
 
 ## IBM FTP Server for Downloading Clients and Server Fixes
 - Clients:<br>
@@ -11,7 +17,7 @@ has moved to it's on [repository](https://github.com/bnachtwey/dsmci)
 - OC Patches<br>
     https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/opcenter/
 
-> [!WARNING]
+> [!TIP]
 > Server Major Releases (ending with .0 / -000) must be downloaded using the customer portal as the versions on the ftp server do not include the license file!
 
 ## Blueprints & Blueprint Tools
