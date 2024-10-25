@@ -8,3 +8,6 @@
 
 ## Articles on Windows Security
 - *Das Hochsicherheits-Windows*<br>https://www.heise.de/select/ct/2023/20/2317914255711479609#!
+
+## Eye catching stuff
+- [Browser-in-Browser-Attack](https://becker.koeln/videos/2024-10-19-brower-in-browser-attacks/) German Video by [Felix Becker](https://www.linkedin.com/in/dev-felix-becker/)
