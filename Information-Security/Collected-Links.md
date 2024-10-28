@@ -11,3 +11,7 @@
 
 ## Eye catching stuff
 - [Browser-in-Browser-Attack](https://becker.koeln/videos/2024-10-19-brower-in-browser-attacks/) German Video by [Felix Becker](https://www.linkedin.com/in/dev-felix-becker/)
+
+
+## Privacy
+- [The CMS.Law GDPR Enforcement Tracker is an overview of fines and penalties which data protection authorities within the EU have imposed under the EU General Data Protection Regulation (GDPR, DSGVO).](https://www.enforcementtracker.com/)
