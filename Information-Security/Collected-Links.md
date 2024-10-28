@@ -8,6 +8,7 @@
 ### Fail2ban
 - https://codenet.dev/guide-to-whitelisting-banning-or-unbanning-an-ip-in-fail2ban/
 - https://thelinuxcode.com/whitelist-ip-address-fail2ban/
+- https://www.hostinger.com/tutorials/fail2ban-configuration
 - 
 ## Articles on Windows Security
 - *Das Hochsicherheits-Windows* (behind Paywall)<br>https://www.heise.de/select/ct/2023/20/2317914255711479609#!
