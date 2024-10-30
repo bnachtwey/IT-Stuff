@@ -18,4 +18,4 @@
 
 
 ## Privacy
-- [The CMS.Law GDPR Enforcement Tracker is an overview of fines and penalties which data protection authorities within the EU have imposed under the EU General Data Protection Regulation (GDPR, DSGVO).](https://www.enforcementtracker.com/)
+- [Database with Privary related fees.](https://www.enforcementtracker.com/)<br>*The CMS.Law GDPR Enforcement Tracker is an overview of fines and penalties which data protection authorities within the EU have imposed under the EU General Data Protection Regulation (GDPR, DSGVO).*
