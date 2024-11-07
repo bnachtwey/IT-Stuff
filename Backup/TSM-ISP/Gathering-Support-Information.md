@@ -30,5 +30,6 @@ The last command converts the output in a readable format ;-)
 ## Offline Analysis: `db2dart`
 If neither the _db2support_ nor the _db2 inspect_ gathers enough information for identifying the problem, running an offline `db2dart` is the last opportunity.
 
-> If possible run an db2 backup before!
+> [!TIP]
+> If possible run a db2 backup before to avoid any problems when you're urged to stop the db2dart!
 
