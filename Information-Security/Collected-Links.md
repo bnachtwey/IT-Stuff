@@ -4,6 +4,10 @@
 
 * [https://digital-defense.io/](https://digital-defense.io/)<br>a large collection of check lists on various security topics
 
+## useful other ressources
+- List of obsolete / outdated software<br>
+  https://endoflife.software/
+
 ## Articles on Linux Security
 ### Fail2ban
 - https://codenet.dev/guide-to-whitelisting-banning-or-unbanning-an-ip-in-fail2ban/
