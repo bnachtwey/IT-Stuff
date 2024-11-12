@@ -13,3 +13,8 @@
 
 ## WLAN Hacking (just collecting links by now)
 - [Aircrack](https://www.aircrack-ng.org/)
+
+## ISMS
+- [wazuh.](https://wazuh.com/) -- The Open Source Security Platform / Unified XDR and SIEM protection for endpoints and cloud workloads.
+  - https://www.heise.de/ratgeber/Wazuh-Unternehmenssicherheit-mit-Open-Source-gewaehrleisten-10008627.html
+  - t.b.d.
