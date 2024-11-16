@@ -1,6 +1,7 @@
 # Notes on Bitlocker
 ## Using Bitlocker from the commandline
 🚧 I first wrote this text in german, so translation to english will follow 🚧
+
 The following approach was tested with
   * Windows 10 Pro / 22H2
   * Windows 11 Pro / 23H2
