@@ -1,7 +1,7 @@
 # Notes on Bitlocker
 ## Using Bitlocker from the commandline
 🚧 I first wrote this text in german, so translation to english will follow 🚧
-* The following approach was tested with
+The following approach was tested with
   * Windows 10 Pro / 22H2
   * Windows 11 Pro / 23H2
 
@@ -123,5 +123,5 @@
 * get Bitlocker key and pipe into a file:<br>
   `manage-bde -protectors -get C: > bitlocker_c.txt`
   
-> [!TIP]
-> The key (in the example: `53465F4B-98AB-45E2-823D-1F93C0911081`) was already shown during the encryption.
+>> [!TIP]
+>> The key (in the example: `53465F4B-98AB-45E2-823D-1F93C0911081`) was already shown during the encryption.
