@@ -19,3 +19,5 @@ convert:
 ```bash
 pandoc <your md file>  --from=gfm --pdf-engine=wkhtmltopdf --output <your outputfile>.pdf
 ```
+# Another Alternative: *asciidoc*
+- [Heise Article](https://www.heise.de/hintergrund/Documentation-as-Code-mit-Asciidoctor-4642013.html?seite=all)
