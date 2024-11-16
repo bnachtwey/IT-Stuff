@@ -245,7 +245,7 @@ select 'LOCK ADMIN' || ADMIN_NAME from ADMINS where SYSTEM_PRIV='NO'
 	```dsmadmc
 	SELECT 'DELETE VOLUME ' || volume_name || ' DISCARD=Yes' FROM volumes WHERE devclass_name=<devc name> LIMIT 10
 	```
-- `DISK` volumes do not vanish automatically and must be removed manually
+- 💡 `DISK` volumes do not vanish automatically and must be removed manually
 
 ## [ TODO ] wait for tapes umounted
 
