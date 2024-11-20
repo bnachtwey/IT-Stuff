@@ -48,3 +48,20 @@ Letzte erfolgr. Synchronisierungszeit: 20.09.2024 10:47:48
 Quelle: ptbtime2.ptb.de,ptbtime4.ptb.de
 Abrufintervall: 10 (1024s)
 ```
+# Windows Timezone settings
+## get actual timezone
+```
+tzutil /g
+```
+## set new timezone
+```
+tzutil /s <timezone>
+```
+e.g. for UTC
+```
+tzutil /s UTC
+```
+for CET
+```
+tzutil /s "Central Europe Standard Time"
+```
