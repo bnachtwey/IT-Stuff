@@ -56,4 +56,4 @@ sudo apt install teams -y
 
 ### OneDrive
 
-have a look at https://abraunegg.github.io/
+have a look at https://abraunegg.github.io/ or https://github.com/abraunegg/onedrive
