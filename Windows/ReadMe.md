@@ -4,3 +4,8 @@
   *Microsoft's Default "TPM ohne PIN" war dagegen schon immer völlig sinnfrei. Jetzt auch noch alle Bitlocker Schlüssel zu Microsoft zwangshochzuladen pervertiert jegliche Sicherheit durch Bitlocker aber endgültig und vollständig.*<br>
   *Wer sich bei der Installation wohl oder übel schon bei Microsoft Online zwangsanmelden musste ohne das überhaupt zu wollen kann sein Onlinekonto zumindest jederzeit auch nachträglich wieder in ein Offlinekonto zurückverwandeln:*<br>
    https://www.thewindowsclub.com/change-microsoft-account-to-local-account-windows-10
+
+---
+
+- Alternative to the Windows GUI
+  - [Cairo Shell](https://github.com/cairoshell/cairoshell/releases)
