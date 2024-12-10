@@ -1,4 +1,7 @@
 # Adding Guest Agents for best usage
+> [!IMPORTANT]
+> Check if `QEMU Guest Agent` is enabled in the *Options* section -- as it's not by default :-(
+
 Due to the [official proxmox documentation](https://pve.proxmox.com/wiki/Qemu-guest-agent) the `qemu-guest-agent` should be installed
 - for Debian style Linuxes<br>
   `apt-get install qemu-guest-agent`
