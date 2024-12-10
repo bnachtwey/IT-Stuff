@@ -8,4 +8,4 @@
 ---
 
 - Alternative to the Windows GUI
-  - [Cairo Shell](https://github.com/cairoshell/cairoshell/releases)
+  - [Cairo Shell](https://cairoshell.com/) : https://github.com/cairoshell/cairoshell/releases
