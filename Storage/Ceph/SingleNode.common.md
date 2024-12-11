@@ -41,13 +41,74 @@ I follow the [guide published by RedHat](https://www.redhat.com/en/blog/ceph-clu
   ```bash
   sudo cephadm add-repo --release squid
   ```
+- add `ceph-common` tools (containing e.g. `ceph`, `rbd`, `mount.ceph`)
+  ```bash
+  sudo cephadm add-repo --release squid
+  sudo cephadm install ceph-common
+  ```
+  
+  > [INFO]
+  > using the distro's `ceph-common` will install the version of ceph assigned to the OS version ???
   
 
 ## bootstrap monitoring node
 - Assumptions
   - no dedicated communication network
+- `cephadm bootstrap` command
+  - `--mon-ip 192.168.189.101` : IP to access the Monitoring node
+  - `--cluster-network 192.168.189.0/24` define the network for the internal cluster communication (practically skipped as there's no)
+  - `--dashboard-password-noupdate` :  stop forced dashboard password change
+  - `--initial-dashboard-user admin` : Initial user for the dashboard
+  - `--initial-dashboard-password <Password>` : Initial password for the initial dashboard user
+  - `--log-to-file` :  configure cluster to log to traditional log files in `/var/log/ceph/$fsid`
+  - `--single-host-defaults` : adjust configuration defaults to suit a single-host cluster
+  <br>==>
+  ```bash
+  Ceph Dashboard is now available at:
 
+             URL: https://PAG-L:8443/
+            User: admin
+        Password: <Password>
+  
+  Enabling client.admin keyring and conf on hosts with "admin" label
+  Saving cluster configuration to /var/lib/ceph/<ceph cluster ID>/config directory
+  You can access the Ceph CLI as following in case of multi-cluster or non-default config:
 
+        sudo /sbin/cephadm shell --fsid <ceph cluster ID> -c /etc/ceph/ceph.conf -k /etc/ceph/ceph.client.admin.keyring
+  
+  Or, if you are only running a single cluster on this host:
+  
+        sudo /sbin/cephadm shell
+  
+  Please consider enabling telemetry to help improve Ceph:
+  
+        ceph telemetry on
+  
+  For more information see:
+  
+        https://docs.ceph.com/en/latest/mgr/telemetry/
+  
+  Bootstrap complete.
+  ```
+- check config `ceph -s` or `ceph status`:
+  ```bash
+  sudo ceph -s
+    cluster:
+  id:     1f3cb94c-b7c3-11ef-b021-e89c25c69efd
+  health: HEALTH_WARN
+          OSD count 0 < osd_pool_default_size 2
+
+  services:
+    mon: 1 daemons, quorum PAG-L (age 24m)
+    mgr: PAG-L.suzyia(active, since 23m), standbys: PAG-L.khupoi
+    osd: 0 osds: 0 up, 0 in
+
+  data:
+    pools:   0 pools, 0 pgs
+    objects: 0 objects, 0 B
+    usage:   0 B used, 0 B / 0 B avail
+    pgs:
+  ```
 ---
 # Bugs
 - by default the installation of the ceph repo fails, as the `jinja2` package is missing:
