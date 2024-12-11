@@ -9,11 +9,6 @@
 
 # useful configuration settings
 - `include config.d/*` should be places at the top of your local `config` file to read settings for specific hosts first
+- `IdentitiesOnly yes` <br>
+  Specifies that ssh should only use the configured authentication identity and certificate files (either the default files, or those explicitly configured in the ssh_config files or passed on the ssh(1) command-line), even if ssh-agent(1) or a PKCS11Provider or SecurityKeyProvider offers more identities.  The argument to this keyword must be yes or no (the default).  This option is intended for situations where ssh-agent offers many different identities.
 
-example configuration setting, may be 
-```
-Host <Alias1> [Alias2] [ ... Alias N]`<br>
-  Define *Shortnames* or *Aliases* to Access hosts using specific settings
-- `HostName <IP-Name or IP-Adress>`<br>
-
-# Some magic's ideas
