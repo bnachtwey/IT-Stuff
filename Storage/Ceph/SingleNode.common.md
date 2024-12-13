@@ -1,5 +1,5 @@
 # Common Notes on my first *~Single~ Node Cluster* Rollout
-I follow the [guide published by RedHat](https://www.redhat.com/en/blog/ceph-cluster-single-machine)
+I follow the ~guide published by RedHat](https://www.redhat.com/en/blog/ceph-cluster-single-machine)~ the official [ceph installation documentation](https://docs.ceph.com/en/latest/install/)
 ## System Setting
 🚧this part vvv is obsolete 🚧
 - one VM running on Proxmox 8.3.1
