@@ -1,6 +1,7 @@
-# Common Notes on my first *Single Node Cluster* Rollout
+# Common Notes on my first *~Single~ Node Cluster* Rollout
 I follow the [guide published by RedHat](https://www.redhat.com/en/blog/ceph-cluster-single-machine)
 ## System Setting
+🚧this part vvv is obsolete 🚧
 - one VM running on Proxmox 8.3.1
 - Rocky Linux 9.5<br>
   by now (Dec 12th 2024) *AlmaLinux* still supports *Ceph 18.2* but not *19.2*
@@ -23,7 +24,7 @@ I follow the [guide published by RedHat](https://www.redhat.com/en/blog/ceph-clu
   sdd           8:48   0    1T  0 disk
   sr0          11:0    1 1024M  0 rom
   ```
-
+🚧this part ^^^is obsolete 🚧
   ## preparation
 - additional software
   ```bash
