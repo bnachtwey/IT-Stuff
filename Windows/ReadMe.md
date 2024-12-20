@@ -9,3 +9,5 @@
 
 - Alternative to the Windows GUI
   - [Cairo Shell](https://cairoshell.com/) : https://github.com/cairoshell/cairoshell/releases
+- [List of Windows Shortcuts](https://virot.eu/shortcuts-to-microsoft-management-consoles-control-panel-snap-ins/)
+  - The ServerManager may be different: `%windir%\system32\ServerManager.exe`
