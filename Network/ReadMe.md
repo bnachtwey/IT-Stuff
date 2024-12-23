@@ -5,3 +5,6 @@
 
 - CIDR / VLSM Calculator:<br>
   https://www.subnet-calculator.com/cidr.php
+
+- Glasfaser-Basics auf der GPN erklärt:
+  https://media.ccc.de/v/gpn18-13-alles-was-ihr-schon-immer-ber-glasfasern-wissen-wolltet
