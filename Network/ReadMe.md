@@ -8,3 +8,6 @@
 
 - Glasfaser-Basics auf der GPN erklärt:
   https://media.ccc.de/v/gpn18-13-alles-was-ihr-schon-immer-ber-glasfasern-wissen-wolltet
+
+
+- `$SQ from Hell` https://media.ccc.de/v/gpn18-110--ql-from-hell#t=1329
