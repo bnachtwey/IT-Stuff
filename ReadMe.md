@@ -7,6 +7,8 @@ Either just to document and record for myself or maybe also to share with others
 - [Markdown documentation] t.b.d.
 - [A discussion on special comments](https://github.com/orgs/community/discussions/16925)
 - [An german article on _how to use and md basics_](https://www.heise.de/hintergrund/Wie-Sie-mit-Markdown-schnell-und-einfach-Texte-auszeichnen-7222418.html?seite=all), german, behind paywall
+- [Mardown guide on github](http://guides-github.com/features/mastering-markdown/)
+- [Markdown Cheat-Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 - ...
 
 
