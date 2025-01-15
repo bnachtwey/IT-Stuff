@@ -126,3 +126,8 @@ The following approach was tested with
   
 > [!TIP]
 > The key (in the example: `53465F4B-98AB-45E2-823D-1F93C0911081`) was already shown during the encryption.
+
+---
+> [!CAUTION]
+> Bitlocker is not secure as shown on the [38C3](https://media.ccc.de/v/38c3-windows-bitlocker-screwed-without-a-screwdriver):<br>
+> Having one-time physical access to a *so called encrypted* windows device, the master key can be read and spread :-(
