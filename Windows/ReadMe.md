@@ -5,6 +5,8 @@
   *Wer sich bei der Installation wohl oder übel schon bei Microsoft Online zwangsanmelden musste ohne das überhaupt zu wollen kann sein Onlinekonto zumindest jederzeit auch nachträglich wieder in ein Offlinekonto zurückverwandeln:*<br>
    https://www.thewindowsclub.com/change-microsoft-account-to-local-account-windows-10
 
+- As *Defined Working Hours* are completely ignored when Windows (especially Win11) wants to *reboot NOW!!*, I tried another approach: Adding a special key to the registry. Let's hope Microsoft considers this.<br>
+  For convenience issues I also put the content in a `.reg` [file](./files/DisableAutoReboot.reg)
 ---
 
 - Alternative to the Windows GUI
