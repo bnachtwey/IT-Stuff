@@ -12,6 +12,9 @@ Use instead
 ## The most simple approach: Use the WebApps
 Of course, the easiest way is not to install the Apps, but run them as WebbApp in the Azure Cloud. Unfortunately, with this approach, Microsoft get *full control* on your personal and perhaps also private data -- do so, _if you've nothing not to share with the public..._ 
 
+## Trying `wine` and `PlayOnLinux`
+see https://thelinuxcode.com/install-microsoft-office-linux/
+
 ## Trying to have some controll: do a local install
 As long as there are still _on-prem versions_ of Microsoft Office, you can install them using [wine](https://www.winehq.org/).
 
