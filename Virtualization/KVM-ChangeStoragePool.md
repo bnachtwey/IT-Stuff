@@ -51,6 +51,9 @@ sudo virsh edit <vm_name>
 ```
 Change the `<source file>` element to point to the new location[2][3].
 
+> [!INFO]
+> This may be very extensive work, calling for a `sed` command doing this ;-)
+
 11. Start your virtual machines:
 ```bash
 sudo virsh start <vm_name>
@@ -59,14 +62,14 @@ sudo virsh start <vm_name>
 Remember to create the new directory before changing the path, and ensure you have sufficient permissions and storage space in the new location[3]. If you encounter SELinux-related issues, you may need to adjust SELinux contexts or temporarily set it to permissive mode[3].
 
 Citations:
-[1] https://ostechnix.com/how-to-change-kvm-libvirt-default-storage-pool-location/
-[2] https://gist.github.com/plembo/5e108dc8000850442d756fc3747d31a3
-[3] https://www.informaticar.net/change-kvm-libvirt-default-storage-path/
-[4] https://www.unixarena.com/2015/12/linux-kvm-change-libvirt-vm-image-store-path.html/
-[5] https://access.redhat.com/solutions/966703
-[6] https://serverfault.com/questions/900824/how-to-move-kvm-image-to-another-directory-partition
-[7] https://access.redhat.com/solutions/301353
-[8] https://www.reddit.com/r/linuxquestions/comments/tkgqdu/how_to_change_storage_path_for_libvirt/
+- [1] https://ostechnix.com/how-to-change-kvm-libvirt-default-storage-pool-location/
+- [2] https://gist.github.com/plembo/5e108dc8000850442d756fc3747d31a3
+- [3] https://www.informaticar.net/change-kvm-libvirt-default-storage-path/
+- [4] https://www.unixarena.com/2015/12/linux-kvm-change-libvirt-vm-image-store-path.html/
+- [5] https://access.redhat.com/solutions/966703
+- [6] https://serverfault.com/questions/900824/how-to-move-kvm-image-to-another-directory-partition
+- [7] https://access.redhat.com/solutions/301353
+- [8] https://www.reddit.com/r/linuxquestions/comments/tkgqdu/how_to_change_storage_path_for_libvirt/
 
 ---
 Answer from Perplexity: https://www.perplexity.ai/search/rhel-get-kvm-machines-CoOz0nwbRCGdgyjVpyKcRQ?utm_source=copy_output
