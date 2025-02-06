@@ -8,7 +8,7 @@ I'm going to collect at least those I'm using :-)
 > - *Proxmox 8.3.2 on Debian 12 / Bookwork*, Kernel `6.8.12-5-pve`
 > - *Rocky Linux 9.5 (Blue Onyx)*, Kernel `5.14.0-503.21.1.el9_5.x86_64`
 
-## Gather Infos
+## Gather Information
 ### Get list of VMs
 #### Proxmox
 ```bash
