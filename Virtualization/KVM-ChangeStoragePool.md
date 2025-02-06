@@ -51,9 +51,10 @@ sudo virsh edit <vm_name>
 ```
 Change the `<source file>` element to point to the new location[2][3].
 
-> [!INFO]
-> This may be very extensive work, calling for a `sed` command doing this ;-)
-> so try `EDITOR='sed -i "s#/var/lib/libvirt/images#/<new location>#g"' virsh edit <vm_name>`
+> [!INFO]<br>
+> This may be very extensive work, calling for a `sed` command doing this ;-)<br>
+> so try <br>
+> `EDITOR='sed -i "s#/var/lib/libvirt/images#/<new location>#g"' virsh edit <vm_name>`
 
 11. Start your virtual machines:
 ```bash
