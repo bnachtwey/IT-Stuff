@@ -18,3 +18,9 @@
 - [wazuh.](https://wazuh.com/) -- The Open Source Security Platform / Unified XDR and SIEM protection for endpoints and cloud workloads.
   - https://www.heise.de/ratgeber/Wazuh-Unternehmenssicherheit-mit-Open-Source-gewaehrleisten-10008627.html
   - t.b.d.
+
+## Information Gathering
+- [PingCastle](https://www.pingcastle.com/) -- *Active Directory is quickly becoming a critical failure point in any large-sized company, as it is both complex and costly to secure.*<br>
+  Parts are available in the [*free Basic Edition*](https://www.pingcastle.com/thank_you_for_downloading_free_pingcastle_basic/), e.g.
+  - AD HealthCheck
+  - AD map
