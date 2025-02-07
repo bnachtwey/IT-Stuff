@@ -26,8 +26,8 @@ SYSTEM_DISK_SOURCE="/satapool/SRC/noble-server/noble-server.vmdk"
 ################# GO #################
 ######################################
 
-## Create VM
-qm create ${VMID} --name ${NAME}
+## Create VM and attach given disk
+qm create ${VMID} --name ${NAME} --ide0 ${SYSTEM_DISK_STORAGE}:0,import-from=${SYSTEM_DISK_SOURCE},format=qcow2 --boot order=ide0
 
 ## Setup Memory and CPUs
 qm set ${VMID} --memory ${MEMORY_SIZE}
@@ -42,20 +42,3 @@ qm set ${VMID} --net0 virtio,bridge=${INTERFACE},queues=4
 qm set ${VMID} --agent enabled=1
 ## Set OS Type to Linux 2.6 (or newer)
 qm set ${VMID} --ostype l26
-
-## Hard Drive Size
-#DATA_DISK_STORAGE="satapool"
-#DATA_DISK_SIZE="1024G"
-
-## Configure Storage
-### SYSTEM DISK, just import given qcow2 file
-SYSTEM_DISK="/${SYSTEM_DISK_STORAGE}/images/${VMID}/vm-${VMID}-disk-0.qcow2"
-qm disk import ${VMID} $SYSTEM_DISK_SOURCE $SYSTEM_DISK_STORAGE --format qcow2
-qm set ${VMID} --ide0 $SYSTEM_DISK_STORAGE:${VMID}/vm-${VMID}-disk-0.qcow2
-
-### DATA DISK, create new one and attach
-#pvesm alloc ${DATA_DISK_STORAGE} ${VMID} vm-${VMID}-disk-1.qcow2 ${DATA_DISK_SIZE} --format qcow2
-#qm set ${VMID} --ide1 ${DATA_DISK_STORAGE}:${VMID}/vm-${VMID}-disk-2.qcow2
-
-### Set Boot order
-qm set ${VMID} --boot order='ide0'
