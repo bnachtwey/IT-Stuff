@@ -1,0 +1,2 @@
+- [Gemeindeordnung §31 -- Ausscheiden, Nachrücken, Ergänzungswahl](https://dejure.org/gesetze/GemO/31.html)<br>
+  ***Ist die Zahl** der Gemeinderäte dadurch, daß nicht eintretende oder ausgeschiedene Gemeinderäte nicht durch Nachrücken ersetzt oder bei einer Wahl Sitze nicht besetzt werden konnten, **auf weniger als zwei Drittel der gesetzlichen Mitgliederzahl herabgesunken, ist eine Ergänzungswahl für den Rest der Amtszeit** nach den für die Hauptwahl geltenden Vorschriften **durchzuführen**.*
