@@ -54,7 +54,10 @@
   qm set ${VMID} --scsihw virtio-scsi-single
   qm set ${VMID} --bios ovmf
 
-  mkdir ${DISKPATH}
+  if [[ ! -d ${DISKPATH} ]]
+  then
+    mkdir ${DISKPATH}
+  fi
 
   wget https://github.com/home-assistant/operating-system/releases/download/14.2/haos_ova-14.2.qcow2.xz -O ${DISKNAME}.xz
 
@@ -62,7 +65,7 @@
   xz -d ${DISKNAME}.xz
 
   # edit machines config file, add line like
-  echo "scsi0: fastpool:411/vm-${VMID}-disk-0.qcow2,iothread=1,size=32G" >> /etc/pve/qemu-server/${VMID}.conf
+  echo "scsi0: fastpool:${VMID}/vm-${VMID}-disk-0.qcow2,iothread=1,size=32G" >> /etc/pve/qemu-server/${VMID}.conf
 
   ```
 
