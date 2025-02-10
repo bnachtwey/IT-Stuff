@@ -5,8 +5,8 @@
   ```bash
   #! /bin/bash
   
-  ############### PREPARE ##############
-  ######################################
+  ############### PREPARE: CUSTOMIZE CONFIGURATION ###############
+  ################################################################
 
   ## Basic VM Info
   VMID=411
@@ -30,8 +30,8 @@
   DISKNAME="${DISKPATH}/vm-${VMID}-disk-0.qcow2"
   
   
-  ################# GO #################
-  ######################################
+  ################# GO : DEPLOY VM #################
+  ##################################################
   
   ## Create VM and attach given disk
   qm create ${VMID} --name ${NAME}
@@ -59,7 +59,7 @@
     mkdir ${DISKPATH}
   fi
 
-  wget https://github.com/home-assistant/operating-system/releases/download/14.2/haos_ova-14.2.qcow2.xz -O ${DISKNAME}.xz
+  curl -o ${DISKNAME}.xz https://github.com/home-assistant/operating-system/releases/download/14.2/haos_ova-14.2.qcow2.xz
 
   cd ${DISKPATH}
   xz -d ${DISKNAME}.xz
