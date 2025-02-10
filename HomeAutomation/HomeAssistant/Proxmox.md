@@ -67,6 +67,9 @@
   # edit machines config file, add line like
   echo "scsi0: fastpool:${VMID}/vm-${VMID}-disk-0.qcow2,iothread=1,size=32G" >> /etc/pve/qemu-server/${VMID}.conf
 
+  # rescan disks to reset it's size
+  qm disk rescan --vmid ${VMID}
+
   ```
 
 - start VM
