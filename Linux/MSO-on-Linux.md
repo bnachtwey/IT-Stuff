@@ -15,8 +15,25 @@ Of course, the easiest way is not to install the Apps, but run them as WebbApp i
 ## Trying `wine` and `PlayOnLinux`
 see https://thelinuxcode.com/install-microsoft-office-linux/
 
+Hm, *PlayOnLinux* sees very outdated ...
+
 ## Trying to have some controll: do a local install
 As long as there are still _on-prem versions_ of Microsoft Office, you can install them using [wine](https://www.winehq.org/).
+
+## *Codeweaevers' CrossOver*
+
+- not free, cost about 74,- €
+- get it [here](https://www.codeweavers.com/crossover)
+ 
+### Installation
+- get installable binary, e.g. `crossover_24.0.6-1.deb`
+- install using the installer, e.g. `dpkg -i crossover_24.0.6-1.deb`
+  - having `wine` already installed, no dependecies are missing
+ 
+### First run 
+Crossover add a new section to the *Xfce* Menu, offering a selections of Windows applications to install:<br>
+![](./pictures/CrossOver-1.png)
+
 
 ### MS Office
 
