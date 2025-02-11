@@ -25,24 +25,76 @@ As long as there are still _on-prem versions_ of Microsoft Office, you can insta
 - not free, cost about 74,- €
 - get it [here](https://www.codeweavers.com/crossover)
  
-### Installation
+### Installation *crossover itself*
 - get installable binary, e.g. `crossover_24.0.6-1.deb`
 - install using the installer, e.g. `dpkg -i crossover_24.0.6-1.deb`
   - having `wine` already installed, no dependecies are missing
  
-### First run 
 Crossover add a new section to the *Xfce* Menu, offering a selections of Windows applications to install:<br>
-![](./pictures/CrossOver-1.png)
+![](./pictures/Crossover-01.png)
 
+### Installation *MS Office*
+When installing MS Office, you have to provide an *installation binary*, e.g. `OfficeSetup.exe`:<br>
+![](./pictures/MSOffice-01.png)
 
-### MS Office
+- Limitations
+  - Office is only compatible with a *Windows 7 32-bit Bottle*
+  - Only some languages supported, at least english :-)<br>
+  ![](./pictures/MSOffice-02.png)
 
-T.B.D.
+- Crossover will also install some dependencies:<br>
+  ![](./pictures/MSOffice-03.png)
+
+- Therefore you must either be `root` do belong to the `sudoers` group:<br>
+  ![](./pictures/Crossover-02.png)<br>
+  ![](./pictures/Crossover-03.png)
+
+- When *nearly* finished, *CrossOver* asks for a license :-(<br>
+  ![](./pictures/Crossover-04.png)
+
+- Going on with *TryNow*
+
+- Next the installer asks for some Microsoft Licensese .. <br>
+  ![](./pictures/MSOffice-04.png)<br>
+  ![](./pictures/MSOffice-05.png)<br>
+  ![](./pictures/MSOffice-06.png)
+
+- Then installing Office itself<br>
+  ![](./pictures/MSOffice-07.png)
+
+- Nearly finished, Microsofts tries to persuade to the mobile apps<br>
+  ![](./pictures/MSOffice-08.png)
+
+- Remember, there's a *double opt out*, *Don't you **really* want these fantastic mobile Apps??*
+
+- Standing brave, you'll get the real *finished* statement<br>
+  ![](./pictures/MSOffice-09.png)
+
+### Running *Outlook*
+- First start *crossover*, then select *Outlook*<br>
+  ![](./pictures/Outlook-01.png)<br>
+
+- Enter your E-Mail address
+  ![](./pictures/Outlook-02.png)
+
+- FAIL<br>
+  ![](./pictures/Outlook-03.png)
+
+=> Maybe Office was a 64Bit Application causing this problems in a *32bit Win7 Bottle*?
+
+**T.B. continued ...**
 
 ### Teams
 
 > [!TIP]
 > Unfortunately Microsoft stopped shipping a Linux Binary, so the only way to use *MS Teams* is the webclient :-(
+
+
+
+## Trying to have some controll: do a local install
+As long as there are still _on-prem versions_ of Microsoft Office, you can install them using [wine](https://www.winehq.org/).
+
+### MS Office
 
 #### Teams 4 Debian11
 
