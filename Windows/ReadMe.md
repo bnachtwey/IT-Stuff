@@ -6,7 +6,8 @@
    https://www.thewindowsclub.com/change-microsoft-account-to-local-account-windows-10
 
 - As *Defined Working Hours* are completely ignored when Windows (especially Win11) wants to *reboot NOW!!*, I tried another approach: Adding a special key to the registry. Let's hope Microsoft considers this.<br>
-  For convenience issues I also put the content in a `.reg` [file](./files/DisableAutoReboot.reg)
+  For convenience issues I also put the content in a `.reg` [file](./files/DisableAutoReboot.reg)<br>
+  **DOES NOT WORK, WINDOWS JUST IGNORES THIS REG KEY** 🤮
 ---
 
 - Alternative to the Windows GUI
