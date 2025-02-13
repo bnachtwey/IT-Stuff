@@ -71,3 +71,8 @@ qm set ${VMID} --scsi0 $SYSTEM_DISK_STORAGE:${VMID}/vm-${VMID}-disk-0.qcow2,ioth
 ### Set Boot order
 qm set ${VMID} --boot order='scsi0'
 ```
+
+---
+## Further Readings / other guides
+- unfortunately there's no official guide, but a [section in the proxmox documentation](https://pve.proxmox.com/pve-docs/chapter-qm.html#_import_ovf_ova_through_cli)
+- https://syncbricks.com/how-to-import-ova-to-proxmox/
