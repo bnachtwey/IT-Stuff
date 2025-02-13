@@ -74,5 +74,7 @@ qm set ${VMID} --boot order='scsi0'
 
 ---
 ## Further Readings / other guides
-- unfortunately there's no official guide, but a [section in the proxmox documentation](https://pve.proxmox.com/pve-docs/chapter-qm.html#_import_ovf_ova_through_cli)
+- unfortunately there's no official guide, but a *two sections*:
+  - [*in the proxmox documentation*](https://pve.proxmox.com/pve-docs/chapter-qm.html#_import_ovf_ova_through_cli)
+  - [*in the proxmox wiki*](https://pve.proxmox.com/wiki/Migrate_to_Proxmox_VE#Import_OVF)
 - https://syncbricks.com/how-to-import-ova-to-proxmox/
