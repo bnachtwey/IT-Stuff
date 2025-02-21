@@ -10,3 +10,4 @@
   - 052116391643
 - [Bücherreihe *"Kurz und Mündig"* des Vereins DigitalCourage](https://shop.digitalcourage.de/themen/kurzmuendig/)
   - [Ich habe doch nichts zu verbergen (Band 12)](https://shop.digitalcourage.de/nichts-zu-verbergen.html)
+- [Alternatives to US controlled IT offerings](https://european-alternatives.eu)
