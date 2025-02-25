@@ -6,6 +6,20 @@
 - *AlmaLinux release 9.5 (Teal Serval)*
 - Kernel *6.8.12-5-pve*
 - ...
+
+## Summary
+- especially for Alma Linux (and therefore Rocky and CentOS and RHEL) some packages are missing<br>
+  ```bash
+  dnf -y update
+  dnf -y install python3.12 python3.12-devel
+  ```
+- the default python3 version is too old, but cannot removed, so a workaround is needed:<br>
+  ```bash
+  rm /usr/bin/python3
+  ln -s /usr/bin/python3.12 /usr/bin/python3
+  ```
+--
+# Detailed log book on attempt to install
 ## 0 -- Check Requirements & install additional software
 as [mentioned](https://netboxlabs.com/docs/netbox/en/stable/installation/)
 ### Python 3.10, 3.11 or 3.12
