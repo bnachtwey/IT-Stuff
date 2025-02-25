@@ -94,7 +94,25 @@ sudo -u postgres psql
 ```
 Within the shell, enter the following commands to create the database and user (role), substituting your own value for the password:
 ```psql
-CREATE DATABASE netbox;
+postgres=# CREATE DATABASE netbox;
 CREATE USER netbox WITH PASSWORD 'STRONG PASSWORD';
 ALTER DATABASE netbox OWNER TO netbox;
+CREATE DATABASE
+CREATE ROLE
+ALTER DATABASE
+```
+
+### Verify Service Status
+*You can verify that authentication works by executing the psql command and passing the configured username and password. (Replace localhost with your database server if using a remote database.)*
+
+```bash
+$ psql --username netbox --password --host localhost netbox
+Password for user netbox: 
+psql (13.20)
+Type "help" for help.
+
+netbox=> \conninfo
+You are connected to database "netbox" as user "netbox" on host "localhost" (address "::1") at port "5432".
+
+netbox=> \q
 ```
