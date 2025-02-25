@@ -13,11 +13,18 @@
   dnf -y update
   dnf -y install python3.12 python3.12-devel
   ```
-- the default python3 version is too old, but cannot removed, so a workaround is needed:<br>
+- the default python3 version is too old, but cannot removed, so a workaround is needed<br>
   ```bash
   rm /usr/bin/python3
   ln -s /usr/bin/python3.12 /usr/bin/python3
   ```
+- the installation of netbox itself ends with a command to run an update. Herefore *gunicorn* must be installed and configured, but that happens in the next step. So postpone the run of `/opt/netbox/update.sh`
+- the systemd scripts are not copied automatically<br>
+  ```bash
+  cp /opt/netbox/contrib/netbox*.service /etc/systemd/system/
+  systemct daemon-reload
+  ```
+
 --
 # Detailed log book on attempt to install
 ## 0 -- Check Requirements & install additional software
