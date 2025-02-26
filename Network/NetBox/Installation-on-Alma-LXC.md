@@ -11,7 +11,7 @@
 - especially for Alma Linux (and therefore Rocky and CentOS and RHEL) some packages are missing<br>
   ```bash
   dnf -y update
-  dnf -y install python3.12 python3.12-devel
+  dnf -y install python3.12 python3.12-devel git
   ```
 - the default python3 version is too old, but cannot removed, so a workaround is needed<br>
   ```bash
@@ -19,11 +19,18 @@
   ln -s /usr/bin/python3.12 /usr/bin/python3
   ```
 - the installation of netbox itself ends with a command to run an update. Herefore *gunicorn* must be installed and configured, but that happens in the next step. So postpone the run of `/opt/netbox/update.sh`
-- the systemd scripts are not copied automatically<br>
+- the systemd scripts are not copied within the netbox installation, but afterwards when installing gunicorn. Another reason to  postpone the run of `/opt/netbox/update.sh`
+- using a *self-signed certificate* the creation failed as there's no folder for the private cert<br>
   ```bash
-  cp /opt/netbox/contrib/netbox*.service /etc/systemd/system/
-  systemct daemon-reload
+  mkdir /etc/ssl/private/
   ```
+- *nginx* installation for ubuntu only in documentaton, so for *RHEL* missing. Also the folder `/etc/nginx/sites-available/netbox`  does not exist
+  ```bash
+  dnf -y install nginx
+
+  mkdir -p /etc/nginx/sites-available/netbox
+  ```
+- 
 
 --
 # Detailed log book on attempt to install
@@ -138,7 +145,7 @@ You are connected to database "netbox" as user "netbox" on host "localhost" (add
 netbox=> \q
 ```
 
-## Redis Installation
+## 2 -- Redis Installation
 ### Install Redis
 install and enable redis by
 ```bash
@@ -156,7 +163,7 @@ Redis server v=6.2.17 sha=00000000:0 malloc=jemalloc-5.1.0 bits=64 build=5e7d2a5
 PONG
 ```
 
-## NetBox Installation
+## 3 -- NetBox Installation
 
 This section of the documentation discusses installing and configuring the NetBox application itself.
 ### Install System Packages
@@ -406,5 +413,84 @@ Failed to restart netbox-rq.service: Unit netbox-rq.service not found.
      CGroup: /system.slice/netbox-rq.service
              └─3418 /opt/netbox/venv/bin/python3 /opt/netbox/netbox/manage.py rqworker high default low
 ```
+
+> [!INFO]
+> This is part of the next installation step!
 so, failed at all again ...<br>
-perhaps, because *right now*, no *gunicorn* is installed nor configured??
+perhaps, because *right now*, no *gunicorn* is installed nor configured?? Let's do the gunicorn config and then try again  ...
+
+
+## 4a -- Gunicorn
+### Configuration and Copying systemd scripts
+```bash
+cp /opt/netbox/contrib/gunicorn.py /opt/netbox/gunicorn.py
+
+cp -v /opt/netbox/contrib/*.service /etc/systemd/system/
+systemctl daemon-reload
+```
+start and enable both scripts
+```bash
+systemctl enable --now netbox netbox-rq
+```
+
+now working :-)
+```bash
+systemctl status netbox netbox-rq
+● netbox.service - NetBox WSGI Service
+     Loaded: loaded (/etc/systemd/system/netbox.service; enabled; preset: disabled)
+     Active: active (running) since Tue 2025-02-25 15:54:30 UTC; 4min 23s ago
+       Docs: https://docs.netbox.dev/
+   Main PID: 3642 (gunicorn)
+      Tasks: 6 (limit: 1649879)
+     Memory: 528.0M
+        CPU: 10.546s
+     CGroup: /system.slice/netbox.service
+             ├─3642 /opt/netbox/venv/bin/python3 /opt/netbox/venv/bin/gunicorn --pid /var/tmp/netbox.pid --pythonpath /opt/netbox/netbox --config /opt/netbox/gunicorn.py netbox.wsgi
+             ├─3643 /opt/netbox/venv/bin/python3 /opt/netbox/venv/bin/gunicorn --pid /var/tmp/netbox.pid --pythonpath /opt/netbox/netbox --config /opt/netbox/gunicorn.py netbox.wsgi
+             ├─3644 /opt/netbox/venv/bin/python3 /opt/netbox/venv/bin/gunicorn --pid /var/tmp/netbox.pid --pythonpath /opt/netbox/netbox --config /opt/netbox/gunicorn.py netbox.wsgi
+             ├─3645 /opt/netbox/venv/bin/python3 /opt/netbox/venv/bin/gunicorn --pid /var/tmp/netbox.pid --pythonpath /opt/netbox/netbox --config /opt/netbox/gunicorn.py netbox.wsgi
+             ├─3646 /opt/netbox/venv/bin/python3 /opt/netbox/venv/bin/gunicorn --pid /var/tmp/netbox.pid --pythonpath /opt/netbox/netbox --config /opt/netbox/gunicorn.py netbox.wsgi
+             └─3647 /opt/netbox/venv/bin/python3 /opt/netbox/venv/bin/gunicorn --pid /var/tmp/netbox.pid --pythonpath /opt/netbox/netbox --config /opt/netbox/gunicorn.py netbox.wsgi
+
+Feb 25 15:54:30 bnw-Netbox systemd[1]: Started NetBox WSGI Service.
+Feb 25 15:54:31 bnw-Netbox gunicorn[3642]: [2025-02-25 15:54:31 +0000] [3642] [INFO] Starting gunicorn 23.0.0
+Feb 25 15:54:31 bnw-Netbox gunicorn[3642]: [2025-02-25 15:54:31 +0000] [3642] [INFO] Listening at: http://127.0.0.1:8001 (3642)
+Feb 25 15:54:31 bnw-Netbox gunicorn[3642]: [2025-02-25 15:54:31 +0000] [3642] [INFO] Using worker: gthread
+Feb 25 15:54:31 bnw-Netbox gunicorn[3643]: [2025-02-25 15:54:31 +0000] [3643] [INFO] Booting worker with pid: 3643
+Feb 25 15:54:31 bnw-Netbox gunicorn[3644]: [2025-02-25 15:54:31 +0000] [3644] [INFO] Booting worker with pid: 3644
+Feb 25 15:54:31 bnw-Netbox gunicorn[3645]: [2025-02-25 15:54:31 +0000] [3645] [INFO] Booting worker with pid: 3645
+Feb 25 15:54:31 bnw-Netbox gunicorn[3646]: [2025-02-25 15:54:31 +0000] [3646] [INFO] Booting worker with pid: 3646
+Feb 25 15:54:31 bnw-Netbox gunicorn[3647]: [2025-02-25 15:54:31 +0000] [3647] [INFO] Booting worker with pid: 3647
+
+● netbox-rq.service - NetBox Request Queue Worker
+     Loaded: loaded (/etc/systemd/system/netbox-rq.service; enabled; preset: disabled)
+     Active: active (running) since Tue 2025-02-25 15:35:11 UTC; 23min ago
+       Docs: https://docs.netbox.dev/
+   Main PID: 3418 (python3)
+      Tasks: 3 (limit: 1649879)
+     Memory: 184.8M
+        CPU: 12.991s
+     CGroup: /system.slice/netbox-rq.service
+             ├─3418 /opt/netbox/venv/bin/python3 /opt/netbox/netbox/manage.py rqworker high default low
+             └─3482 /opt/netbox/venv/bin/python3 /opt/netbox/netbox/manage.py rqworker high default low
+
+Feb 25 15:35:20 bnw-Netbox python3[3418]: 15:35:20 Cleaning registries for queue: high
+Feb 25 15:35:20 bnw-Netbox python3[3418]: 15:35:20 Cleaning registries for queue: default
+Feb 25 15:35:20 bnw-Netbox python3[3418]: 15:35:20 Cleaning registries for queue: low
+Feb 25 15:35:20 bnw-Netbox python3[3418]: 15:35:20 default: handle(job=<Job: 7785d7c3-163d-4817-ae67-e3432ad79d68>) (7785d7c3-163d-4817-ae67-e3432ad79d68)
+Feb 25 15:35:20 bnw-Netbox python3[3483]: 15:35:20 Successfully completed handle(job=<Job: 7785d7c3-163d-4817-ae67-e3432ad79d68>) job in 0:00:00.456190s on worker 155637aea37747a3a110dace01e1c4e3
+Feb 25 15:35:20 bnw-Netbox python3[3483]: 15:35:20 default: Job OK (7785d7c3-163d-4817-ae67-e3432ad79d68)
+Feb 25 15:35:20 bnw-Netbox python3[3483]: 15:35:20 Result is kept for 500 seconds
+Feb 25 15:48:50 bnw-Netbox python3[3418]: 15:48:50 Cleaning registries for queue: high
+Feb 25 15:48:50 bnw-Netbox python3[3418]: 15:48:50 Cleaning registries for queue: default
+Feb 25 15:48:50 bnw-Netbox python3[3418]: 15:48:50 Cleaning registries for queue: low
+```
+## 5 -- HTTP Server setup
+### create self-signed certificate
+```bash
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+-keyout /etc/ssl/private/netbox.key \
+-out /etc/ssl/certs/netbox.crt
+```
+fails as no `/etc/ssl/private` folder exists ...
+
