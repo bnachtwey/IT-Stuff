@@ -1,7 +1,7 @@
 # A list of security and privacy improving addons for Mozilla Thunderbird
-- [DKIM Verifier]
+- [DKIM Verifier](https://addons.thunderbird.net/en-US/thunderbird/addon/dkim-verifier)<br>
   *DomainKeys Identified Mail (DKIM) is a method which allows domains to sign e-mails. The add-on verifies these DKIM signatures and shows the result in the e-mail header.*<br>
-  [Detailed description](https://secuso.aifb.kit.edu/TORPEDO.php)
+  
 - [DS-BCC](https://addons.thunderbird.net/en-US/thunderbird/addon/ds-bcc)<br>
   *Data protection extension, to avoid data mishaps with circular mails.*
 - [PGPGeek](https://addons.thunderbird.net/en-US/thunderbird/addon/pgpgeek)<br>
@@ -23,3 +23,6 @@
 # Other useful Addons for Mozilla Firefox
 - [Ecosia Search]<br>
   *Ecosia - The search engine that plants trees*<br>
+
+--- 
+- [Heise on TORPEDO](https://www.heise.de/hintergrund/Wie-sich-Nutzer-und-Firmen-vor-Phishing-schuetzen-koennen-10231875.html), paywall
