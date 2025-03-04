@@ -45,7 +45,7 @@ Then you should set a new `data-root` path by:
 
 - restart docker<br>
   ```bash
-  systemctl stop docker
+  systemctl start docker
   ```
 - verify setting of new path<br>
   ```bash
