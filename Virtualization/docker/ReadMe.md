@@ -34,6 +34,7 @@ Then you should set a new `data-root` path by:
 - stop docker and verify, it hasn't restarted<br>
   ```bash
   systemctl stop docker
+  systemctl stop docker.socket
 
   ps aux | grep -i docker | grep -v grep
   ```
