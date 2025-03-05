@@ -6,4 +6,5 @@
 
 
 # a litte off topic
-- [Erneuerbare Energien: Warum teurer Winterstrom das neue Normal ist](https://www.heise.de/hintergrund/Streit-um-Strompreise-Ursachen-und-Loesungsvorschlaege-10245191.html?seite=all), Heise+, 2025-0206, 
+- [Erneuerbare Energien: Warum teurer Winterstrom das neue Normal ist](https://www.heise.de/hintergrund/Streit-um-Strompreise-Ursachen-und-Loesungsvorschlaege-10245191.html?seite=all), Heise+, 2025-0206,
+- [Maximilian Fichtner: Energiespeicher der Zukunft](https://www.youtube.com/live/uTbiMGl0mts), Dt.Museum München auf YT
