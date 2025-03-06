@@ -12,7 +12,7 @@ I'm going to collect at least those I'm using :-)
 ### Get list of VMs
 | Proxmox | KVM |
 | :------ | :--- |
-| `qm list` | `virsh list -all`|
+| `qm list` | `virsh list`|
 
 ### Get list of storage pools
 | Proxmox | KVM |
