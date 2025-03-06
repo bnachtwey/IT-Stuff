@@ -9,10 +9,15 @@ I'm going to collect at least those I'm using :-)
 > - *Rocky Linux 9.5 (Blue Onyx)*, Kernel `5.14.0-503.21.1.el9_5.x86_64`
 
 ## Gather Information
-### Get list of VMs
+### Get list of running VMs
 | Proxmox | KVM |
 | :------ | :--- |
 | `qm list` | `virsh list`|
+
+### Get list of all VMs
+| Proxmox | KVM |
+| :------ | :--- |
+| `qm list | grep -v "stopped"` | `virsh list --all`|
 
 ### Get list of storage pools
 | Proxmox | KVM |
@@ -67,3 +72,8 @@ works like VMware-like *Suspend* functionality
 
 ## Connect to an running VM
 🏗️
+
+## remove a VM
+| Proxmox | KVM |
+| :------ | :--- |
+| t.b.d. | `vish undefine <vm-name>` |
