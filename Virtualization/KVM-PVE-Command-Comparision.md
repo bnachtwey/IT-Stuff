@@ -10,14 +10,14 @@ I'm going to collect at least those I'm using :-)
 
 ## Gather Information
 ### Get list of running VMs
-| Proxmox | KVM |
-| :------ | :--- |
-| `qm list` | `virsh list`|
+| Proxmox VM | Proxmox LXC | KVM |
+| :------ | :------ | :--- |
+| `qm list` | `pct list`| `virsh list`|
 
 ### Get list of all VMs
-| Proxmox | KVM |
-| :------ | :--- |
-| `qm list | grep -v "stopped"` | `virsh list --all`|
+| Proxmox VM | Proxmox LXC | KVM |
+| :------ | :------ | :--- |
+| `qm list \| grep -v "stopped"`  |  `pct list \| grep -v "stopped"`  | `virsh list --all`|
 
 ### Get list of storage pools
 | Proxmox | KVM |
@@ -26,31 +26,31 @@ I'm going to collect at least those I'm using :-)
 
 ## Shutdown - Start - HardStop - Suspend - Resume VMs
 ### Shutting down a certain VM
-| Proxmox | KVM |
-| :------ | :--- |
-| `qm shutdown <vmid>` | `virsh start <vm-name>` |
+| Proxmox VM | Proxmox LXC | KVM |
+| :------ | :------ | :--- |
+| `qm shutdown <vmid>` | `pct shutdown <vmid>` | `virsh start <vm-name>` |
 
-### Start a certain VM
-| Proxmox | KVM |
-| :------ | :--- |
-| `qm start <vmid>` | `virsh shutdown <vm-name>` |
+### Start a certain VM| Proxmox VM | Proxmox LXC | KVM |
+| :------ | :------ | :--- |
+| `qm start <vmid>` | `pct start <vmid>` | `virsh start <vm-name>` |
 
 ### (Hard) Stopping a certain VM
-| Proxmox | KVM |
-| :------ | :--- |
-| `qm stop <vmid>` | `virsh destroy <vm-name>` |
+### Start a certain VM
+| Proxmox VM | Proxmox LXC | KVM |
+| :------ | :------ | :--- |
+| `qm stop <vmid>` | `pct stop <vmid>` ||`virsh destroy <vm-name>` |
 
 ### (Hard) Reseting a certain VM
-| Proxmox | KVM |
-| :------ | :--- |
-| `qm reset <vmid>` | `virsh reboot <vm-name>` |
-| | `virsh destroy <vm-name> && virsh start <vm-name>` |
+| Proxmox VM | Proxmox LXC | KVM |
+| :------ | :------ | :--- |
+| `qm reset <vmid>` | `pct stop <vmid> && pct start <vmid>` | `virsh reboot <vm-name>` |
+| | | `virsh destroy <vm-name> && virsh start <vm-name>` |
 
 ### Suspend a certain VM
 *ordinary suspend*, just freerzing the VM
-| Proxmox | KVM |
-| :------ | :--- |
-| `qm suspend <vmid>` | `virsh suspend <vm-name>` |
+| Proxmox VM | Proxmox LXC | KVM |
+| :------ | :------ | :--- |
+| `qm suspend <vmid>`| `pct suspend <vmid>` | `virsh suspend <vm-name>` |
 
 ### Suspend a certain VM with saving the state to disk
 works like VMware-like *Suspend* functionality
