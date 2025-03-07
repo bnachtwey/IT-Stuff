@@ -8,3 +8,6 @@ mainly iX Magazin by Heise, so behind PayWall
 
 ## Running LLMs locally
 As it seems, the easiest way is to use [`ollama`](https://ollama.com/) as it's easy to deploy on local maschines and manages a wide variety of LLMs :-)
+
+## critical thoughts ..
+- [Chatbots Are Cheating on Their Benchmark Tests](https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/), The Atlantic, March 5, 2025
