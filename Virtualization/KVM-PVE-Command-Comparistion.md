@@ -73,6 +73,10 @@ works like VMware-like *Suspend* functionality
 ## Connect to an running VM
 🏗️
 
+| Proxmox | KVM |
+| :------ | :--- |
+| `qm terminal <vmid>` | `virsh console <vm-name>` |
+
 ## remove a VM
 | Proxmox | KVM |
 | :------ | :--- |
