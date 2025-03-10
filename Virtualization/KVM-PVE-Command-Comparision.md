@@ -28,7 +28,7 @@ I'm going to collect at least those I'm using :-)
 ### Shutting down a certain VM
 | Proxmox VM | Proxmox LXC | KVM |
 | :------ | :------ | :--- |
-| `qm shutdown <vmid>` | `pct shutdown <vmid>` | `virsh start <vm-name>` |
+| `qm shutdown <vmid>` | `pct shutdown <vmid>` | `virsh shutdown <vm-name>` |
 
 ### Start a certain VM| Proxmox VM | Proxmox LXC | KVM |
 | :------ | :------ | :--- |
