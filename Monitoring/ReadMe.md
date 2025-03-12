@@ -10,5 +10,6 @@
 - Videos
   - [Collection *"From Zero to Hero"* at YouTube by *NetBox Labs* itself](https://www.youtube.com/watch?v=zT82jOUCcW4&list=PL7sEPiUbBLo_iTds-NV-9Tu05Gg2Aj8N7))
 
+- [Collection of Device-Images for NetBox](https://github.com/Abulhallaj/netbox-deviceimage)
 ## Perfsonar
 - [*perfSONAR is the **perf**ormance **S**ervice-**O**riented **N**etwork monitoring **AR**chitecture, a network measurement toolkit designed to provide federated coverage of paths and help to establish end-to-end usage expectations.*](https://docs.perfsonar.net/install_options.html)
