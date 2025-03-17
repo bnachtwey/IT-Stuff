@@ -13,3 +13,6 @@
 - [Alternatives to US controlled IT offerings](https://european-alternatives.eu)
 - [Übersicht kommunaler Ausfälle](https://kommunaler-notbetrieb.de/)<br>
   **ACHTUNG: Die Karte zeigt alle Ausfälle, auch der letzten Jahre, nicht nur akute!**
+
+# Exeternal Informtaion
+- [Wiki on ISMS by a Guy from Berlin](ttps://wiki.isms-ratgeber.info/wiki/Willkommen_im_ISMS-Ratgeber_WiKi)
