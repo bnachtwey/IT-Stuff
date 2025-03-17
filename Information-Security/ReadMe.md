@@ -15,4 +15,4 @@
   **ACHTUNG: Die Karte zeigt alle Ausfälle, auch der letzten Jahre, nicht nur akute!**
 
 # Exeternal Informtaion
-- [Wiki on ISMS by a Guy from Berlin](ttps://wiki.isms-ratgeber.info/wiki/Willkommen_im_ISMS-Ratgeber_WiKi)
+- [Wiki on ISMS by a Guy from Berlin](https://wiki.isms-ratgeber.info/wiki/Willkommen_im_ISMS-Ratgeber_WiKi)
