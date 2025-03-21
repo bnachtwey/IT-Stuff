@@ -17,10 +17,12 @@
 
 - This is a game to teach you the basics of using a POSIX (Linux, BSD, UNIX) terminal. 
   https://gitlab.com/slackermedia/bashcrawl
-  
-  # 
-
 - http://svnbook.red-bean.com/
+-   
+  # NON-GOSSIP
+- [This is a Coup](https://isthisacoup.com/)
+
+
 
 # GPT
 
