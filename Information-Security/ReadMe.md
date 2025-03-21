@@ -16,3 +16,4 @@
 
 # Exeternal Informtaion
 - [Wiki on ISMS by a Guy from Berlin](https://wiki.isms-ratgeber.info/wiki/Willkommen_im_ISMS-Ratgeber_WiKi)
+- [IBM (free) *Cyber Resilience Assessment*](https://www.ibm.com/flashsystem/cyber-resilience#Cyber+resilience+assessment)
