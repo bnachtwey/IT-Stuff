@@ -6,6 +6,3 @@
 
 ## Politik
 - [Stromwirtschaft CDU vs. Habeck](https://bsky.app/profile/stefanhajek.bsky.social/post/3li4wu6xt6s2q)
-
-## Misleading People
-- [Defense Against Dishonest Charts](https://flowingdata.com/projects/dishonest-charts/) 
