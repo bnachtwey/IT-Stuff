@@ -15,7 +15,10 @@
   - [Proxmox](https://www.proxmox.com/en/), Debian, KVM based
   - 
 
+---
+## further reading
 
+- [Mounting a `.qcow2` image](https://www.baeldung.com/linux/mount-qcow2-image)
 --- 
 Bucket list, needs to qualified and enlisted
 - Kubernetes
