@@ -13,3 +13,6 @@
 - Alternative to the Windows GUI
   - [Cairo Shell](https://cairoshell.com/) : https://github.com/cairoshell/cairoshell/releases
 
+---
+- Running Windows without MSCloud-Connect (German, not verified)<br>
+  https://www.deskmodder.de/blog/2025/03/30/windows-11-24h2-und-hoeher-bypass-fuer-lokalen-account-mit-einem-weiteren-befehl-moeglich/
