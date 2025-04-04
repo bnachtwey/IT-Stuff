@@ -1,6 +1,8 @@
 # Notes on using Ubiquiti Network components
+- [A Comparision of many UI switches](https://evanmccann.net/blog/ubiquiti/unifi-comparison-charts)
+
 🚧
-## gettin the linus Network management Server
+## getting the linux Network management Server
 https://ui.com/download/unifi/linux/download-started
 
 ## 1. attempt to install into debian 12 LXC container
@@ -10,6 +12,7 @@ https://ui.com/download/unifi/linux/download-started
 -  wget https://dl.ui.com/unifi/9.0.108/unifi_sysvinit_all.deb
 
 -  try to install
+```bash
 # dpkg -i unifi_sysvinit_all.deb 
 Selecting previously unselected package unifi.
 (Reading database ... 19138 files and directories currently installed.)
@@ -38,5 +41,5 @@ dpkg: error processing package unifi (--install):
  dependency problems - leaving unconfigured
 Errors were encountered while processing:
  unifi
-
+```
 -  
