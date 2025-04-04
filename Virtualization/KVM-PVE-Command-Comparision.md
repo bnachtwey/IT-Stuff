@@ -78,6 +78,6 @@ works like VMware-like *Suspend* functionality
 | `qm terminal <vmid>` | `virsh console <vm-name>` |
 
 ## remove a VM
-| Proxmox | KVM |
-| :------ | :--- |
-| t.b.d. | `vish undefine <vm-name>` |
+| Proxmox VM | Proxmox LXC |KVM |
+| :------ | :--- | :--- |
+| `qm destroy <vmid>` | ?? | `vish undefine <vm-name>` |
