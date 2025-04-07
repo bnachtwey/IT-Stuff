@@ -32,7 +32,6 @@
 
 - https://de-de.topographic-map.com/
 - [Stephen Fry on AI](https://stephenfry.substack.com/p/ai-a-means-to-an-end-or-a-means-to)
-- [Rant *gegen* M365](https://www.heise.de/meinung/Kommentar-So-schlecht-sind-die-Argumente-fuer-Microsoft-365-10341986.html), Heise iX, 2025-04-07
 
 # pfsense ISOs
 https://sgpfiles.netgate.com/mirror/downloads/
