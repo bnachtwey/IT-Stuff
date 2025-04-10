@@ -2,7 +2,7 @@
 
 > [!TIP]
 > **dsmci** ..
-> .. has moved to it's on [repository](https://github.com/bnachtwey/dsmci)
+> .. has moved to it's own [repository](https://github.com/bnachtwey/dsmci)
 
 > [!IMPORTANT]
 > ## Security Information on SP
@@ -19,6 +19,11 @@
 
 > [!TIP]
 > Server Major Releases (ending with .0 / -000) must be downloaded using the customer portal as the versions on the ftp server do not include the license file!
+
+## System Requirements and supported OS
+- [SP 8.1.26 Server Requirements](https://www.ibm.com/docs/en/storage-protect/8.1.26?topic=systems-minimum-linux-x86-64-server-requirements)
+  - [SP 8.1.26 Server Requirements and Support for Linux x86_64](https://www.ibm.com/support/pages/node/7186417)
+- [Overview - SP Supported Operating Systems](https://www.ibm.com/support/pages/overview-ibm-storage-protect-supported-operating-systems)
 
 ## Blueprints & Blueprint Tools
 
