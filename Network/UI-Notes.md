@@ -11,7 +11,25 @@ https://ui.com/download/unifi/linux/download-started
 - get package
 -  wget https://dl.ui.com/unifi/9.0.108/unifi_sysvinit_all.deb
 
+<<<<<<< HEAD
 -  try to install
+=======
+-  install prerequisites<br>
+   ```bash
+   apt --fix-broken install
+   apt-get install binutils curl mongodb-server mongodb-10gen ongodb-org-server
+   ```
+
+
+https://help.ui.com/hc/en-us/articles/220066768-Updating-and-Installing-Self-Hosted-UniFi-Network-Servers-Linux
+
+
+```bash
+apt-get install gnupg
+
+```
+
+>>>>>>> a31bf9e (just added)
 ```bash
 # dpkg -i unifi_sysvinit_all.deb 
 Selecting previously unselected package unifi.
