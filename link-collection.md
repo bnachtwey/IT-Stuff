@@ -38,9 +38,9 @@ https://sgpfiles.netgate.com/mirror/downloads/
 https://repo.ialab.dsu.edu/pfsense/
 
 # Ubiquiti
-https://lazyadmin.nl/tag/ubiquiti/
-https://lazyadmin.nl/network/unifi-cloud-gateway-ultra/
-https://lazyadmin.nl/network/unifi-uk-ultra-review/
+- https://lazyadmin.nl/tag/ubiquiti/
+- https://lazyadmin.nl/network/unifi-cloud-gateway-ultra/
+- https://lazyadmin.nl/network/unifi-uk-ultra-review/
 
 # check_mk
 https://forum.checkmk.com/t/uberwachung-internet-verbindung/15678
