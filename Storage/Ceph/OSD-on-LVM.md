@@ -1,4 +1,4 @@
-# Creating OSDs on Multipath devices
+# Creating OSDs on Multipath devices: using LVM
 unfortunately multipath devices cannot be used for OSDs directly, but there's a workaround: unsing a *logical volume* :-)
 
 1) Create logical volume, e.g. by
