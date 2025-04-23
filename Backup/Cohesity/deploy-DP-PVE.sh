@@ -92,34 +92,50 @@ function findUtils()
 ###############################################
 ############### PREPARE ROLL-OUT ##############
 ###############################################
+# Check if needed utilities are installed
 findUtils
 
 
-## Basic VM Info
-# Get highest current VMID
+# Set basic VM infos
+## Get highest already deployed VMs
 next_vmid=$(($(qm list | awk 'END{print $1}') + 1))
 
-# Ask for VMID with suggestion
+## Ask for VMID with suggesting the next number available
 read -p "Enter VMID [${next_vmid}]: " -e -i "${next_vmid}" vmid
 VMID="${vmid:-${next_vmid}}"
 
-# Ask for name with VMID-based suggestion
+## Ask for name with VMID-based suggestion
 read -p "Enter VM name [VM${vmid}]: " -e -i "VM${vmid}" VMNAME
 VMNAME="${VMNAME:-VM${vmid}}"
 
-## Memory Size
+## Set Memory Size
 read -p "Enter memory in GB [32]: " -e -i "32" MEMORY_GB
 MEMORY_GB="${MEMORY_GB:-32}"
 MEMORY_SIZE=$(( MEMORY_GB * 1024 ))
 
-## Processors
+## Set Number of Processors (Sockets & Cores)
 read -p "Enter number of cores [2]: " -e -i "2" CORES
 CORES="${CORES:-32}"
 
 read -p "Enter number of sockets [2]: " -e -i "2" SOCKETS
 SOCKETS="${CORES:-32}"
 
-CPUTYPE="host"
+## Set CPU type, suggest type based on actual system
+## get capability of actual CPU
+if grep -qw 'avx512' /proc/cpuinfo; then
+    CPU=x86-64-v4
+elif grep -qw 'avx2' /proc/cpuinfo; then
+    CPU=x86-64-v3
+elif grep -qw 'avx' /proc/cpuinfo; then
+    CPU=x86-64-v2
+else
+    CPU=x86-64-v1
+fi
+
+echo "Set CPU type"
+echo "If you're using a proxmox cluster chose minimum requirements met by all nodes"
+read -p "Enter CPUTYPE [${CPU}]: " -e -i "$CPU" CPUTYPE
+CPUTYPE="${CPUTYPE:-${CPUTYPE}}"
 
 # Network
 
