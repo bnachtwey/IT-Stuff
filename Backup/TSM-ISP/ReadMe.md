@@ -37,3 +37,6 @@
 ## Other Stuff
 ### GitHub Repos
 - [IBM's SP Repo](https://github.com/IBM/ansible-storage-protect)
+
+### Using Ansible with SP
+https://medium.com/@sarthak.ksh.dev/ibm-storage-protect-client-deployments-from-manual-chaos-to-automation-5d4a54c1ee3b
