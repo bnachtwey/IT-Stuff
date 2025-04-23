@@ -31,3 +31,9 @@
     https://www.ibm.com/support/pages/ibm-storage-protect-blueprints
 - The *tsmdiskperf tool* is now part of the whole Blueprint Configuration Scripts Collection ... and called `spdiskperf.pl `<br>
     https://www.ibm.com/support/pages/system/files/inline-files/sp-config-v51.zip
+- [GitHub Repo on Blueprints](https://github.com/IBM/storage-protect-galaxy)
+
+
+## Other Stuff
+### GitHub Repos
+- [IBM's SP Repo](https://github.com/IBM/ansible-storage-protect)
