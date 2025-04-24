@@ -19,7 +19,7 @@
   https://gitlab.com/slackermedia/bashcrawl
 - http://svnbook.red-bean.com/
 -   
-  # NON-GOSSIP
+# NON-GOSSIP
 - [This is a Coup](https://isthisacoup.com/)
 
 
