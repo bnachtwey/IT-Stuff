@@ -3,7 +3,8 @@
 # changelog
 # date          version	 remark
 # 2025-04-22    0.1		initial coding 
-# 2025-04-23    0.2		some additions for checking requirements
+# 2025-04-23    0.1.1	some additions for checking requirements
+# 2025-04-23    0.1.2   select for source disk, adding size to disk definition
 #                       some minor fixes
 ##############################################################################
 #
