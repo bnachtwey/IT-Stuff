@@ -172,8 +172,10 @@ mapfile -t pools < <(pvesm status --content images | tail -n +2 | grep active | 
 select_pool() {
     local prompt="$1"
     PS3="$prompt: "
-    select pool in "${pools[@]}"; do
-        if [[ -n "$pool" ]]; then
+    select pool in "${pools[@]}" 
+    do
+        if [[ -n "$pool" ]]
+        then
             echo "$pool"
             break
         else
@@ -183,26 +185,34 @@ select_pool() {
 }
 opool=$(select_pool "Choose storage pool for OS disk ")
 mpool=$(select_pool "Choose storage pool for Meta data disk ")
-while true; do
+while true
+do
     read -p "Enter Size of meta data disk in GB [at least 512]: " -e -i "512" MDISKSIZE
     MDISKSIZE=${MDISKSIZE:-512}
     
-    if [[ $MDISKSIZE -ge 512 ]]; then
+    if [[ $MDISKSIZE -ge 512 ]] 
+    then
         break
     else
         echo "Error: Must be ≥ 512" >&2
     fi
 done
 dpool=$(select_pool "Choose storage pool for Mass data disk ")
-while true; do
+while true
+do
     read -p "Enter Size of meta data disk in GB [at least 1024]: " -e -i "1024" DDISKSIZE
     DDISKSIZE=${DDISKSIZE:-1024}
     
-    if [[ $DDISKSIZE -ge 1024 ]]; then
-        break
-    else
+    if [[ $DDISKSIZE -le 1023 ]]
+    then
         echo "Error: Must be ≥ 1024" >&2
+    elif (( ${DDISKSIZE} > 21 * ${MDISKSIZE} ))
+    then
+        echo "Error: Data Disk must less than 21 times larger than the meta data disk!" >&2
+    else
+        break
     fi
+    set +x
 done
 
 ODISKNAME="vm-${VMID}-disk-OS.qcow2"
@@ -224,7 +234,27 @@ if [[ ! -d ${DDISKPATH} ]]; then mkdir -p ${DDISKPATH}; fi
 ##echo ${dpool} : ${DDISKPATH}/${DDISKNAME}
 
 ##exit;
-OSRCDISK=/satapool/SRC/DP/cohesity-kvm-robo-7.1.2_u3_release-20241231_bb47fe77.qcow2
+read -p "Enter a path: " SRCDIR
+mapfile -t SRCFILES < <(find "${SRCDIR}" -maxdepth 1 -type f -name "*.qcow2")
+if [ ${#SRCFILES[@]} -eq 0 ]
+then
+    echo "No .qcow2 files found in ${SRCDIR}"
+    exit 1
+fi
+
+echo "Select a .qcow2 file:"
+select OSRCDISK in "${SRCFILES[@]}"
+do
+    if [ -n "${OSRCDISK}" ]
+    then
+        echo "You selected: ${OSRCDISK}"
+        break
+    else
+        echo "Invalid selection."
+    fi
+done
+
+# OSRCDISK=/satapool/SRC/DP/cohesity-kvm-robo-7.1.2_u3_release-20241231_bb47fe77.qcow2
 
 
 ##################################################
@@ -261,8 +291,8 @@ qemu-img create -f qcow2 ${MDISKPATH}/${MDISKNAME} ${MDISKSIZE}G
 qemu-img create -f qcow2 ${DDISKPATH}/${DDISKNAME} ${DDISKSIZE}G
 
 # edit machines config file, add line like
-echo "scsi0: ${opool}:${VMID}/${ODISKNAME},iothread=1,size=${ODISKSIZE}" >> /etc/pve/qemu-server/${VMID}.conf
-echo "scsi1: ${mpool}:${VMID}/${MDISKNAME},iothread=1,size=${MDISKSIZE}" >> /etc/pve/qemu-server/${VMID}.conf
-echo "scsi2: ${dpool}:${VMID}/${DDISKNAME},iothread=1,size=${DDISKSIZE}" >> /etc/pve/qemu-server/${VMID}.conf
+echo "scsi0: ${opool}:${VMID}/${ODISKNAME},iothread=1,size=${ODISKSIZE}G" >> /etc/pve/qemu-server/${VMID}.conf
+echo "scsi1: ${mpool}:${VMID}/${MDISKNAME},iothread=1,size=${MDISKSIZE}G" >> /etc/pve/qemu-server/${VMID}.conf
+echo "scsi2: ${dpool}:${VMID}/${DDISKNAME},iothread=1,size=${DDISKSIZE}G" >> /etc/pve/qemu-server/${VMID}.conf
 
 qm set ${VMID} --boot order=scsi0
