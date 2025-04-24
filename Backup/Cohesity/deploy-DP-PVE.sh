@@ -254,14 +254,15 @@ qm set ${VMID} --bios seabios
 
 ## copy OS DISK
 cp ${OSRCDISK} ${ODISKPATH}/${ODISKNAME}
+ODISKSIZE=$(($(ls -l ${OSRCDISK} | awk '{print $5'})/1073741824 + 1))
 
 ## create further disks
 qemu-img create -f qcow2 ${MDISKPATH}/${MDISKNAME} ${MDISKSIZE}G
 qemu-img create -f qcow2 ${DDISKPATH}/${DDISKNAME} ${DDISKSIZE}G
 
 # edit machines config file, add line like
-echo "scsi0: ${opool}:${VMID}/${ODISKNAME},iothread=1" >> /etc/pve/qemu-server/${VMID}.conf
-echo "scsi1: ${mpool}:${VMID}/${MDISKNAME},iothread=1" >> /etc/pve/qemu-server/${VMID}.conf
-echo "scsi2: ${dpool}:${VMID}/${DDISKNAME},iothread=1" >> /etc/pve/qemu-server/${VMID}.conf
+echo "scsi0: ${opool}:${VMID}/${ODISKNAME},iothread=1,size=${ODISKSIZE}" >> /etc/pve/qemu-server/${VMID}.conf
+echo "scsi1: ${mpool}:${VMID}/${MDISKNAME},iothread=1,size=${MDISKSIZE}" >> /etc/pve/qemu-server/${VMID}.conf
+echo "scsi2: ${dpool}:${VMID}/${DDISKNAME},iothread=1,size=${DDISKSIZE}" >> /etc/pve/qemu-server/${VMID}.conf
 
 qm set ${VMID} --boot order=scsi0
