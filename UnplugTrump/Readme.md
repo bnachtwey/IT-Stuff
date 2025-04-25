@@ -7,3 +7,7 @@
   - [Tech-Bros abklemmen: So entkommen Sie US-Clouds](https://www.heise.de/ratgeber/Tech-Bros-abklemmen-So-entkommen-Sie-US-Clouds-10292877.html), Heise+ / c't,  2025-04-04, Paywall
   - [Alternativen zu US-Clouddiensten: Überblick und Konfigurationstipps ](https://www.heise.de/ratgeber/Alternativen-zu-US-Clouddiensten-Ueberblick-und-Konfigurationstipps-10294724.html), Heise+ / c't, 2025-04-07, Paywall
   - [heise+ Expertentalk: Weg von US-Diensten](https://youtube.com/live/BrV9_6_KAk8), You-Tube-Aufzeichnung ??
+
+
+## Gossip?
+- [Molson Hart on *America underestimates the difficulty of bringing manufacturing back*](https://www.molsonhart.com/blog/america-underestimates-the-difficulty-of-bringing-manufacturing-back)
