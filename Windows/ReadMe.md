@@ -14,6 +14,6 @@
   - [Cairo Shell](https://cairoshell.com/) : https://github.com/cairoshell/cairoshell/releases
 
 ---
-- Running Windows without MSCloud-Connect (German, not verified)<br>
+- Running Windows without being forced to use MSCloud-Connect (German, not verified)<br>
   https://www.deskmodder.de/blog/2025/03/30/windows-11-24h2-und-hoeher-bypass-fuer-lokalen-account-mit-einem-weiteren-befehl-moeglich/<br>
   [Windows 11 ohne Microsoft-Konto](https://www.heise.de/tipps-tricks/Windows-11-ohne-Microsoft-Konto-so-geht-s-6213708.html), heise 2024-11-11, german
