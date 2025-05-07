@@ -28,3 +28,10 @@ For other Microsoft applications, the method may differ. You can check Microsoft
   [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot]
   "TurnOffWindowsCopilot"=dword:00000001
   ```
+
+> [!WARNING]
+> Q: Do these suggestions work or are they only "eye powder"?
+>
+> A: Yes, these methods should work to disable Copilot in Windows and Microsoft applications. The PowerShell script removes the Copilot package, while the Registry tweak prevents it from running. However, Microsoft may update its policies or reintroduce Copilot through system updates, so it's always good to check for new workarounds.<br>
+>
+> If you're an IT admin, **Group Policy or Intune might be more effective** for managing Copilot across multiple devices.
