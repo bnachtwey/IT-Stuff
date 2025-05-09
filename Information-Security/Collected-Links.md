@@ -17,6 +17,9 @@
 ## Articles on Windows Security
 - *Das Hochsicherheits-Windows* (behind Paywall)<br>https://www.heise.de/select/ct/2023/20/2317914255711479609#!
 
+## Attacking Windows
+- [Running EZ Tools Natively on Linux: A Step-by-Step Guide](https://www.sans.org/blog/running-ez-tools-natively-on-linux-a-step-by-step-guide/)
+
 ## Eye catching stuff
 - [Browser-in-Browser-Attack](https://becker.koeln/videos/2024-10-19-brower-in-browser-attacks/) German Video by [Felix Becker](https://www.linkedin.com/in/dev-felix-becker/)
 
