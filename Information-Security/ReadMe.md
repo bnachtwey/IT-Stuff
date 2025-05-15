@@ -14,6 +14,15 @@
 - [Übersicht kommunaler Ausfälle](https://kommunaler-notbetrieb.de/)<br>
   **ACHTUNG: Die Karte zeigt alle Ausfälle, auch der letzten Jahre, nicht nur akute!**
 
+- pdfs um Metadaten bereinigen<br>
+  ```bash
+  % mutool info Geheimgutachten_Teil\ A.pdf
+
+  PDF-1.7
+  Info object (1697 0 R):
+  <</Author(sven Kurze)/CreationDate(D:20250513011832Z)/Creator(Vorschau)/ModDate(D:20250513165030+02'00')/Producer(macOS Version 12.7.6 \(Build 21H1320\) Quartz PDFContext)/Title(Band 1)>>`<br>
+  ```
+  Dank an [fefe](https://blog.fefe.de/?ts=96dab014)
 # Exeternal Informtaion
 - [Wiki on ISMS by a Guy from Berlin](https://wiki.isms-ratgeber.info/wiki/Willkommen_im_ISMS-Ratgeber_WiKi)
 - [IBM (free) *Cyber Resilience Assessment*](https://www.ibm.com/flashsystem/cyber-resilience#Cyber+resilience+assessment)
