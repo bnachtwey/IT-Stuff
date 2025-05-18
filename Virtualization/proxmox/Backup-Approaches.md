@@ -14,3 +14,8 @@ However, this approach has a number of weaknesses in terms of IT security:
 - what about `veeam`?
 - what about `TSM^H ISP`
 - what else?
+
+
+---
+# Collected Links
+- [How to use the command 'qmrestore' (with examples)](https://commandmasters.com/commands/qmrestore-linux/)
