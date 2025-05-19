@@ -9,7 +9,7 @@ unfortunately multipath devices cannot be used for OSDs directly, but there's a 
    ```
 1) get keyring for further steps (no idea why, but obviously it's necessary)
    ```bash
-   ceph auth get client.bootstrap-osd /var/lib/ceph/bootstrap-osd/ceph.keyring
+   ceph auth get client.bootstrap-osd > /var/lib/ceph/bootstrap-osd/ceph.keyring
    ```
 1) create a ceph-volume using the LV
    ```bash
