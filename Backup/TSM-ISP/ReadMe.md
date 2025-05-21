@@ -25,6 +25,10 @@
   - [SP 8.1.26 Server Requirements and Support for Linux x86_64](https://www.ibm.com/support/pages/node/7186417)
 - [Overview - SP Supported Operating Systems](https://www.ibm.com/support/pages/overview-ibm-storage-protect-supported-operating-systems)
 
+- Bypassing the OS checks:<br>
+  ```bash
+  ./install.sh -c -vmargs -DBYPASS_TSM_REQ_CHECKS=true
+  ```
 ## Blueprints & Blueprint Tools
 
 - Overview page<br>
