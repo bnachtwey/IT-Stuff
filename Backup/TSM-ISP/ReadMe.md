@@ -29,6 +29,46 @@
   ```bash
   ./install.sh -c -vmargs -DBYPASS_TSM_REQ_CHECKS=true
   ```
+> [!TIP]
+> 
+>   This throws a lot of warning ...
+>   ```bash
+>   =====> IBM Installation Manager> Install> Prerequisites
+> 
+>   Validation results:
+>   
+>   * [WARNING] IBM Storage Protect server 8.1.26.20250315_0033 contains validation warning.
+>        1. WARNING: The command "rpm -qa --queryformat '%{RELEASE}\n' redhat-release* | grep \\." has failed.
+>        2. WARNING: The installation cannot continue if Security-enhanced Linux (SELinux) is enabled and in enforcing mode.
+>   
+>   * [WARNING] IBM Storage Protect license 8.1.26.20250315_0025 contains validation warning.
+>        3. WARNING: The command "rpm -qa --queryformat '%{RELEASE}\n' redhat-release* | grep \\." has failed.
+>   
+>   * [WARNING] IBM Storage Protect storage agent 8.1.26.20250315_0021 contains validation warning.
+>        4. WARNING: The command "rpm -qa --queryformat '%{RELEASE}\n' redhat-release* | grep \\." has failed.
+>   
+>   * [WARNING] IBM Storage Protect device driver  8.1.26.20250315_0028 contains validation warning.
+>        5. WARNING: The command "rpm -qa --queryformat '%{RELEASE}\n' redhat-release* | grep \\." has failed.
+>   
+>   * [WARNING] IBM Storage Protect Operations Center 8.1.26000.20250314_1902 contains validation warning.
+>        6. WARNING: The operating system on which you are installing the product is not supported. For more information, see http://www.ibm.com/support/docview.wss?uid=swg21243309.
+>   
+>    * [WARNING] Open Snap Store Manager 8.1.26.20250315_0023 contains validation warning.
+>       7. WARNING: The command "rpm -qa --queryformat '%{RELEASE}\n' redhat-release* | grep \\." has failed.
+>       8. WARNING: The command "rpm -qa --queryformat '%{RELEASE}\n' redhat-release* | grep \\." has failed.
+>   
+>   Enter the number of the error or warning message above to view more details.
+>   
+>   Options:
+>       R. Recheck status.
+>   
+>       B. Back,      N. Next,      C. Cancel
+>   ```
+>   **BUT** you can just enter **N**ext :-)
+>   ```bash
+>   -----> [N]
+>   ```
+
 ## Blueprints & Blueprint Tools
 
 - Overview page<br>
