@@ -16,6 +16,9 @@ unfortunately multipath devices cannot be used for OSDs directly, but there's a 
    ceph-volume lvm prepare --data cephVG1/cephLV1
    ceph-volume lvm activate 0 e701b2dc-8ff2-454a-a808-6b43f06cd870
    ```
+> [!TIP]
+>  if the `ceph-volume lvm activate` fails and the osd is listed as *ghost osd*, just repeat it again<br>
+
    or a litte more generic
    ```bash
    ceph-volume lvm activate $(ceph-volume lvm list | grep "osd id" | awk '{print $3}') $(ceph-volume lvm list | grep "osd fsid" | awk '{print $3}')
