@@ -14,3 +14,7 @@ As it seems, the easiest way is to use [`ollama`](https://ollama.com/) as it's e
 ## critical thoughts ..
 - [Chatbots Are Cheating on Their Benchmark Tests](https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/), The Atlantic, March 5, 2025
 - [Faul und inkompetent? KI-Nutzung schadet dem Image im Büro](https://www.heise.de/news/Faul-und-inkompetent-KI-Nutzung-schadet-dem-Image-im-Buero-10381152.html)
+
+## interesting use cases / web offerings
+- [THEY SEE YOUR PHOTOS](https://theyseeyourphotos.com/)<br>
+  *Your photos reveal a lot of private information. In this experiment, we use the Google Vision API to see how much can be inferred about you from a single photo. See what they see.*
