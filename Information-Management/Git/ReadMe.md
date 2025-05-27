@@ -9,6 +9,8 @@
 - valuable plugins
   - *Git History*
   - *Git Lens*
+- *online VS Code*<br>
+  a simplifyed version of VS Code is available directly inside GitHub, just enter `.` when you've entered a GitHub Repo :-D
 
 ## HowTo and Introductions to `git`
 - Git4Maker, Part1: [Wie Bastler von Git profitieren: Git als Code-Versionsverwaltung](https://www.heise.de/ratgeber/Wie-Bastler-von-Git-profitieren-Git-als-Code-Versionsverwaltung-10245442.html?seite=all), Heise+ 2025-01-20
