@@ -14,3 +14,4 @@
 
 ## HowTo and Introductions to `git`
 - Git4Maker, Part1: [Wie Bastler von Git profitieren: Git als Code-Versionsverwaltung](https://www.heise.de/ratgeber/Wie-Bastler-von-Git-profitieren-Git-als-Code-Versionsverwaltung-10245442.html?seite=all), Heise+ 2025-01-20
+- Git4Maker, Part3: [Wie man Projekte einrichtet ](https://www.heise.de/ratgeber/Git-fuer-Maker-erklaert-Teil-3-Wie-man-Projekte-einrichtet-10374771.html), Heise+ 2025-05-23
