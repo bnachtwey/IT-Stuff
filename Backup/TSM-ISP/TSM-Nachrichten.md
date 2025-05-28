@@ -19,3 +19,6 @@ So most the articles are written in german:
 | 06/2019 	 | Verlässlichkeit von Tape-Speichermedien | https://www.gwdg.de/documents/20182/27257/GN_6-2019_www.pdf |
 | 04-05/2020 | TSM-Instanzenmigration und SP-8-Upgrade | https://www.gwdg.de/documents/20182/27257/GN_4-5-2020_www.pdf |
 | 05/2021 	 | Comparing Two Approaches for DB2 Reorganization in the Scope of IBM Spectrum Protect | https://www.gwdg.de/documents/20182/27257/GN_5-2021_www.pdf |
+
+The last article was also published in the "iX -- Magazin für professionelle IT" at [Heise Publishing](www.heise.de):
+- iX 08/2021 [Methoden zur Reorganisation einer DB2-Datenbank](https://www.heise.de/select/ix/2021/8/2101311501739290733)
