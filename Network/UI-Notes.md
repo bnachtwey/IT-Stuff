@@ -1,5 +1,6 @@
 # Notes on using Ubiquiti Network components
 - [A Comparision of many UI switches](https://evanmccann.net/blog/ubiquiti/unifi-comparison-charts)
+- [Remarks on LAGs with UI](https://support.hostifi.com/en/articles/6454249-unifi-how-to-enable-link-aggregation-on-switches-lag)
 
 🚧
 ## getting the linux Network management Server
