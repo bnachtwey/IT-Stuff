@@ -1,4 +1,4 @@
-# Current Version of all Products from the Storage Protect Suite
+# Current Version of Products from the Storage Protect Suite
 👷‍♀️ unfortunately IBM has no such landing page, so let's try to gather it myself 👷‍♀️
 
 [Link to actual documentation](https://www.ibm.com/docs/en/storage-protect/8.1.26)
