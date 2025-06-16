@@ -1,6 +1,7 @@
 # "IT-Stuff" -- just collecting various information on IT related stuff
 Either just to document and record for myself or maybe also to share with others ;-)
 
+You may call this [*MY DIGITAL GARDEN*](https://maggieappleton.com/garden-history) :-)
 
 ---
 # OT Markdown remarks useful for all the notes made here
