@@ -3,7 +3,7 @@
 
 [Link to actual documentation](https://www.ibm.com/docs/en/storage-protect/8.1.26)
 
-## Spectrum Protect Server
+## Storage Protect Server
 
 ### latest versions
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
@@ -17,7 +17,7 @@
 ### Withdrawn versions
 - 8.1.14-000 due to bug in MFA
 
-## Spectrum Protect Operations Center
+## Storage Protect Operations Center
 
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
 | :-: | :-: | :----------: | :----- |
