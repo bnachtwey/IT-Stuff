@@ -30,7 +30,7 @@
 | OS | latest VRM | latest Patch / FixPack | Remarks|
 | :-: | :-: | :----------: | :----- |
 | AIX | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/AIX/BA/v8126/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/AIX/BA/v8117/) |
-| Linuxx DEB | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Linux/LinuxX86_DEB/BA/v8126/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Linux/LinuxX86_DEB/v8117/) | 
+| Linux DEB | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Linux/LinuxX86_DEB/BA/v8126/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Linux/LinuxX86_DEB/v8117/) | 
 | Linuxx x86 | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Linux/LinuxX86_DEB/BA/v8126/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Linux/LinuxX86/BA/v8117/) | 
 | Windows | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Windows/x64/v8126/) | [8.1.25-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Windows/x64/v8125/) |
 
