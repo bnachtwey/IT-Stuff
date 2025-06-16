@@ -43,13 +43,13 @@
 ### [TSM4SQL](https://www.ibm.com/docs/en/spfd)
 | latest VRM | latest Patch / FixPack | Remarks|
 | :-: | :----------: | :----- |
-| [8.1.24](https://www.ibm.com/docs/en/spfd/8.1.24) | [8.1.17-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/sql/v8117/windows/) | |
+| [8.1.24](https://www.ibm.com/docs/en/spfd/8.1.24) | [8.1.17-2](https://www.ibm.com/support/fixcentral/swg/doSelectFixes?options.selectedFixes=8.1.17.2-TIV-TSMSQL-Win&continue=1) (via FixCentral), [8.1.17-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/sql/v8117/windows/) (IBM FTP) | |
 
 ### [TSM4Mail](https://www.ibm.com/docs/en/spfm)
 
 | latest VRM | latest Patch / FixPack | Remarks|
 | :-: | :----------: | :----- |
-| [8.1.22](https://www.ibm.com/docs/en/spfm/8.1.22) | t.b.d. | |
+| [8.1.22](https://www.ibm.com/docs/en/spfm/8.1.22) | [8.1.17-2](https://www.ibm.com/support/fixcentral/swg/doSelectFixes?options.selectedFixes=8.1.17.2-TIV-TSMEXC-Win&continue=1) (via FixCentral) | |
 
 ### TSM4Oracle
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
@@ -61,8 +61,8 @@
 ### [TSM4VE](https://www.ibm.com/docs/en/spfve)
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
 | :-: | :-: | :----------: | :----- |
-| Linux | [8.1.26](https://www.ibm.com/docs/en/spfve/8.1.26) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/linux/linux86/v8123/) | |
-| Windows | [8.1.26](https://www.ibm.com/docs/en/spfve/8.1.26) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/windows/v8123/) | |
+| Linux | [8.1.26](https://www.ibm.com/docs/en/spfve/8.1.26) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/linux/linux86/v8123/) (vmware only)| |
+| Windows | [8.1.26](https://www.ibm.com/docs/en/spfve/8.1.26) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/windows/v8123/) (vmware only) | |
 
 ---
 ToDo:
