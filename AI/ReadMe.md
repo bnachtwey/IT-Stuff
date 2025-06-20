@@ -1,4 +1,9 @@
-# Notes on Artificial Intelligence and Large Language Models (LLM)
+# Notes on (*so called*) Artificial Intelligence and Large Language Models (LLM)
+
+## ??
+- [AI attribution for improved transparency](https://aiattribution.github.io/)<br>
+  *An attribution statement identifies not only the presence of AI involvement, but also how AI was used. This approach makes important distinctions between different types and amounts of AI contributions, allowing creators to maintain ownership over co-created work and consumers to calibrate their trust.*<br>
+  BUT: Where to put this *Attribution Info*?
 
 ## further Reading / Background Information
 mainly iX Magazin by Heise, so behind PayWall
