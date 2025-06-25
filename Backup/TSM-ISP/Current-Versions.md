@@ -1,5 +1,5 @@
 # Current Version of Products from the Storage Protect Suite
-👷‍♀️ unfortunately IBM has no such landing page, so let's try to gather it myself 👷‍♀️
+IBM created a [landing page](https://public.dhe.ibm.com/software/products/ISP/currency/protect_server/), but it's still not complete -- imho
 
 [Link to actual documentation](https://www.ibm.com/docs/en/storage-protect/8.1.26)
 
