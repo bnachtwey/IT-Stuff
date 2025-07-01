@@ -81,7 +81,7 @@ Attempts to trace the system calls with strace fail due to my limited knowledge 
 
   => As it seems, *the location* may cause the problem.
 
-- check if the subfolders contain the *"correct lib versions
+- check if the subfolders contain the *"correct lib"* versions
 
   compare *md5sum* of "missing libs" in RHEL9.6 system:
 
@@ -99,4 +99,4 @@ Attempts to trace the system calls with strace fail due to my limited knowledge 
   d0b1bc7916f0efb2b1add791fb0b5135  /opt/tivoli/tsm/db2/lib64/awssdk/RHEL/7.6/libaws-cpp-sdk-s3.so
   ```
 
-  So, the *"missing lib"* and the one from the `RHEL9.2` folder are binary identical.
+  So, the *"missing lib"* and the one from the *`RHEL9.2` folder* are binary identical.
