@@ -3,7 +3,11 @@
 -->
 
 # ISP Derivates Issues
-Using not *real Redhat Entprise Linux 9*, but derivates like [*AlmaLinux*](https://almalinux.org/get-almalinux/), [Oracle Linux](https://yum.oracle.com/oracle-linux-isos.html) or [*Rocky Linux*](https://rockylinux.org/download) you face a problem as *Storage Protect 8.1.23* (and newer version including 8.1.27) does allow to configure a database. This affects as well *plain new installations* as *in place updates*
+Using not *real Redhat Entprise Linux 9*, but derivates like [*AlmaLinux*](https://almalinux.org/get-almalinux/) or [*Rocky Linux*](https://rockylinux.org/download) you face a problem as *Storage Protect 8.1.23* (and newer version including 8.1.27) does allow to configure a database. This affects as well *plain new installations* as *in place updates*
+
+> [!INFO]
+> 
+> Tesing with [Oracle Linux](https://yum.oracle.com/oracle-linux-isos.html), the problem *does not* occur.
 
 ## SUMMARY
 - SP 8.1.23 and newer fails on install and update using RHEL9 derivates
@@ -16,6 +20,15 @@ Using not *real Redhat Entprise Linux 9*, but derivates like [*AlmaLinux*](https
 ---
 ---
 # Complete analysis and error description and solution
+
+> [!INFO]
+> The installation of TSM/SP on *RHEL derivates* fail always as some checks are not passed.
+>
+> You can bypass these checks by running the installation with an extra option `-DBYPASS_TSM_REQ_CHECKS=true`, e.g. call :
+>
+> ```bash
+> ./install.sh -c -vmargs -DBYPASS_TSM_REQ_CHECKS=true
+> ```
 
 ## Problem description
 Trying to update or newly install ISP 8.1.23+, the database operation fail on starting the database manager, unfortunately the error messsage is not very helpful as it reports an *I/O error* due to *access problems* (Example from installation of SP8.1.26)
