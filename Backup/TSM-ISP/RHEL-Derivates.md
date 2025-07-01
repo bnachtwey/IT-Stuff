@@ -7,7 +7,7 @@ Using not *real Redhat Entprise Linux 9*, but derivates like [*AlmaLinux*](https
 
 > [!INFO]
 > 
-> Tesing with [Oracle Linux](https://yum.oracle.com/oracle-linux-isos.html), the problem *does not* occur.
+> Testing with [Oracle Linux](https://yum.oracle.com/oracle-linux-isos.html), the problem *does not* occur.
 
 ## SUMMARY
 - SP 8.1.23 and newer fails on install and update using RHEL9 derivates
