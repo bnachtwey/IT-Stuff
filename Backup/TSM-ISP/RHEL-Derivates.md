@@ -3,6 +3,7 @@
 # changelog
 # date          version remark
 # 2025-07-02    0.1.    first version covering RHEL9 and SP up to 8.1.27
+#               0.1.1   changed "[!INFO]" with "[!NOTE]"
 # 2025-06-27    0.0.1   initial version, shared with IBM
 #
 ##############################################################################
@@ -38,7 +39,7 @@
 
 Using not *original [Redhat Entprise Linux 9](https://www.redhat.com/en/blog/install-linux-rhel-9) (TM)*, but derivates like [*AlmaLinux*](https://almalinux.org/get-almalinux/) or [*Rocky Linux*](https://rockylinux.org/download) you face a problem as *Storage Protect 8.1.23* (and newer version including 8.1.27) does allow to configure a database. This affects as well *plain new installations* as *in place updates*
 
-> [!INFO]
+> [!NOTE]
 >
 > Testing with [Oracle Linux](https://yum.oracle.com/oracle-linux-isos.html), the problem *does not* occur.
 
@@ -47,15 +48,16 @@ Using not *original [Redhat Entprise Linux 9](https://www.redhat.com/en/blog/ins
 - SP 8.1.23 and newer fails on install and update using RHEL9 derivates
 - issue (and fix) is verified for *AlmaLinux9.6* and *RockyLinux9.6*, but *Oracle Linux R9-U6* is not affected
 - error messages are misleading
-- root cause are missing `awslib-*`files in default path
-- adding the RHEL9.2 path to the `ldconfig` solves the problem
+- root cause are missing `awslib-*` files in default path
+- adding the `RHEL9.2` path to the `ldconfig` solves the problem
 
 ---
 ---
 
 # Complete analysis and error description and solution
 
-> [!INFO]
+> [!NOTE]
+>
 > The installation of TSM/SP on *RHEL derivates* fail always as some checks are not passed.
 >
 > You can bypass these checks by running the installation with an extra option `-DBYPASS_TSM_REQ_CHECKS=true`, e.g. call :
@@ -203,7 +205,7 @@ Let's check if this workaround will also work for updating SP.
 
 But, of course, I have an idea:
 
-Well, there are no `libaws` files for RHEL9 at all:
+Well, there are no `libaws` files for RHEL9 after installing 8.1.22 at all:
 
 ```bash
 $ ls -l /opt/tivoli/tsm/db2/lib64/awssdk/RHEL/
@@ -213,6 +215,7 @@ drwxr-xr-x. 2 bin bin 98 Jan 12  2024 8.1
 ```
 
 so the `ldd $(which db2start)` does not fail on missing libs ...
+
 ```bash
 $ ldd $(which db2start) | wc -l
 64
@@ -222,7 +225,7 @@ $ ldd $(which db2start) | grep "not" | wc -l
 0
 ```
 
-So perhaps, 8.1.22 does not need them?
+So perhaps, 8.1.22 does not need them, but 8.1.23 does?
 
 well, the [*what's new* announcements](https://www.ibm.com/docs/en/storage-protect/8.1.27?topic=servers-whats-new) for 8.1.23 *does not metion AWS*:
 
@@ -242,8 +245,8 @@ well, the [*what's new* announcements](https://www.ibm.com/docs/en/storage-prote
 - A number of APARs are included in this version of the product.
 ``` 
 
-Well, AWS-Support was added in [8.1.8](http://www.ibm.com/support/knowledgecenter/SSEQVQ_8.1.8/srv.common/r_techchg_intelligenttier_818.html) and further S3 functionality in [8.1.15](https://www.ibm.com/docs/en/storage-protect/8.1.15?topic=servers-whats-new).
+A closer look into the documenation reveals that AWS-Support was added in [8.1.8](http://www.ibm.com/support/knowledgecenter/SSEQVQ_8.1.8/srv.common/r_techchg_intelligenttier_818.html) and further S3 functionality in [8.1.15](https://www.ibm.com/docs/en/storage-protect/8.1.15?topic=servers-whats-new).
 
-Even the [APAR list](https://www.ibm.com/support/pages/node/6447173#8123) does not menton neither *Amazon* nor *AWS* for 8.1.23.
+Even the [APAR list](https://www.ibm.com/support/pages/node/6447173#8123) does not mention neither *Amazon* nor *AWS* for 8.1.23.
 
 **Sorry, no idea after all :-(**
