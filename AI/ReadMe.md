@@ -1,5 +1,13 @@
 # Notes on (*so called*) Artificial Intelligence and Large Language Models (LLM)
 
+## legal stuff
+- [DSK Orientierungshilfe KI](https://www.datenschutzkonferenz-online.de/media/oh/20240506_DSK_Orientierungshilfe_KI_und_Datenschutz.pdf)<br>
+*Orientierungshilfe der Konferenz der unabhängigen Datenschutzaufsichtsbehörden des Bundes und der Länder vom 6. Mai 2024*
+- [DSK zu TOMs bei der Nutzung von KI](https://www.datenschutzkonferenz-online.de/media/oh/DSK-OH_KI-Systeme.pdf)<br>
+*Orientierungshilfe zu empfohlenen technischen und organisatorischen Maßnahmen bei der Entwicklung und beim Betrieb von KI-Systemen*, Juli 2025
+- [KI Checkliste des BayLDA](https://www.lda.bayern.de/media/ki_checkliste.pdf
+- [Rechtsgrundlagen im Datenschutz beim Einsatz von Künstlicher Intelligenz](https://www.baden-wuerttemberg.datenschutz.de/wp-content/uploads/2024/10/Rechtsgrundlagen-KI-v2.0.pdf)<br>
+  LfDI.BW zu *Wann und wie dürfen personenbezogene Daten für das Training und die Anwendung von Künstlicher Intelligenz verarbeitet werden?*, Version 2.0 vom 17.10.2024
 ## ??
 - [AI attribution for improved transparency](https://aiattribution.github.io/)<br>
   *An attribution statement identifies not only the presence of AI involvement, but also how AI was used. This approach makes important distinctions between different types and amounts of AI contributions, allowing creators to maintain ownership over co-created work and consumers to calibrate their trust.*<br>
