@@ -9,3 +9,6 @@ mainly behind paywall:
 - [Lasercutter K40 justieren](https://www.heise.de/select/make/2021/4/2113213584260524312)
 - [Deutlich billiger: Luftfilter für Lasercutter](https://www.heise.de/news/Deutlich-billiger-Luftfilter-fuer-Lasercutter-6147310.html)
 - [Abgas-Reinigungsanlage für den 400-Euro-Lasercutter](https://www.heise.de/ratgeber/Abgas-Reinigungsanlage-fuer-den-400-Euro-Lasercutter-4182088.html)
+
+# other stuff (not K40)
+- [Wie Sie den Autofokus eines Lasercutters nachrüsten](https://www.heise.de/ratgeber/Wie-Sie-den-Autofokus-eines-Lasercutters-nachruesten-9650083.html)
