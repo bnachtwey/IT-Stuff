@@ -22,7 +22,8 @@ mainly iX Magazin by Heise, so behind PayWall
 ## Running LLMs locally
 As it seems, the easiest way is to use [`ollama`](https://ollama.com/) as it's easy to deploy on local maschines and manages a wide variety of LLMs :-)
 
-[Heise](www.heise.de) published an article on this [topic](https://www.heise.de/hintergrund/Sprachmodelle-lokal-betreiben-Fuenf-Tools-vorgestellt-10312843.html), but in german only:-(
+- [Heise](www.heise.de) published an article on this [topic](https://www.heise.de/hintergrund/Sprachmodelle-lokal-betreiben-Fuenf-Tools-vorgestellt-10312843.html), but in german only:-(
+- https://www.heise.de/tests/Open-WebUI-GUI-fuer-lokale-Sprachmodelle-im-Test-10488313.html
 
 ## critical thoughts ..
 - [Chatbots Are Cheating on Their Benchmark Tests](https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/), The Atlantic, March 5, 2025
