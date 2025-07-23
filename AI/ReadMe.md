@@ -5,7 +5,7 @@
 *Orientierungshilfe der Konferenz der unabhängigen Datenschutzaufsichtsbehörden des Bundes und der Länder vom 6. Mai 2024*
 - [DSK zu TOMs bei der Nutzung von KI](https://www.datenschutzkonferenz-online.de/media/oh/DSK-OH_KI-Systeme.pdf)<br>
 *Orientierungshilfe zu empfohlenen technischen und organisatorischen Maßnahmen bei der Entwicklung und beim Betrieb von KI-Systemen*, Juli 2025
-- [KI Checkliste des BayLDA](https://www.lda.bayern.de/media/ki_checkliste.pdf
+- [KI Checkliste des BayLDA](https://www.lda.bayern.de/media/ki_checkliste.pdf)
 - [Rechtsgrundlagen im Datenschutz beim Einsatz von Künstlicher Intelligenz](https://www.baden-wuerttemberg.datenschutz.de/wp-content/uploads/2024/10/Rechtsgrundlagen-KI-v2.0.pdf)<br>
   LfDI.BW zu *Wann und wie dürfen personenbezogene Daten für das Training und die Anwendung von Künstlicher Intelligenz verarbeitet werden?*, Version 2.0 vom 17.10.2024
 ## ??
@@ -27,6 +27,7 @@ As it seems, the easiest way is to use [`ollama`](https://ollama.com/) as it's e
 ## critical thoughts ..
 - [Chatbots Are Cheating on Their Benchmark Tests](https://www.theatlantic.com/technology/archive/2025/03/chatbots-benchmark-tests/681929/), The Atlantic, March 5, 2025
 - [Faul und inkompetent? KI-Nutzung schadet dem Image im Büro](https://www.heise.de/news/Faul-und-inkompetent-KI-Nutzung-schadet-dem-Image-im-Buero-10381152.html)
+- [Coding-KI läuft Amok und löscht gesamte Firmendatenbank aus "Panik"](https://winfuture.de/news,152386.html)
 
 ## interesting use cases / web offerings
 - [THEY SEE YOUR PHOTOS](https://theyseeyourphotos.com/)<br>
