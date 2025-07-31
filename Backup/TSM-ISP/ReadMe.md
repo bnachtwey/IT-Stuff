@@ -77,6 +77,8 @@
     https://www.ibm.com/support/pages/system/files/inline-files/sp-config-v51.zip
 - [GitHub Repo on Blueprints](https://github.com/IBM/storage-protect-galaxy)
 
+## Part Numbers and Products
+see [Product Search -- Find licensing and ordering information for IBM offerings](https://www.ibm.com/about/software-licensing/us-en/product_search?search=Storage%20Protect)
 
 ## Other Stuff
 ### GitHub Repos
