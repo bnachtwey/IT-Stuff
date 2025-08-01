@@ -22,12 +22,12 @@ LTO drive speed matching native data rates (MB/s / GB/h)
 |              |              |                    |	40.00 / 144.00 	 |  40.00 / 144.00  |
 
 Sources:<br>
-[LTO-7](https://www.redbooks.ibm.com/redbooks/pdfs/sg245946.pdf)
+- [IBM Redbook: LTO-7](https://www.redbooks.ibm.com/redbooks/pdfs/sg245946.pdf)
 ~~[LTO-8](https://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/8/897/ENUS117-078/index.html&request_locale=en)~~
 ~~[LTO-9](https://www.ibm.com/common/ssi/cgi-bin/ssialias?appname=skmwww&htmlfid=897%2FENUS121-069&infotype=AN&subtype=CA&mhsrc=ibmsearch_a&mhq=lto-9)~~
-[IBM TS4500 R9 Tape Library Guide](https://www.redbooks.ibm.com/redbooks/pdfs/sg248235.pdf)
-[IBM Tape Library Guide for Open Systems](https://www.redbooks.ibm.com/redbooks/pdfs/sg245946.pdf)
-[IBM: Performance specifications for LTO tape drives](https://www.ibm.com/docs/en/ts4500-tape-library?topic=performance-lto-specifications)
+- [IBM TS4500 R9 Tape Library Guide](https://www.redbooks.ibm.com/redbooks/pdfs/sg248235.pdf)
+- [IBM Tape Library Guide for Open Systems](https://www.redbooks.ibm.com/redbooks/pdfs/sg245946.pdf)
+- [IBM: Performance specifications for LTO tape drives](https://www.ibm.com/docs/en/ts4500-tape-library?topic=performance-lto-specifications)
 
 *) Speedsteps below 305 mb/s for full hight drives only
 
