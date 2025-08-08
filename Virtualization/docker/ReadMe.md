@@ -1,11 +1,5 @@
 # Docker Nice2Know
 
-## you should consider ...
-- not be always `root` on your dockerhost!
-- to add your main user to the docker group, so you can run the most common commands without being / becoming `root`<br>
-  ```
-  sudo usermod -aG docker $USER
-  ```
 ## Nice2Know
 - The using `docker-compose` the `.yml` file needs no `version: "3"` any more
 
