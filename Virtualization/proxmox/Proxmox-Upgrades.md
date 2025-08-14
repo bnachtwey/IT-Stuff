@@ -129,16 +129,21 @@ Although the process is well described at [proxmox' website](), I'd like to shar
     
 3) Update all Debian and PBS repository entries to Trixie.
 
-  ```bash
-  sed -i 's/bookworm/trixie/g' /etc/apt/sources.list
-  ```
+   ```bash
+   sed -i 's/bookworm/trixie/g' /etc/apt/sources.list
+   ```
 
 4) do dist-upgrade
 
-  ```bash
-  apt-get clean all
-  apt-get update
-  apt-get dist-upgrade
-  ```
+   ```bash
+   apt-get clean all
+   apt-get update
+   apt-get dist-upgrade
+   ```
 
-5) ..
+5) accept and reconfigure
+
+  - keyboard again
+  - some services (just press <ENTER>)
+
+6) reboot
