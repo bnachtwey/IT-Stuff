@@ -72,4 +72,73 @@ Although the process is well described at [proxmox' website](), I'd like to shar
 
    > I do wonder, why I have to reconfigre my keyboard and console locale ... well ...
    > No need to restart services as you'll reboot the whole maschine afterwards
+
+5) Cleanup Repos again
+
+   > Well, after the full upgrade, the enterprise repo is back again and enabled, so just remove it again
+   >
+   > ```bash
+   > rm -f /etc/apt/sources.list.d/pve-enterprise.sources
+   > ```
+
+## Workflow PBS 3.4.1 => PBS ??
+
+> [!INFO]
+> This Notes cover a dedicated Backup Server
+
+1) First, make sure that the system is using the latest Proxmox Backup Server packages:
+
+   ```bash
+   apt update
+   apt dist-upgrade
+   ```
+2) check versions with `pbs3to4`
+
+   e.g.
+   ```bash
+   ~# pbs3to4
+   = CHECKING VERSION INFORMATION FOR PBS PACKAGES =
+   
+   INFO: Checking for package updates..
+   PASS: all packages up-to-date
+   INFO: Checking proxmox backup server package version..
+   PASS: 'proxmox-backup' has version >= 3.4.0
+   INFO: Check running kernel version..
+   PASS: running kernel '6.8.12-10-pve' is considered suitable for upgrade.
+   
+   = MISCELLANEOUS CHECKS =
+   
+   INFO: Checking PBS daemon services..
+   PASS: systemd unit 'proxmox-backup.service' is in state 'active'
+   PASS: systemd unit 'proxmox-backup-proxy.service' is in state 'active'
+   INFO: Checking for supported & active NTP service..
+   PASS: Detected active time synchronisation unit
+   INFO: Checking for package repository suite mismatches..
+   PASS: found no suite mismatch
+   INFO: Checking bootloader configuration...
+   SKIP: System booted in legacy-mode - no need for additional pacckages.
+   SKIP: could not get dkms status
+   
+   = SUMMARY =
+   
+   TOTAL:     9
+   PASSED:    7
+   SKIPPED:   2
+   NOTICE:    0
+   ```
     
+3) Update all Debian and PBS repository entries to Trixie.
+
+  ```bash
+  sed -i 's/bookworm/trixie/g' /etc/apt/sources.list
+  ```
+
+4) do dist-upgrade
+
+  ```bash
+  apt-get clean all
+  apt-get update
+  apt-get dist-upgrade
+  ```
+
+5) ..
