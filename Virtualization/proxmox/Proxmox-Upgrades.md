@@ -83,6 +83,8 @@ Although the process is well described at [proxmox' website](), I'd like to shar
 
 ## Workflow PBS 3.4.1 => PBS ??
 
+The Full [_3to4_ upgrade guide](https://pbs.proxmox.com/wiki/Upgrade_from_3_to_4) describes all needed steps, but i'd like to add my notes neverthess :-)
+
 > [!INFO]
 > This Notes cover a dedicated Backup Server
 
