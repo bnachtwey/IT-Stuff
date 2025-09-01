@@ -57,11 +57,13 @@ IBM created a [landing page](https://public.dhe.ibm.com/software/products/ISP/cu
 
 ### TSM4Oracle
 
+IBM decides sometimes in the past to put the Oracle TDP together with the one for MSSQL, so you've check the _TDP4SQL_ if there's a new Oracle client ...
+
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
 | :-: | :-: | :----------: | :----- |
-| AIX | t.b.d. | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/aix/v819/) | |
-| Linux | t.b.d. | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/linux/linux86_64/v819/) | |
-| Windows | t.b.d. | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/win/x64/v819/) | |
+| AIX | [8.1.23](https://www.ibm.com/docs/en/spfd/8.1.24?topic=whats-new) | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/aix/v819/) | |
+| Linux | [8.1.23](https://www.ibm.com/docs/en/spfd/8.1.24?topic=whats-new) | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/linux/linux86_64/v819/) | |
+| Windows | [8.1.22](https://www.ibm.com/docs/en/spfd/8.1.24?topic=whats-new) | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/win/x64/v819/) | |
 
 ### [TSM4VE](https://www.ibm.com/docs/en/spfve)
 
