@@ -11,7 +11,7 @@ Approach for german keyboard layout, but MacOS running english language, others 
 | `~`                    | `<OPTION> + <N>`  |
 | `[`                    | `<OPTION> + <5>`  |
 | `]`                    | `<OPTION> + <6>`  |
-| `|`                    | `<OPTION> + <7>`  |
+| `\|`                    | `<OPTION> + <7>`  |
 | `{`                    | `<OPTION> + <8>`  |
 | `}`                    | `<OPTION> + <9>`  |
 | `\`                    | `<OPTION> + <Y>` <br> `<OPTION>+<SHIFT>+<7>`  |
