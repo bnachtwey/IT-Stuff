@@ -10,9 +10,9 @@ IBM created a [landing page](https://public.dhe.ibm.com/software/products/ISP/cu
 
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
 | :-: | :-: | :----------: | :----- |
-| AIX | 8.1.26-0 | [8.1.22-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/AIX/8.1.22.100/),[8.1.16-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/AIX/8.1.16.100/),[8.1.15-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/AIX/8.1.15.100/),[8.1.14-200](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/AIX/8.1.14.200/) | |
-| Linux x86 | 8.1.26-0 | [8.1.22-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/Linux/8.1.22.100/x86_64/),[8.1.16-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/Linux/8.1.16.100/x86_64/),[8.1.15-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/Linux/8.1.15.100/x86_64/), [8.1.14-200](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/Linux/8.1.14.200/x86_64/) | |
-| Windows | 8.1.26-0 | [8.1.22-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/NT/8.1.22.100/), [8.1.16-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/NT/8.1.16.100/), [8.1.15-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/NT/8.1.15.100/), [8.1.14-200](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/NT/8.1.14.200/) | |
+| AIX | 8.1.27-0 | [8.1.22-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/AIX/8.1.22.100/),[8.1.16-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/AIX/8.1.16.100/),[8.1.15-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/AIX/8.1.15.100/),[8.1.14-200](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/AIX/8.1.14.200/) | |
+| Linux x86 | 8.1.27-0 | [8.1.22-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/Linux/8.1.22.100/x86_64/),[8.1.16-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/Linux/8.1.16.100/x86_64/),[8.1.15-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/Linux/8.1.15.100/x86_64/), [8.1.14-200](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/Linux/8.1.14.200/x86_64/) | |
+| Windows | 8.1.27-0 | [8.1.22-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/NT/8.1.22.100/), [8.1.16-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/NT/8.1.16.100/), [8.1.15-100](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/NT/8.1.15.100/), [8.1.14-200](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/server/NT/8.1.14.200/) | |
 
 ### latest eFixes
 
@@ -24,7 +24,7 @@ IBM created a [landing page](https://public.dhe.ibm.com/software/products/ISP/cu
 
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
 | :-: | :-: | :----------: | :----- |
-| All | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/opcenter/v8r1/) | [8.1.13-400](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/opcenter/8.1.13.400/)
+| All | [8.1.27-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/opcenter/v8r1/) | [8.1.13-400](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/opcenter/8.1.13.400/)
 
 ## Spectrum Protect Clients
 
@@ -32,10 +32,10 @@ IBM created a [landing page](https://public.dhe.ibm.com/software/products/ISP/cu
 
 | OS | latest VRM | latest Patch / FixPack | Remarks|
 | :-: | :-: | :----------: | :----- |
-| AIX | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/AIX/BA/v8126/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/AIX/BA/v8117/) |
-| Linux DEB | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Linux/LinuxX86_DEB/BA/v8126/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Linux/LinuxX86_DEB/v8117/) | 
-| Linuxx x86 | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Linux/LinuxX86/BA/v8126/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Linux/LinuxX86/BA/v8117/) | 
-| Windows | [8.1.26-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Windows/x64/v8126/) | [8.1.25-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Windows/x64/v8125/) |
+| AIX | [8.1.27-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/AIX/BA/v8127/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/AIX/BA/v8117/) |
+| Linux DEB | [8.1.27-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Linux/LinuxX86_DEB/BA/v8127/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Linux/LinuxX86_DEB/v8117/) | 
+| Linuxx x86 | [8.1.27-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Linux/LinuxX86/BA/v8127/) | [8.1.17-2](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Linux/LinuxX86/BA/v8117/) | 
+| Windows | [8.1.27-0](https://ftp.software.ibm.com/storage/tivoli-storage-management/maintenance/client/v8r1/Windows/x64/v8127/) | [8.1.25-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/client/v8r1/Windows/x64/v8125/) |
 
 ### [TSM4ERP](https://www.ibm.com/docs/en/spferp) / HANA
 
@@ -61,16 +61,16 @@ IBM decides sometimes in the past to put the Oracle TDP together with the one fo
 
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
 | :-: | :-: | :----------: | :----- |
-| AIX | [8.1.23](https://www.ibm.com/docs/en/spfd/8.1.24?topic=whats-new) | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/aix/v819/) | |
-| Linux | [8.1.23](https://www.ibm.com/docs/en/spfd/8.1.24?topic=whats-new) | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/linux/linux86_64/v819/) | |
+| AIX | [8.1.24](https://www.ibm.com/docs/en/spfd/8.1.24?topic=whats-new) | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/aix/v819/) | |
+| Linux | [8.1.24](https://www.ibm.com/docs/en/spfd/8.1.24?topic=whats-new) | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/linux/linux86_64/v819/) | |
 | Windows | [8.1.22](https://www.ibm.com/docs/en/spfd/8.1.24?topic=whats-new) | [8.1.9-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/oracle/win/x64/v819/) | |
 
 ### [TSM4VE](https://www.ibm.com/docs/en/spfve)
 
 | OS | latest VRM | latest Patches / FixPacks | Remarks|
 | :-: | :-: | :----------: | :----- |
-| Linux | [8.1.26](https://www.ibm.com/docs/en/spfve/8.1.26) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/linux/linux86/v8123/) (vmware only)| |
-| Windows | [8.1.26](https://www.ibm.com/docs/en/spfve/8.1.26) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/windows/v8123/) (vmware only) | |
+| Linux | [8.1.27](https://www.ibm.com/docs/en/spfve/8.1.27) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/linux/linux86/v8123/) (vmware only)| |
+| Windows | [8.1.27](https://www.ibm.com/docs/en/spfve/8.1.27) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/windows/v8123/) (vmware only) | |
 
 ---
 ToDo:
