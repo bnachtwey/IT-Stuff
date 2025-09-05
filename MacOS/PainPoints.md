@@ -22,3 +22,17 @@ Approach for german keyboard layout, but MacOS running english language, others 
 | `<DEL>`                | `<Fn> + <BackSpace>` |
 | `<STRG> + <PgnUp>`     | `<CMD> + <Up>`    |
 | `<STRG> + <PgnDown>`   | `<CMD> + <Down>`  |
+
+## just collecting
+
+### no localhost access ?
+
+by default as well _Safari_ as other browsers like _FireFox_ have no access to localhost. Setting up e.g. `rclone` therefore needs a more reliable device like a linux notebook
+
+### zsh prohibits usage of scp
+
+No idea why, but `scp` cannot used from `zsh`
+
+> [!TIP]
+>
+> just start a `bash` and everything is fine :-)
