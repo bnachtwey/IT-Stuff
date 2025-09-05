@@ -23,7 +23,27 @@ Approach for german keyboard layout, but MacOS running english language, others 
 | `<STRG> + <PgnUp>`     | `<CMD> + <Up>`    |
 | `<STRG> + <PgnDown>`   | `<CMD> + <Down>`  |
 
-## just collecting
+## zsh issues
+
+### getting rid of `zsh`
+
+```bash
+chsh -s /bin/bash
+```
+
+### force reading of `.bashrc`
+
+By default new sessions are _login sessions_ that ignore `.bashrc` but evaluate `.bash_profile` :-(
+
+> [!TIP]
+>
+> just force using `bashrc` by
+>
+> ```bash
+> echo "if [ -f ~/.bashrc ]; then source ~/.bashrc; fi" >> ~/.bash_profile
+> ```
+
+## collecting further pain points ...
 
 ### no localhost access ?
 
