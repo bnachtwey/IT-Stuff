@@ -5,3 +5,6 @@
 ## N2K
 - Ceph can not use Multipath devices directly, a workaround is [using LVM](./OSD-on-LVM.md) :-)
 - [Mapping IBM Ceph vs Upstream versions](https://www.ibm.com/support/pages/node/6963049?myns=swgother&mynp=OCSSEG27&mync=E&cm_sp=swgother-_-OCSSEG27-_-E), IBM, for registered users only
+
+## Links
+- London Ceph Days 2025: [Erasure Coding Enhancements for Tentacle](https://www.youtube.com/watch?v=WH6dFrhllyo), YouTube
