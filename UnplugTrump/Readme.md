@@ -15,10 +15,10 @@
   - [Alternativen zu US-Clouddiensten: Überblick und Konfigurationstipps ](https://www.heise.de/ratgeber/Alternativen-zu-US-Clouddiensten-Ueberblick-und-Konfigurationstipps-10294724.html), Heise+ / c't, 2025-04-07, Paywall
   - [heise+ Expertentalk: Weg von US-Diensten](https://youtube.com/live/BrV9_6_KAk8), You-Tube-Aufzeichnung ??
 
-
-
 - [Unter Eid: Microsoft kann Schutz vor Cloud Act nicht garantieren](https://www.itmagazine.ch/artikel/85137/Unter_Eid_Microsoft_kann_Schutz_vor_Cloud_Act_nicht_garantieren.html)
   - [Original French publication of the hearing](https://www.senat.fr/compte-rendu-commissions/20250609/ce_commande_publique.html)
+
+- [FAQ zum Self-Hosting](https://www.heise.de/ratgeber/FAQ-zum-Self-Hosting-10499071.html), Heise+, 2025-09-16, Paywall
 
 ## Gossip?
 - [Molson Hart on *America underestimates the difficulty of bringing manufacturing back*](https://www.molsonhart.com/blog/america-underestimates-the-difficulty-of-bringing-manufacturing-back)
