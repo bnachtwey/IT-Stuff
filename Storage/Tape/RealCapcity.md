@@ -10,8 +10,8 @@ Using the following SQL statement on IBM SP servers show how much data can _real
 select -
   v.DEVCLASS_NAME, - 
   d.FORMAT, count(*) as NUMBER, - 
-  CAST((avg(v.EST_CAPACITY_MB) /1024/1024) as decimal(4,3)) as "AVERAGE (TB)", -
-  CAST((PERCENTILE_CONT(0.5) WITHIN GROUP (order by v.EST_CAPACITY_MB)/1024/1024) as decimal(4,3)) as "MEDIAN (TB)" -
+  cast((avg(v.EST_CAPACITY_MB)/1048576) as decimal(4,3)) as "AVERAGE (TB)", -
+  cast((percentile_cont(0.5) within group (order by v.EST_CAPACITY_MB)/1048576) as decimal(4,3)) as "MEDIAN (TB)" -
 from - 
   VOLUMES v, DEVCLASSES d -
 where - 
@@ -27,4 +27,10 @@ and -
 group by - 
   v.DEVCLASS_NAME, - 
   d.FORMAT
+```
+
+same as one-liner
+
+```
+select v.DEVCLASS_NAME, d.FORMAT, count(*) as NUMBER, cast((avg(v.EST_CAPACITY_MB)/1048576) as decimal(4,3)) as "AVERAGE (TB)", cast((percentile_cont(0.5) within group (order by v.EST_CAPACITY_MB)/1048576) as decimal(4,3)) as "MEDIAN (TB)" from VOLUMES v, DEVCLASSES d where (v.DEVCLASS_NAME = d.DEVCLASS_NAME) and ( d.DEVTYPE = 'LTO' or d.DEVTYPE = '3592' ) and v.STATUS = 'FULL' group by v.DEVCLASS_NAME, d.FORMAT
 ```
