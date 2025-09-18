@@ -23,11 +23,11 @@ and format directly as markdown:
 
 ```sql
 select 
-  '| Schema | Table |' as HEADER 
+  '| Table Schema | Table Name |' as HEADER 
 from SYSIBM.SYSDUMMY1 
 union all 
 select 
-  '|--------|--------|' as SEPaRATOR 
+  '|:--------|:--------|' as SEPARATOR 
 from SYSIBM.SYSDUMMY1 
 union all 
 select 
@@ -35,6 +35,19 @@ select
 from TABLES 
 ```
 
-unfortunately, each line starts with `HEADER:` if the command is issued within the `dsmadmc`, maybe different using the `db2` command ..
+## get list of columns for the `SYSCAT/COLUMNS` table
 
-## get list of columns for the `SYSCAT` table
+```sql
+select 
+  '| Table Name | Column Name | Number of Entries | Datatype | Length |' as HEADER 
+from SYSIBM.SYSDUMMY1 
+union all 
+select 
+  '|:--------|:--------|:--------:|:--------:|:--------:|' as SEPARATOR 
+from SYSIBM.SYSDUMMY1 
+union all 
+select 
+  '| ' || TABNAME || ' | ' || COLNAME || ' | ' || COLNO || ' | ' || TYPENAME || ' | ' || LENGTH || ' |' 
+from COLUMNS 
+```
+> unfortunately, each line starts with `HEADER:` if the command is issued within the `dsmadmc`, maybe different using the `db2` command ..
