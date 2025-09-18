@@ -1,6 +1,8 @@
 # List of columns stored in the `SYSCAT` table of `tsminst1`
 
 > `Number of Entries` is just a snapshot of my instance ;-)
+>
+> Example taken from SP instance running V8.1.20 :seenoevil:
 
 | Table Name | Column Name | Number of Entries | Datatype | Length |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 |:--------|:--------|:--------:|:--------:|:--------:|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
