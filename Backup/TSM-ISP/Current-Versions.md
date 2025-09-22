@@ -77,7 +77,7 @@ IBM decides sometimes in the past to put the Oracle TDP together with the one fo
 
 well, not a really Roadmap, but a FAQ and some support pages give an answer
 
-- [Which IBM Spectrum Protect Family products and releases have support extension contracts available for purchase beyond their End of Support (EOS) date?](https://www.ibm.com/support/pages/node/259159)
+- [IBM Spectrum Protect and Tivoli Storage Manager Family Products with Support Extension contracts available](https://www.ibm.com/support/pages/node/259159)
 
   - Withdrawal announcement letters:
 
