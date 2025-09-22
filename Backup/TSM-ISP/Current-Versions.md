@@ -73,6 +73,24 @@ IBM decides sometimes in the past to put the Oracle TDP together with the one fo
 | Windows | [8.1.27](https://www.ibm.com/docs/en/spfve/8.1.27) | [8.1.23-1](https://ftp.software.ibm.com/storage/tivoli-storage-management/patches/tivoli-data-protection/vmware/windows/v8123/) (vmware only) | |
 
 ---
+## Product Roadmap
+
+well, not a really Roadmap, but a FAQ gives an answer
+
+- [Which IBM Spectrum Protect Family products and releases have support extension contracts available for purchase beyond their End of Support (EOS) date?](https://www.ibm.com/support/pages/node/259159)
+
+  - Withdrawal announcement letters:
+
+    - **31 December 2021** is announced as the End of Support date (EOS), for IBM Spectrum Protect and IBM Tivoli Storage Manager 7.1 products and for IBM Spectrum Protect Snapshot and IBM Tivoli Storage FlashCopy® Manager 4.1. 
+         The withdrawal announcement letter is available here: [Software support discontinuance: IBM Spectrum Protect and IBM Tivoli Storage Manager programs.](https://w3-03.ibm.com/sales/support/ShowDoc.wss?docid=IA/897/ENUS921-006)
+    - **30 September 2017** is announced as the End of Support date (EOS) for **IBM Tivoli Storage Manager 6.4** products and for IBM Tivoli Storage FlashCopy Manager 3.2. The announcement letter is available [here](http://www.ibm.com/common/ssi/rep_ca/7/897/ENUS916-117/index.html)
+    - **30 April 2017** is announced as the End of Support date (EOS) for **IBM Tivoli Storage Manager 6.3** products and for IBM Tivoli Storage FlashCopy Manager 3.1. The announcement letter is available [here](http://www.ibm.com/common/ssi/rep_ca/2/897/ENUS916-072/index.html)
+    - **30 April 2016** is announced as the End of Support date (EOS) for **IBM Tivoli Storage Manager for Virtual Environments 6.2** product. The announcement letter is available [here](http://www.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ca&infotype=an&appname=iSource&supplier=897&letternum=ENUS915-114)
+    - **30 April 2015** is announced as the End of Support date (EOS) for most **IBM Tivoli Storage Manager 6.2** products. The announcement letter is available [here](http://www.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ca&infotype=an&appname=iSource&supplier=897&letternum=ENUS914-056)
+    - **30 April 2014** was the End of Support date (EOS) for most **IBM Tivoli Storage Manager 5.5 and 6.1 products** with distributed platforms. The announcement letter is available [here](http://www.ibm.com/common/ssi/cgi-bin/ssialias?subtype=ca&infotype=an&appname=iSource&supplier=897&letternum=ENUS913-063)
+
+-  T.B.D.
+---
 ToDo:
 How to gather this information automatically? 👷‍♀️
 
