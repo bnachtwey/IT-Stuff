@@ -80,4 +80,4 @@ works like VMware-like *Suspend* functionality
 ## remove a VM
 | Proxmox VM | Proxmox LXC |KVM |
 | :------ | :--- | :--- |
-| `qm destroy <vmid>` | ?? | `vish undefine <vm-name>` |
+| `qm destroy <vmid>` | ?? | `virsh undefine <vm-name>` |
