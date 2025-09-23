@@ -81,3 +81,9 @@ works like VMware-like *Suspend* functionality
 | Proxmox VM | Proxmox LXC |KVM |
 | :------ | :--- | :--- |
 | `qm destroy <vmid>` | ?? | `virsh undefine <vm-name>` |
+
+## get ressources of running vm
+
+| Proxmox VM | Proxmox LXC |KVM |
+| :------ | :--- | :--- |
+| T.B.D.  | T.B.D. | `virsh dominfo <vm-name>` |
