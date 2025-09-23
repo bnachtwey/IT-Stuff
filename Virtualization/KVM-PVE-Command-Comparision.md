@@ -30,15 +30,15 @@ I'm going to collect at least those I'm using :-)
 | :------ | :------ | :--- |
 | `qm shutdown <vmid>` | `pct shutdown <vmid>` | `virsh shutdown <vm-name>` |
 
-### Start a certain VM| Proxmox VM | Proxmox LXC | KVM |
+### Start a certain VM
+| Proxmox VM | Proxmox LXC | KVM |
 | :------ | :------ | :--- |
 | `qm start <vmid>` | `pct start <vmid>` | `virsh start <vm-name>` |
 
 ### (Hard) Stopping a certain VM
-### Start a certain VM
 | Proxmox VM | Proxmox LXC | KVM |
 | :------ | :------ | :--- |
-| `qm stop <vmid>` | `pct stop <vmid>` ||`virsh destroy <vm-name>` |
+| `qm stop <vmid>` | `pct stop <vmid>` |`virsh destroy <vm-name>` |
 
 ### (Hard) Reseting a certain VM
 | Proxmox VM | Proxmox LXC | KVM |
