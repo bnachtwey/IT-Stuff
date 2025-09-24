@@ -1,0 +1,3 @@
+# Just collect my best AI failures :-D
+
+...
