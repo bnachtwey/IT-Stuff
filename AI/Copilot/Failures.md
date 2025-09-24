@@ -1,2 +1,0 @@
-# Collecting Failures of Copilot on ... hm ... quite simple tasks ..
-
