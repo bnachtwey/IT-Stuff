@@ -12,3 +12,5 @@
 ## Trusthful leading People
 - [PubPeer](https://pubpeer.com/static/about)<br>
   *The PubPeer Foundation is a California-registered public-benefit corporation with 501(c)(3) nonprofit status in the United States. The overarching goal of the Foundation is to improve the quality of scientific research by enabling innovative approaches for community interaction.*
+
+- [#DesinfoScore: Wie _NutriScore_ nur für Politiker](https://www.linkedin.com/in/mirkolange/recent-activity/all/)
