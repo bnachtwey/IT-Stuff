@@ -11,4 +11,22 @@
 ![Copilot coming soon](.pictures/Copilot_on_vacation-001.png)
 
 ## Fully useful answers
-I had an problem with an aws cli command, so I asked _Copilot_ to fix my command .. and he did:
+I had an problem with an `aws` cli command, so I asked _Copilot_ to fix my command .. and he did:
+
+![1st answer](.pictures/Copilot-Corrected-Command-1.png)
+
+Well, I need some more details -- Nothing, copilot cannot provide:
+
+![extened answer](.pictures/Copilot-Corrected-Command-2.png)
+
+## Reliable answers, Part one
+
+Having a deeper look on the aws-answers you'll figure out ...
+
+to add the option **before** the destination
+
+![option before destination](.pictures/Copilot-Corrected-Command-1A.png)
+
+and **after**
+
+![option after destination](.pictures/Copilot-Corrected-Command-2A.png)
