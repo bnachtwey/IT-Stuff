@@ -2,4 +2,4 @@
 
 - [Overview on additional Repositories](https://rhel.pkgs.org/) ... and their content
 
-  [Overview on "Red Hat Enterprise Linux Release Dates"](https://access.redhat.com/articles/3078)
+- [Overview on "Red Hat Enterprise Linux Release Dates"](https://access.redhat.com/articles/3078)
