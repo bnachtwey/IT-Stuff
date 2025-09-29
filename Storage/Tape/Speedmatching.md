@@ -32,22 +32,6 @@ Sources:<br>
 
 *) Speedsteps below 305 mb/s for full hight drives only
 
-## "real" LTO capacity measures
-
-The values given are derived from a given number of tapes marked as full inside TSM
-|  Generation  |	LTO-9  |  LTO-8  |  LTO-7  |  LTO-6	 |  LTO-5  |
-| ------------ | ------- | ------- | ------- | ------- | ------- |
-|  Minimum   | 	—   |  10.91   |  	2.44 	  |  1.17 	 |  0.97   |
-|  Maximum   | 	— 	|  38.55   |  	47.05 	|  10.73 	 |  5.18   |
-|  Average   | 	— 	|  14.73   |  	7.19 	  |  2.93 	 |  1.71   |
-|  Median    | 	— 	|  13.85   |  	6.43 	  |  2.83 	 |  1.60   |
-||||
-|  native             | 	18.00   | 	12.00  | 	6.00   | 	 	2.50  | 	 	1.50  |
-|  native compressed 	| 	45.00   | 	30.00  | 	15.00  | 		6.25  | 	 	3.00  |
-||||			
-|  Number of Tapes 	|  —  | 263 |	1404 |	4051 |	659 |
-
-
 # Enterprise Tape (Jaguar) Speedmatching
 
 Jaguar drive speed matching data rates (MB/s) depend on the media and the generation style used (see [1] – [4])
