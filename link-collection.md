@@ -12,7 +12,7 @@
 # Gossip
 -  Film: Das Fest des Huhns
    https://www.youtube.com/watch?v=Hy2PAdzMd-0
-
+- (https://phrack.org/)
 # 
 
 - This is a game to teach you the basics of using a POSIX (Linux, BSD, UNIX) terminal. 
