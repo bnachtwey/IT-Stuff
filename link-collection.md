@@ -76,6 +76,11 @@ https://unix.stackexchange.com/questions/639179/connect-2-sites-networks-with-wi
 ## RaspAP
 - http://raspap.com/ <br>
   The easiest, full-featured wireless router setup for Debian-based devices
+---
+# other stuff
 
 ## cheap A1-Printing
 - https://www.wir-machen-druck.de/plakat-din-a1-hoch-594-x-841-mm-einseitig-40farbig-bedruckt-topseller.html
+
+## free training
+- Article on free trainings by [Computerwoche.de](https://www.computerwoche.de/article/2820593/diese-kostenlosen-kurse-bieten-it-hersteller.html), periodically updated
