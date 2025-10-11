@@ -22,12 +22,6 @@
 # NON-GOSSIP
 - [This is a Coup](https://isthisacoup.com/)
 
-
-
-# GPT
-
-[ChatGPT-4o ist jetzt kostenlos für alle](https://www.heise.de/news/Ist-GPT-4o-nur-schnell-oder-auch-besser-Kostenlos-in-ChatGPT-9726508.html)
-
 # nice stuff
 
 - https://de-de.topographic-map.com/
@@ -81,6 +75,9 @@ https://unix.stackexchange.com/questions/639179/connect-2-sites-networks-with-wi
 
 ## cheap A1-Printing
 - https://www.wir-machen-druck.de/plakat-din-a1-hoch-594-x-841-mm-einseitig-40farbig-bedruckt-topseller.html
+
+## managed services
+- [AdminForge](https://adminforge.de/) -- *Self-hosted Open Source Services & Linux Admin Tutorials*
 
 ## free training
 - Article on free trainings by [Computerwoche.de](https://www.computerwoche.de/article/2820593/diese-kostenlosen-kurse-bieten-it-hersteller.html), periodically updated
