@@ -1,0 +1,10 @@
+[Unit]
+Description=Run remote backup and prune service at 12:00 (or as soon as possible)
+
+[Timer]
+OnCalendar=09:00
+Unit=rbackup.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target
