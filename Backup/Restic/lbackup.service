@@ -1,0 +1,7 @@
+[Unit]
+Description=Run lbackup.sh if /local/Restic/config exists
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'if [ -d /local/Restic/config ]; then /local/Restic/bin/lbackup.sh; fi'
+

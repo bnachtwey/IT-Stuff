@@ -1,0 +1,11 @@
+[Unit]
+Description=Run lbackup.service every hour from 06:00 to 23:00
+
+[Timer]
+OnCalendar=*-*-* 06..23:00:00
+Unit=lbackup.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+
