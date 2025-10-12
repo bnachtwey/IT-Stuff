@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
-
 # Can I automatically backup my bitwarden tresor?
 
 Bitwarden does not offer built-in automatic backup of vaults for cloud-hosted accounts, but you can automate backups on personal computers or self-hosted servers using third-party tools, scripts, or dedicated automation projects.
