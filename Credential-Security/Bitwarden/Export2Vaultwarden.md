@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
-
 # Set up automated Bitwarden exports to a self-hosted Vaultwarden
 
 You can automate exports from Bitwarden to your self-hosted Vaultwarden using scripting and open-source tools that utilize Bitwarden’s CLI and Vaultwarden’s API. The typical setup involves regularly exporting your Bitwarden vault (possibly encrypted) and importing it into Vaultwarden, often with a Docker container or custom script.
