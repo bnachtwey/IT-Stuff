@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
-
 # How to backup my bitwarden tresor and how to access that backup?
 
 To backup your Bitwarden vault, you can export your data as an encrypted file using the web or desktop app. Accessing that backup later requires importing it back into Bitwarden using your account or the password chosen during encryption.
