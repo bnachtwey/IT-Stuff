@@ -8,3 +8,6 @@
 
 ## Links
 - London Ceph Days 2025: [Erasure Coding Enhancements for Tentacle](https://www.youtube.com/watch?v=WH6dFrhllyo), YouTube
+- [IBM Storage Ceph Object Storage Deep Dive Series](https://ceph-object-deep-dive.hashnode.dev/) by [Daniel Parkes/IBM](https://www.linkedin.com/in/daniel-parkes-workcv/)
+  - [Ceph RGW Architecture: A Deep Dive into its Core Foundations](https://ceph-object-deep-dive.hashnode.dev/ibm-storage-ceph-object-storage-deep-dive-series-part-1)
+  - [A Deep Dive into Ceph RGW: Data Path, Sharding, and Automated Management](https://ceph-object-deep-dive.hashnode.dev/ibm-storage-ceph-object-storage-deep-dive-series-part-2)
