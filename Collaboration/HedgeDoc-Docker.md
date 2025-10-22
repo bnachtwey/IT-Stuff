@@ -47,7 +47,7 @@ volumes:
   uploads:
 ```
 
-## corresponding `hedgedoc/.env` file aka `hedgedoc-env`:
+## corresponding `hedgedoc/.env` file aka `hedgedoc-env`
 
 ```yaml
 # Application domain
