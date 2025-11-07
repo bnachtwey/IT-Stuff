@@ -53,7 +53,7 @@ The values given are derived from a given number of tapes marked as full inside 
 
 *) Average of multiple median values
 
-> **THANKS to all the members of the so called _TSM-JF_*) (a non-official TSM usergroup hosted by University of Marburg and me, mainly attending academic) who shared their data with me** 👍
+> **THANKS to all the members of the so called _TSM-JF_*) who shared their data with me** 👍
 >
 > *) The _TSM-JF_ is a (non-official) TSM usergroup hosted by University of Marburg and me, mainly attending academic users, IBM partners and guys from the [GSE SSMSD](https://www.gse.org/german-workinggroups/ssmsd-system-managed-storage/)
 
