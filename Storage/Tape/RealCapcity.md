@@ -57,4 +57,4 @@ The values given are derived from a given number of tapes marked as full inside 
 >
 > *) The _TSM-JF_ is a (non-official) TSM usergroup hosted by University of Marburg and me, mainly attending academic users, IBM partners and guys from the [GSE SSMSD](https://www.gse.org/german-workinggroups/ssmsd-system-managed-storage/)
 
-**I do invite anyone to share her/his measures with me to extend this knowledge base.**
+**I do invite anyone to [share](mailto:tsm@bjoernsoe.net) her/his measures with me to extend this knowledge base.**
