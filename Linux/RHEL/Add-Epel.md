@@ -12,16 +12,29 @@ sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noa
 
 ## .. RHEL9
 
-Approach for Centos9 works fine with AlmaLinux:
 
-```bash
-sudo dnf config-manager --set-enabled crb && sudo  dnf install https://dl.fedoraproject.org/pub/epel/epel{,-next}-release-latest-9.noarch.rpm
-```
+- CentOS 9, AlmaLinux 9
+
+  ```bash
+  sudo dnf config-manager --set-enabled crb && sudo  dnf install https://dl.fedoraproject.org/pub/epel/epel{,-next}-release-latest-9.noarch.rpm
+  ```
+
+- RHEL 9
+
+  ```bash
+  ```
 
 ## .. RHEL10
 
-not testes with Alma yet :-(
+- CentOS Stream 10
 
-```bash
-sudo dnf config-manager --set-enabled crb && sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
-```
+  ```bash
+  sudo dnf config-manager --set-enabled crb && sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
+  ```
+
+- RHEL 10
+
+  ```bash
+   sudo subscription-manager repos --enable codeready-builder-for-rhel-10-$(arch)-rpms
+   sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
+  ```
