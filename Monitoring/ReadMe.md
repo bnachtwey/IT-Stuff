@@ -1,6 +1,7 @@
 # Notes on Monitoring and Documentation
 
 ## NetBox
+
 - Artikelserie in der *iX*
   - [NetBox: Datenbasis für die RZ-Automatisierung nutzen](https://www.heise.de/hintergrund/NetBox-Datenbasis-fuer-die-RZ-Automatisierung-nutzen-10270025.html?seite=all), Heise+, 2025-02-07, *Paywall*
   - [Automatisierung: NetBox in der Anwendung](https://www.heise.de/hintergrund/Automatisierung-NetBox-in-der-Anwendung-10272371.html?seite=all), Heise+, 2025-02-07, *Paywall*
@@ -11,8 +12,17 @@
   - [Collection *"From Zero to Hero"* at YouTube by *NetBox Labs* itself](https://www.youtube.com/watch?v=zT82jOUCcW4&list=PL7sEPiUbBLo_iTds-NV-9Tu05Gg2Aj8N7))
 
 - [Collection of Device-Images for NetBox](https://github.com/Abulhallaj/netbox-deviceimage)
+
 ## Perfsonar
+
 - [*perfSONAR is the **perf**ormance **S**ervice-**O**riented **N**etwork monitoring **AR**chitecture, a network measurement toolkit designed to provide federated coverage of paths and help to establish end-to-end usage expectations.*](https://docs.perfsonar.net/install_options.html)
 
-## Systemcalls 
+## Systemcalls
+
 - https://stratoshark.org/
+
+## Logging Made Easy
+
+- [Project Description at CISA](https://www.cisa.gov/resources-tools/services/logging-made-easy)
+- [GitHub Repo](https://github.com/cisagov/LME)
+- [Documentation at `github.io`](https://cisagov.github.io/lme-docs/docs/)
