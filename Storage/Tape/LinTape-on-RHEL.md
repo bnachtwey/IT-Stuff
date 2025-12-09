@@ -48,7 +48,7 @@ The installation splits in three steps:
 
 ## Coping IBM beeing behind the RHEL releases
 
-### Workaround 1
+### Workaround 1 -- *Quick & Dirty*
 
 Sometimes it works if you just replace the version number in the `/etc/os-release` with an older one for which the building of lin_tape work, .e.g.
 
