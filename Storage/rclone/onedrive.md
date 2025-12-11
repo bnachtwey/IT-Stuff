@@ -49,7 +49,9 @@ for headless nodes
     > **TIP**
     >
     > although the Docu recommends to have the same version of rclone, I created a token using _rclone 1.60_ and could use it with _rclone 1.71_
-    
+
+for a headless configuration (e.g. servers)
+
 13) a browser window pops up asking to authenticate against M$ online: do so :-)
 14) After the browser showing "_Success! All done. Please go back to rclone._" a large text appears in the terminal.
 15) As recommended, copy the full token string and enter it to the rclone CLI waiting on your headless node :-)
@@ -61,7 +63,8 @@ for a local configuration
 
 18) a browser window pops up asking to authenticate against M$ online: do so :-)
 19) After the browser showing "_Success! All done. Please go back to rclone._" the token is automatically copied to the config
-20) You are ready!
+20) 
+21) You are ready!
 
 
 
