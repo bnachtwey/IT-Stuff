@@ -1,4 +1,4 @@
-# Accessing M$ onedrive using rclone
+# Accessing M$ NoneDrive using rclone
 
 Although there's a fine manual on the [rclone website](https://rclone.org/docs/), I'd like to add some remarks on it:
 
@@ -63,8 +63,17 @@ for a local configuration
 
 18) a browser window pops up asking to authenticate against M$ online: do so :-)
 19) After the browser showing "_Success! All done. Please go back to rclone._" the token is automatically copied to the config
-20) 
-21) You are ready!
+20) ```bash
+    Choose a number from below, or type in your own string value.
+    Press Enter for the default (b!OjN4dX1_okmqrMngQdQLXy-vlD2hm7xBtw6DPrjEVP0ye9ieRL9xSpNPmJaFQdxl).
+    
+    1 / PersonalCacheLibrary (business)
+    \ <...>
+    2 / Dokumente (business)
+    \ <...>
+    ```
+    chose 2) as 1) shows nothing with any sense.
+22) You are ready!
 
 
 
@@ -72,3 +81,27 @@ for a local configuration
 
 As by default the mac denys accessing your `localhost`, you have to follow the _headless_ approach described above.
 
+## testing the connection
+
+### get configuration
+
+```bash
+# rclone config dump
+{
+    "<MY CONFIG>": {
+        "drive_id": "<DRIVE Token>",
+        "drive_type": "business",
+        "token": "{\"access_token\":\"<T O K E N >\"}",
+        "type": "onedrive"
+    }
+}
+```
+
+### `rclone ls` and `rclone lsd`
+
+- list diretories only
+
+  ```bash
+  rclone lds <MY CONFIG>:
+  ```
+  
