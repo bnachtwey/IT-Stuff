@@ -1,25 +1,30 @@
 #!/bin/bash
 
 # Function to prompt for USB device
-get_usb_device() {
+get_usb_device() 
+{
   echo "Available USB devices:"
   lsblk -d -o NAME,SIZE,MODEL | grep -v "loop"
   read -p "Enter the USB device (e.g., /dev/sdX): " usb_device
-  if [[ ! -b "$usb_device" ]]; then
+  if [[ ! -b "$usb_device" ]]
+  then
     echo "Invalid device. Please try again."
     exit 1
   fi
 }
 
 # Function to validate encryption passphrase
-get_encryption_passphrase() {
-  while true; do
+get_encryption_passphrase() 
+{
+  while true
+  do
     read -s -p "Enter encryption passphrase: " passphrase1
     echo
     read -s -p "Re-enter encryption passphrase: " passphrase2
     echo
     
-    if [ "$passphrase1" == "$passphrase2" ]; then
+    if [ "$passphrase1" == "$passphrase2" ]
+    then
       echo "Passphrases match."
       break
     else
@@ -33,7 +38,8 @@ read -e -p "Enter the directory to store the ISO file [default: /tmp]: " iso_dir
 iso_dir=${iso_dir:-/tmp}
 
 # Validate if the directory exists or create it if necessary
-if [[ ! -d "$iso_dir" ]]; then
+if [[ ! -d "$iso_dir" ]]
+then
   echo "$iso_dir does not exist. Creating it..."
   mkdir -p "$iso_dir" || { echo "Failed to create directory. Exiting."; exit 1; }
 fi
@@ -48,7 +54,8 @@ iso_url="https://cdimage.kali.org/kali-2025.1a/kali-linux-2025.1a-live-amd64.iso
 wget -O "$iso_path" "$iso_url"
 
 # Verify download success
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
   echo "Failed to download the ISO. Exiting."
   exit 1
 fi
@@ -59,7 +66,8 @@ get_usb_device
 echo "Writing ISO to USB device..."
 sudo dd if="$iso_path" of="$usb_device" bs=4M status=progress conv=fsync
 
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
   echo "Failed to write ISO to USB. Exiting."
   exit 1
 fi
@@ -84,7 +92,8 @@ persistent_partition="${usb_device}3"
 echo "Encrypting the persistence partition..."
 sudo cryptsetup --verbose --verify-passphrase luksFormat "$persistent_partition"
 
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
   echo "Failed to encrypt the partition. Exiting."
   exit 1
 fi
