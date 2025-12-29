@@ -1,39 +1,23 @@
 # Setting up a Minirouter on a LXC container running Debian Trixie
 
-Solution proviced by [Perplexity](https:\\perplexity.ai)
+## Assumptions
 
-> Prompt:
->
-> *how to set up Trixie to act as a gateway from NIC eth1 to eth0 using iptables?*
+Haveing a Linux / Debian VM attached to two networks:
 
-*To turn Trixie into a simple IPv4 gateway from `eth1` (LAN) to `eth0` (WAN) with **iptables**, you need: correct IPs, IP forwarding, and NAT + FORWARD rules.\[1\]\[2\]*
+- `192.168.1.2/24` @ `eth0` as *WAN* / *outer network*
+- `192.168.2.1/24` @ `eth1` as *LAN* / *inner network*
 
-## 1. Network assumptions
+## Basic Idea / Approach
 
-Example layout (adjust to your reality):
+To make the Debian VM route traffic between `192.168.1.0/24` (WAN) and `192.168.2.0/24` (LAN) -- and *vice versa*
 
-- `eth0` (WAN): gets IP via DHCP from ISP/router
-- `eth1` (LAN): static, e.g. `192.168.10.1/24`
+- enable IPv4 forwarding
+- ensure the firewall and host routes are set correctly
+- ensure endpoints have correct gateways
 
-On Trixie (if you still use `ifupdown`):
+## Step by Step
 
-```bash
-# /etc/network/interfaces (example)
-auto eth0
-iface eth0 inet dhcp
-
-auto eth1
-iface eth1 inet static
-    address 192.168.10.1
-    netmask 255.255.255.0
-```
-
-LAN clients must use:
-
-- IP in `192.168.10.0/24`
-- Default gateway: `192.168.10.1` (Trixie’s `eth1`) \[3\]\[4\]
-
-## 2. Enable IP forwarding (persistent)
+### 1. Enable IPv4 forwarding (persistent)
 
 Add this (once you have sysctl working on Trixie):
 
@@ -51,9 +35,9 @@ Verify:
 cat /proc/sys/net/ipv4/ip_forward  # should be 1
 ```
 
-## 3. Runtime iptables rules
+### 2. Allow forwarding in the firewall
 
-Minimal router rules:
+If you use iptables and have restrictive rules, allow forwarding between `eth0` and `eth1` by
 
 ```bash
 # Flush old rules (optional, be careful if remote)
@@ -66,28 +50,39 @@ sudo iptables -P INPUT ACCEPT
 sudo iptables -P FORWARD DROP
 sudo iptables -P OUTPUT ACCEPT
 
-# Allow forwarding from LAN -> WAN
+# Accept forwarding between WAN and LAN
+sudo iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
 sudo iptables -A FORWARD -i eth1 -o eth0 -j ACCEPT
+```
 
-# Allow return traffic (stateful)
-sudo iptables -A FORWARD -i eth0 -o eth1 \
-  -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+> [!Note]
+> If you are not doing NAT on this VM and just routing between the two private networks, you do **not** need a MASQUERADE rule; simple forwarding is enough as long as routes are correct.
 
-# NAT (masquerade) on WAN
+If you later want LAN hosts to reach the internet through this VM (and `eth0` is the internet uplink), *add NAT* by
+
+```bash
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 ```
 
-- The MASQUERADE rule rewrites source addresses of LAN hosts to the `eth0` address.\[5\]\[2\]\[1\]
-- You can inspect rules with:
+> Check settings
+>
+> ```bash
+> # iptables -L -v
+> Chain INPUT (policy ACCEPT 1514 packets, 163K bytes)
+>  pkts bytes target     prot opt in     out     source               destination         
+> 
+> Chain FORWARD (policy DROP 0 packets, 0 bytes)
+>  pkts bytes target     prot opt in     out     source               destination         
+>   142 64582 ACCEPT     all  --  eth0   eth1    anywhere             anywhere            
+>   172 20745 ACCEPT     all  --  eth1   eth0    anywhere             anywhere            
+>     0     0 ACCEPT     all  --  eth0   wg0     anywhere             anywhere            
+>     0     0 ACCEPT     all  --  wg0    any     anywhere             anywhere            
+> 
+> Chain OUTPUT (policy ACCEPT 1290 packets, 123K bytes)
+>  pkts bytes target     prot opt in     out     source               destination  
+> ```
 
-```bash
-sudo iptables -L -n -v
-sudo iptables -t nat -L -n -v
-```
-
-At this point, with clients pointed to `192.168.10.1` as gateway, they should reach the internet.
-
-## 4. Make iptables rules persistent
+### 3. Make iptables rules persistent
 
 On Trixie with iptables:
 
@@ -101,69 +96,18 @@ Then save rules:
 sudo iptables-save | sudo tee /etc/iptables/rules.v4 >/dev/null
 ```
 
-`iptables-persistent` loads `/etc/iptables/rules.v4` automatically at boot, restoring your gateway rules.\[6\]\[1\]
+`iptables-persistent` loads `/etc/iptables/rules.v4` automatically at boot, restoring your gateway rules.
 
-## 5. Quick verification checklist
+### 4. Configure host gateways/routes
 
-On Trixie:
+Both networks must know to use this Debian VM as the router, so
 
-- `ip a` shows:
-  - `eth0` with valid WAN IP.
-  - `eth1` with `192.168.10.1/24` (or your chosen LAN subnet).
-- `cat /proc/sys/net/ipv4/ip_forward` → `1`.
-- `iptables -t nat -L -n -v` shows `MASQUERADE` on `eth0`.
-- `iptables -L FORWARD -n -v` shows ACCEPT rules for `eth1 -> eth0` and ESTABLISHED/RELATED back.\[7\]\[1\]
+- On `192.168.2.0/24` (LAN) hosts:
 
-On a LAN client:
+  Set default gateway to `192.168.2.1`,
+  
+  or at least a route to `192.168.1.0/24` via `192.168.2.1`
 
-- `ip route` shows default via `192.168.10.1`
-- `ping 8.8.8.8` works
-- If DNS is configured, `ping debian.org` works
-
-If you want a stricter firewall on the router (e.g. limit what FROM LAN can go out), rules can be tightened, but the above is the minimal working gateway using `iptables`.\[10\]\[11\]\[12\]\[8\]\[9\]
-
-## Sources
-
-- \[1\]: <https://www.systutorials.com/setting-up-gateway-using-iptables-and-route-on-linux/>
-
-- \[2\]: <https://www.revsys.com/writings/quicktips/nat.html>
-
-- \[3\]: <https://www.linode.com/docs/guides/linux-router-and-ip-forwarding/>
-
-- \[4\]: <https://wiki.debian.org/NetworkConfiguration>
-
-- \[5\]: <https://www.thomas-krenn.com/de/wiki/Internet_Connection_Sharing_(Masquerade)_unter_Linux>
-
-- \[6\]: <https://gridscale.io/en/community/tutorials/debian-router-gateway/>
-
-- \[7\]: <https://www.baeldung.com/linux/server-router-configure>
-
-- \[8\]: <https://www.digitalocean.com/community/tutorials/how-to-forward-ports-through-a-linux-gateway-with-iptables>
-
-- \[9\]: <https://wiki.debian.org/BridgeNetworkConnections>
-
-- \[10\]: <https://geek64.de/linux/linux-iptables-masquerade-einrichten-netzwerk-nat-forwarding/>
-
-- \[11\]: <https://stackoverflow.com/questions/60782425/iptables-masquerade-not-working-on-debian-vm>
-
-- \[12\]: <https://ilearnedhowto.wordpress.com/2016/05/10/how-to-configure-a-simple-router-with-iptables-in-ubuntu/>
-
----
-
-## Addon: Wireguard on Router
-
-> under construction, does not work this way :-(
-
-If your router also acts as a VPN server using wireguard, you must extend the routing rules mentioned above to do routing between the wg interface and the LAN, too :-)
-
-Assuming the wireguard NIC is called `wg0` add the following lines:
-
-```bash
-# Allow forwarding from wg0 -> LAN
-sudo iptables -A FORWARD -i wg0 -o eth1 -j ACCEPT
-
-# Allow return traffic (stateful)
-sudo iptables -A FORWARD -i ethq -o wg0 \
-  -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-
-```
+- On `192.168.1.0/24` (WAN) hosts or upstream router:
+  
+  Add a static route: `192.168.2.0/24 via 192.168.1.2`
