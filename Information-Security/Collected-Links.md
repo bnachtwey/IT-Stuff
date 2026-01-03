@@ -1,10 +1,22 @@
 # A List of useful web sites concerning Information Security
 
-## Overview sites
+## Overview sites 
 
 - [https://digital-defense.io/](https://digital-defense.io/)
 
   *large collection of check lists on various security topics*
+
+- [National Institute of Standards and Technology (NIST)](https://www.nist.gov/)
+  - [Cybersecurity and Privacy](https://www.nist.gov/cybersecurity-and-privacy)
+    - [NIST CyberSecurityFramework](https://www.nist.gov/cyberframework)
+    - [NIST Privacy Framework](https://www.nist.gov/privacy-framework)
+    - [NIST Risk Management Framework](https://csrc.nist.gov/projects/risk-management/about-rmf)
+  - [Zero Trust Architecture](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf)
+- [Cybersecurity & Infrastructure Security Agency (CISA)](https://www.cisa.gov/)
+  - [CISA Known Exploited Vulnerabilities Catalog (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+  - [Zero Trust Maturity Model](https://www.cisa.gov/sites/default/files/2023-04/zero_trust_maturity_model_v2_508.pdf)
+
+
 
 ## useful other ressources
 
