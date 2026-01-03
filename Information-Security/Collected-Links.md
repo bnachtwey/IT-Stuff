@@ -1,6 +1,6 @@
 # A List of useful web sites concerning Information Security
 
-## Overview sites 
+## Overview sites
 
 - [https://digital-defense.io/](https://digital-defense.io/)
 
@@ -16,12 +16,11 @@
   - [CISA Known Exploited Vulnerabilities Catalog (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
   - [Zero Trust Maturity Model](https://www.cisa.gov/sites/default/files/2023-04/zero_trust_maturity_model_v2_508.pdf)
 
-
-
 ## useful other ressources
 
 - List of obsolete / outdated software
-  - https://endoflife.software/
+
+  - <https://endoflife.software/>
 
 ## Articles on Linux Security
 
@@ -33,9 +32,9 @@
 
 ### Fail2ban
 
-- https://codenet.dev/guide-to-whitelisting-banning-or-unbanning-an-ip-in-fail2ban/
-- https://thelinuxcode.com/whitelist-ip-address-fail2ban/
-- https://www.hostinger.com/tutorials/fail2ban-configuration
+- <https://codenet.dev/guide-to-whitelisting-banning-or-unbanning-an-ip-in-fail2ban/>
+- <https://thelinuxcode.com/whitelist-ip-address-fail2ban/>
+- <https://www.hostinger.com/tutorials/fail2ban-configuration>
 
 ## Articles on Windows Security
 
