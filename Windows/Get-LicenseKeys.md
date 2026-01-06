@@ -2,7 +2,7 @@
 
 ## Windows
 
-Many ways to do, but 
+Many ways to do, buts
 
 - using `regedit.exe` as *Administrator*
 
@@ -19,7 +19,7 @@ Many ways to do, but
 
   ```powershell
   type : Cannot find path 'HKLM:\SOFTWARE\Microsoft\WindowscNT\CurrentVersion\SoftwareProtectionPlatform\BackupProductKeyDefault' because it does not exist.
-  ``` 
+  ```
 
   ??? It's definitively visible using `regedit.exe` ???
 
@@ -34,4 +34,3 @@ Many ways to do, but
   ```
 
   it's obviously the last line :-)
-  
