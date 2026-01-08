@@ -52,9 +52,16 @@ It has been discovered the Docker doesn't always honor UFW rules. Indeed, with a
 
 Fixing (thanks to [Jack Wallen](https://www.techrepublic.com/meet-the-team/us/jack-wallen/): [How to fix the Docker and UFW security flaw](https://www.techrepublic.com/article/how-to-fix-the-docker-and-ufw-security-flaw/)):
 
-1. Edit the global docker config file `/etc/default/docker`  and add the following line:
+> deprecated
+> 1. Edit the global docker config file `/etc/default/docker`  and add the following line:
+> ```
+> DOCKER_OPTS="--iptables=false"
+> ```
+1. Edit the global docker config file `/etc/default/daemon.json`  and add the following line:
    ```
-   DOCKER_OPTS="--iptables=false"
+   "iptables": false
    ```
-2. Save and close that file. Restart the docker daemon with the command `sudo systemctl restart docker`.
-3. Now, when you deploy a container, it will no longer alter iptables and will honor `ufw`.
+> [!NOTE]
+> Multiple entries are seperated by `;`   
+3. Save and close that file. Restart the docker daemon with the command `sudo systemctl restart docker`.
+4. Now, when you deploy a container, it will no longer alter iptables and will honor `ufw`.
