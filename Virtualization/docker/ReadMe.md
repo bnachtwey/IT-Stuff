@@ -108,6 +108,7 @@ Fixing (thanks to [Jack Wallen](https://www.techrepublic.com/meet-the-team/us/ja
    "iptables": false
    ```
 > [!NOTE]
-> Multiple entries are seperated by `;`   
+> Multiple entries are seperated by `,`
+
 3. Save and close that file. Restart the docker daemon with the command `sudo systemctl restart docker`.
 4. Now, when you deploy a container, it will no longer alter iptables and will honor `ufw`.
