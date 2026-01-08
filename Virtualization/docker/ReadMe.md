@@ -1,5 +1,51 @@
 # Docker Nice2Know
 
+## Installing Docker on Debian
+
+due to the [offical guide](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
+
+### Prepare
+
+```bash
+# Add Docker's official GPG key:
+sudo apt update
+sudo apt install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/debian
+Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update
+```
+
+### Install
+
+remove old docker stuff first
+
+```bash
+sudo apt-get -y remove $(dpkg -l | grep docker | awk '{print $2}' | xargs)
+sudo apt-get -y autoremove
+```
+then install newly
+
+```bash
+sudo apt-get update
+sudo apt-get install -y docker-ce
+```
+> There's no need to install `docker-compose` seperately, btw that causes problems like this
+> ```bash
+> dpkg: error processing archive /var/cache/apt/archives/docker-compose-plugin_5.0.1-1~debian.13~trixie_amd64.deb (--unpack):
+>  trying to overwrite '/usr/libexec/docker/cli-plugins/docker-compose', which is also in package docker-compose (2.26.1-4)
+> ```
+
 ## Nice2Know
 - The using `docker-compose` the `.yml` file needs no `version: "3"` any more
 
