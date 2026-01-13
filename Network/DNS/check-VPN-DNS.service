@@ -1,0 +1,7 @@
+
+[Unit]
+Description=Check DNS switching for VPN interface
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/check-VPN-DNS.sh "<IFACE>" "<Target Network/CIDR>" "<Target domain>" "Target DNServer>"
