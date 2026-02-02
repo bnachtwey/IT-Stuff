@@ -3,3 +3,9 @@
 - [Overview on additional Repositories](https://rhel.pkgs.org/) ... and their content
 
 - [Overview on "Red Hat Enterprise Linux Release Dates"](https://access.redhat.com/articles/3078)
+
+## register Server to RHEL
+
+```bash
+# subscription-manager register --username <username> --password <password>
+```
