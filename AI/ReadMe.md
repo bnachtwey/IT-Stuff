@@ -35,6 +35,7 @@ As it seems, the easiest way is to use [`ollama`](https://ollama.com/) as it's e
 - [Faul und inkompetent? KI-Nutzung schadet dem Image im Büro](https://www.heise.de/news/Faul-und-inkompetent-KI-Nutzung-schadet-dem-Image-im-Buero-10381152.html)
 - [Coding-KI läuft Amok und löscht gesamte Firmendatenbank aus "Panik"](https://winfuture.de/news,152386.html)
 - [The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf), CMU and Microsoft Research UK
+- [AI Doesn’t Reduce Work—It Intensifies I](thttps://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it), Harvard Business Review, February 9, 2026
 
 ## interesting use cases / web offerings
 - [THEY SEE YOUR PHOTOS](https://theyseeyourphotos.com/)<br>
