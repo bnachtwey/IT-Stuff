@@ -1,4 +1,4 @@
-# Collecting Failures of Copilot on ... hm ... quite simple tasks ...
+# Collecting Failures of Copilot on ... hm ... quite simple tasks
 
 > [!Note]
 >
@@ -11,6 +11,7 @@
 ![Copilot coming soon](.pictures/Copilot_on_vacation-001.png)
 
 ## Fully useful answers
+
 I had an problem with an `aws` cli command, so I asked _Copilot_ to fix my command .. and he did:
 
 ![1st answer](.pictures/Copilot-Corrected-Command-1.png)
