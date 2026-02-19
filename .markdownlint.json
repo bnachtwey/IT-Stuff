@@ -1,0 +1,11 @@
+{
+  # Disabled linter rules
+  # MD013 - Line length
+  "MD013": false,
+  
+  # MD024 - Multiple headings with the same content
+  "MD024": false,
+  
+  # MD060 - Table column style
+  "MD060": false
+}
