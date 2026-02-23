@@ -1,4 +1,4 @@
-# Collection some nice links from the BSI 
+# Collection some nice links from the BSI
 
 as there's so much, you won't even know what to look for ;-)
 
