@@ -3,6 +3,8 @@
 ##############################################################################
 # changelog
 # date          version remark
+# 2026-03-13    0.0.3.3 changed "sm$uid" to "sm${uid}", fix some linter warnings
+# 2026-03-13    0.0.3.2 some typos fixed, SQL statement for locking Admins fixed 
 # 2024-10-12    0.0.3.1 some indents fixed, "beautifications"
 #               0.0.3.2 added SQL statement generating commands to lock all "non-system" admin
 # 2024-10-11    0.0.3   moved to my personal github repo, some smaller typos fixed
@@ -44,7 +46,7 @@
 
 ## Preparation (SEVERAL DAYS BEFORE MIGRATION)
 
-This manual assumes that the host is already prepared for TSM/ISP, i.e. 
+This manual assumes that the host is already prepared for TSM/ISP, i.e.
 
 - TSM/SP is already installed
 - also the appropriate BA client
@@ -67,7 +69,7 @@ If you use an a-record instead of an c-name, you've to change that.
 
 ## SOME DAYS BEFORE MIGRATION
 
-### [ TODO ] create instance user, it's $HOME folder and additional folders for the ISP instance
+### [ TODO ] create instance user, it's ${HOME} folder and additional folders for the ISP instance
 
 *run this on NEW server*
 
@@ -80,68 +82,67 @@ uid=215
 lcvreate -n sm{$uid}LV -L 5G localVG 
 
 mkfs.ext4 /dev/localVG/sm{uid$}LV
-echo "/dev/localVG/sm{$uid}LV                            /sm$uid          ext4     defaults        0 5" >> /etc
+echo "/dev/localVG/sm{$uid}LV                            /sm${uid}          ext4     defaults        0 5" >> /etc
 /fstab
-mount /sm$uid
+mount /sm${uid}
 
 # set access rights
-chown 1$uid:1000 /sm$uid
+chown 1${uid}:1000 /sm${uid}
 
-# create user sm$uid
-cat "sm$uid:x:1$uid:1000:sm$uid:/sm$uid:/bin/bash" >> /etc/passwd
+# create user sm${uid}
+cat "sm${uid}:x:1$uid:1000:sm${uid}:/sm${uid}:/bin/bash" >> /etc/passwd
 
 # set password
-echo "sm$uid:<PW>" | chpasswd
+echo "sm${uid}:<PW>" | chpasswd
 
 # add to groups
-usermod -a -G disk,tape sm$uid
+usermod -a -G disk,tape sm${uid}
 
 # set password
-echo "sm$uid:<PW>" | chpasswd
+echo "sm${uid}:<PW>" | chpasswd
 
 # create db + logfolders
-su -c "mkdir /actlog/sm$uid" -l sm$uid
-su -c "mkdir /archlog/sm$uid" -l sm$uid
+su -c "mkdir /actlog/sm${uid}" -l sm${uid}
+su -c "mkdir /archlog/sm${uid}" -l sm${uid}
 
 for d in $(ls /db* );
 do
-        su -c "mkdir $d/sm$uid" -l sm$uid
+        su -c "mkdir ${d}/sm${uid}" -l sm${uid}
 done
 
 # copy db path to file for Instance creation / restoreDB
-ls -d /db*/sm$uid > /sm$uid/dbdirs.txt
+ls -d /db*/sm${uid} > /sm${uid}/dbdirs.txt
 
 # create instance's "home" directory + planfile directory
-su -c "mkdir /sm$uid/config/planfiles -p" -l sm$uid
+su -c "mkdir /sm${uid}/config/planfiles -p" -l sm${uid}
 ```
 
 ### [ TODO ] create (temporary) SP instance
 
 *run this on NEW server*
 
-- automatically by script does not work by now 
+- automatically by script does not work by now
   
-  - using the wizard `/opt/tivoli/tsm/server/bin/dsmicfgx `
-    
-    - UID  => `sm$uid `
-    - Instance Directory: => `/sm$uid/config`
-    - The database directories are listed in this file: => `/sm$uid/dbdirs.txt` 
-    - Active log size (GB): => `16`<br> 
+  - using the wizard `/opt/tivoli/tsm/server/bin/dsmicfgx`
+
+    - UID  => `sm${uid}`
+    - Instance Directory: => `/sm${uid}/config`
+    - The database directories are listed in this file: => `/sm${uid}/dbdirs.txt`
+    - Active log size (GB): => `16`<br>
       💡 16 GB is enough for the installation, can be changed later
-    - Active log directory:  => `/actlog/sm$uid `
-    - Primary Archive log directory:  => `/archlog/sm$uid`
+    - Active log directory:  => `/actlog/sm${uid}`
+    - Primary Archive log directory:  => `/archlog/sm${uid}`
     - Active log mirror directory:  => *keep empty*
     - Secondary archive log directory:  => *keep empty*
-    - Server Name: => `SM$uid` 
-    - When the machine boots: 
+    - Server Name: => `SM${uid}`
+    - When the machine boots:
       => `Start the server automatically using the instance user ID`<br>
       💡 this creates `initd`-scripts and/or systemd services
     - Administrator Name : => `<some user, that should have SYSTEM privileges>`<br>
       💡 useful to take one that will be used in production, too
 - manually or by playbook
   - 🚧 T.B.D. 🚧
- 
-  
+
 ### [ TODO ] extend file `dsm.sys` with settings for this new instance
 
 *run this on NEW server*
@@ -152,14 +153,14 @@ uid=215
 echo ""                                                                    >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "* *****************************************************************" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "* *****************************************************************" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "*    admin stanza for SM$uid"                                        >> /opt/tivoli/tsm/client/ba/bin/dsm.sys  
+echo "*    admin stanza for SM${uid}"                                      >> /opt/tivoli/tsm/client/ba/bin/dsm.sys  
 echo "* *****************************************************************" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "* *****************************************************************" >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "SErvername              sm$uid"                                      >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "TCPPort                 2$uid"                                       >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "TCPADMINPort            4$uid"                                       >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "SErvername              sm${uid}"                                    >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "TCPPort                 2${uid}"                                     >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "TCPADMINPort            4${uid}"                                     >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "TCPServeraddress        127.0.0.1"                                   >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
-echo "ERRORLOGName            /tsm/sm$uid.errorlog"                        >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
+echo "ERRORLOGName            /tsm/sm${uid}.errorlog"                      >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "ERRORLOGRetention       30"                                          >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 echo "ENABLEINSTRUMENTATION   No"                                          >> /opt/tivoli/tsm/client/ba/bin/dsm.sys
 ```
@@ -169,7 +170,7 @@ echo "ENABLEINSTRUMENTATION   No"                                          >> /o
 *run this on NEW server*
 
 ```bash
-dsmadmc -se=sm$uid -id=<Admin-UID> -pa "<PW>" halt
+dsmadmc -se=sm${uid} -id=<Admin-UID> -pa "<PW>" halt
 ```
 
 ### [ TODO ] delete Db2 database of temporary ISP instance
@@ -182,10 +183,10 @@ cd config
 
 dsmserv removedb TSMDB1
 
-rm -rf /actlog/$USER/*  -rf
-rm -rf /archlog/$USER/* -rf
+rm -rf /actlog/${USER}/*  -rf
+rm -rf /archlog/${USER}/* -rf
 
-rm -rf /db*/$USER/* -rf
+rm -rf /db*/${USER}/* -rf
 ```
 
 ### [ TODO ] reduce size of staging pools to minimize time for full migration
@@ -212,19 +213,20 @@ for example
 
 *run this on **OLD server** inside TSM*
 
-e.g. 
+e.g.
+
 ```dsmadmc
 DISable SEssion
 LOCK ADMIN <Admin1>
 LOCK ADMIN <Admin2>
 LOCK ADMIN <Admin3>
 ```
+
 Assuming you've set up a RBAC, so monitoring admins, Sysop Admin, etc **are not using SYSTEM privileges**, you can just lock *all admins not having SYSTEM privileges*.
 
 ```dsmadmc
 select 'LOCK ADMIN ' || ADMIN_NAME from ADMINS where SYSTEM_PRIV='No'
 ```
-
 
 ### [ TODO ] cleanup staging pools
 
@@ -232,24 +234,26 @@ select 'LOCK ADMIN ' || ADMIN_NAME from ADMINS where SYSTEM_PRIV='No'
 
 - for each pool of type `DISK` or `FILE` move all data to next non-local pool
 
-	```dsmadmc
-	MIGrate STGPool <pool name> LO=0
-	```
+ ```dsmadmc
+ MIGrate STGPool <pool name> LO=0
+ ```
+
   **WAIT till finished!**
 
 - `FILE` volumes should either vanish automatically or become of type `EMPTY`, so you should remove them manually
 
-	```dsmadmc
-	Query VOLume STGPool=<pool name>
-	
-	DELete VOLume <path and name of volume> DISCARD=Yes
-	```
+ ```dsmadmc
+ Query VOLume STGPool=<pool name>
+ 
+ DELete VOLume <path and name of volume> DISCARD=Yes
+ ```
 
-	you can again use some SQL scripting to get these volumes in groups of maybe 10 :-)
-	
-	```dsmadmc
-	SELECT 'DELETE VOLUME ' || volume_name || ' DISCARD=Yes' FROM volumes WHERE devclass_name=<devc name> LIMIT 10
-	```
+ you can again use some SQL scripting to get these volumes in groups of maybe 10 :-)
+
+ ```dsmadmc
+ SELECT 'DELETE VOLUME ' || volume_name || ' DISCARD=Yes' FROM volumes WHERE devclass_name=<devc name> LIMIT 10
+ ```
+
 - 💡 `DISK` volumes do not vanish automatically and must be removed manually
 
 ## [ TODO ] wait for tapes umounted
@@ -271,6 +275,7 @@ Cross check on LibMan all Volumes are really unmounted
 ```dsmadmc
 LM2XX: Query MOunt
 ```
+
 > [!CAUTION]
 > as long as tapes are DISMOUNTING the LibMan wants to reply the LibClient Instance => do not stop LibClient until umount is finished **completely**!
 
@@ -284,7 +289,8 @@ PERForm LIBACTion <Library Name> ACTion=QUIesce
 
 unfortunately this also sets path to the LibMan and the drives offline. Lateron you need both online to run a `AUDIT LIBRary` command.
 
-Alternatively you can set all paths manually offline 
+Alternatively you can set all paths manually offline
+
 ```dsmadmc
 UPdate PATH <SOURCE> <DEST> SRCType=SERver DESTType=DRive LIBRary=<lib> DEVIce=<devname> ONLine=No
 ```
@@ -322,7 +328,7 @@ CANCEL SEssion <Session-ID>
 
 rerun the `UPDATE PATH` commands as often as needed.
 
-> [!TIP] 
+> [!TIP]
 > rerun the `UPDATE PATH` commands multiple times to avoid (any) instances accessing the newly emptied drives
 
 Check at the end all paths are really offline:
@@ -336,19 +342,17 @@ Query PATH
 *run this on **OLD server** inside TSM*
 
 > [!TIP]
-> using a FILE DEVC makes the access to the DB2 backup much easier as no libman connections needs to be configured
-
-> [!TIP]
->  you can use the `BAckup DB` command from your daily housekeeping script, but DO NOT run the script, especially when not using MAINT mode! Consider using `Wait=No`
-
-> [!TIP]
-> Using `NUMStrems` with more than one parallel stream speeds up a lot. But consider the size of the DB, some are really small, then this parallelization has only limited effect.
+>
+> - using a `FILE DEVC` makes the access to the DB2 backup much easier as no libman connections needs to be configured
+>
+> - you can use the `BAckup DB` command from your daily housekeeping script, but DO NOT run the script, especially when not using MAINT mode! Consider using `Wait=No`
+>
+> - Using `NUMStrems` with more than one parallel stream speeds up a lot. But consider the size of the DB, some are really small, then this parallelization has only limited effect.
 
 e.g.
 
 ```dsmadmc
-BAckup DB Type=Full DEVClass=FDBB Wait=No COMP=N NUMS=1 PROTECTKEYS=YES 
-PASSWORD=<replace with your DB password>
+BAckup DB Type=Full DEVClass=FDBB Wait=No COMP=N NUMS=1 PROTECTKEYS=YES PASSWORD=<replace with your DB password>
 ```
 
 ### [ TODO ] copy vital instance data to common share
@@ -356,14 +360,14 @@ PASSWORD=<replace with your DB password>
 *run this on **OLD server***
 
 ```bash
-$imf=/tsmmove/instmove/sm$uid
-mkdir $imf
-cp -a /sm$uid/config/cert*               $imf/
-cp -a /sm$uid/config/dsmkeydb*           $imf/
-cp -a /sm$uid/config/planfiles           $imf/
-cp -a /sm$uid/config/dsmserv.opt         $imf/
-cp -a /sm$uid/config/devconf.dat         $imf/
-cp -a /sm$uid/config/volhist.dat         $imf/
+imf=/tsmmove/instmove/sm${uid}
+mkdir ${imf}
+cp -a /sm${uid}/config/cert*               ${imf}/
+cp -a /sm${uid}/config/dsmkeydb*           ${imf}/
+cp -a /sm${uid}/config/planfiles           ${imf}/
+cp -a /sm${uid}/config/dsmserv.opt         ${imf}/
+cp -a /sm${uid}/config/devconf.dat         ${imf}/
+cp -a /sm${uid}/config/volhist.dat         ${imf}/
 ```
 
 ### [ TODO ] overwrite instance settings with vital data from old host
@@ -371,7 +375,7 @@ cp -a /sm$uid/config/volhist.dat         $imf/
 *run this on **NEW server***
 
 ```bash
-cp -a $imf/* /sm$uid/config/
+cp -a ${imf}/* /sm${uid}/config/
 ```
 
 ### [ TODO ] adapt settings of dsmserv.opt if needed
@@ -380,7 +384,7 @@ cp -a $imf/* /sm$uid/config/
 
 e.g.
 
-```
+```ini
 DBMEMPERCENT    <Number>      
 REORGBEGINTime  <hh:mm> 
 ```
@@ -403,11 +407,11 @@ su -c 'mkdir /rst/sm${uid}' -l sm${uid}
  **IMPORTANT** As this may take some time, you're strongly advised to use a `screen` for this! **IMPORTANT**
 
 ```bash
-screen -S sm$uid-Restore
+screen -S sm${uid}-Restore
 
 cd config
 
-dsmserv restore db on=../dbdirs.txt RECOVerydir=/rst/sm$uid/ RESTOREKeys=Yes 
+dsmserv restore db on=../dbdirs.txt RECOVerydir=/rst/sm${uid}/ RESTOREKeys=Yes 
 PASSWORD=<replace with your DB password> PROMPT=No
 ```
 
@@ -422,12 +426,13 @@ PASSWORD=<replace with your DB password> PROMPT=No
     - Problem: Also blocks further instances on the new host.
   - better workaround:
     - Bend configuration of LibMan in devconf.dat, i.e. change the destination port(s) so that the host FW on the LibMan blocks connections, e.g.
-      `sed -i 's/LLADDRESS=420/LLADDRESS=720/g' devconf.dat `
+      `sed -i 's/LLADDRESS=420/LLADDRESS=720/g' devconf.dat`
+
 - network share
   - idea1: set whole share to readonly => hinders parallel instance
-  - Idea2: change UID and GID 
+  - Idea2: change UID and GID
     - GID might not matter, if whole share belongs to root anyway
-    - UID ... impacts plenty of interchange with everything possible ... 
+    - UID ... impacts plenty of interchange with everything possible ...
   - any more ideas?
 
 ### [ TODO ] start instance in MAINT mode for test
@@ -435,7 +440,7 @@ PASSWORD=<replace with your DB password> PROMPT=No
 *run this on **NEW server***
 
 ```bash
-su - sm$uid
+su - sm${uid}
 
 cd config
 dsmserv MAINT
@@ -446,7 +451,7 @@ check license validity and register if necessary
 ```dsmadmc
 q lic
 
-reg lic fil=tsmee.lic
+REGister LICense FILename=tsmee.lic
 ```
 
 pull a new DB backup right away
@@ -482,6 +487,7 @@ UPDate DEVClass <Name> DIRectory=<new Path>
 ```
 
 ### [ TODO ] SPECIAL TASK for LIBMAN instances
+
 *run this on **NEW server***
 
 **ADVISE**: first run a `AUDIT LIBRARY` before enabling libclients
@@ -498,7 +504,7 @@ then enable LibClients by setting all paths online
 PERForm LIBACTion <Library Name> ACTion=RESet
 ```
 
-**ADVISE** Check if all paths are really online, perhaps the script does not cover all drives / libclients – if the script is outdated 
+**ADVISE** Check if all paths are really online, perhaps the script does not cover all drives / libclients – if the script is outdated
 
 ```dsmadmc
 Query PATH
@@ -515,10 +521,11 @@ Whereever you manage your IP settings ;-)
 ```dsmadmc
 HALT
 ```
+
 *run this on **NEW server***
 
 ```bash
-systemctl enable --now sm$uid
+systemctl enable --now sm${uid}
 ```
 
 ### [ TODO ] unlock admins
@@ -526,6 +533,7 @@ systemctl enable --now sm$uid
 *run this on **NEW server** inside TSM*
 
 e.g.
+
 ```dsmadmc
 unlock admin storadm
 unlock admin poladm
@@ -533,76 +541,92 @@ unlock admin sysadm
 ```
 
 ### [ TODO ] if the server was a *replication source*
+
 ... you will receive `ANR0340E` messages, as [*When you restore the IBM® Storage Protect database on a source replication server, replication is automatically disabled.*](https://www.ibm.com/docs/en/storage-protect/8.1.24?topic=replication-replicating-client-node-data-after-database-restore).
 
 The IBM description of the  `ANR0340E` message assumess, you do a DB restore *point-in-time* and having lost some primary data to need to recover from the replication target server. But when *moving an instance* you don't have to do so. In this case the only step you have to do
 
-* (re-)enable replication again
+[ ] (re-)enable replication again
 
-*run this on **NEW server** inside TSM*
+  *run this on **NEW server** inside TSM*
 
-```dsmadmc
-enable replication
-```
+  ```dsmadmc
+  enable replication
+  ```
 
---- 
+---
 
 ### [ TODO ] Clean up (perhaps SOME DAYS AFTER MIGRATION)
 
 *run this on **OLD server***
 
 - delete copied data from network share, e.g.
+
   ```bash
-  rm -rf $imf/sm$uid
+  rm -rf ${imf}/sm${uid}
   ```
 
 - delete deprecated data from former host
   - remove DB2 instance
-	```bash
-	su - <inst user>
-	# first remove db inside TSM
-	dsmserv remove db
-	
-	# second, remove it from the DB2 host
-	# get all instances
-	/opt/tivoli/tsm/db2/instance/db2ilist
-	
-	# remove db
-	/opt/tivoli/tsm/db2/instance/db2idrop <instance name>
-	```
+
+    ```bash
+    su - <inst user>
+    # first remove db inside TSM
+    dsmserv remove db
+
+    # second, remove it from the DB2 host
+    # get all instances
+    /opt/tivoli/tsm/db2/instance/db2ilist
+
+    # remove db
+    /opt/tivoli/tsm/db2/instance/db2idrop <instance name>
+    ```
+
   - delete DB folders
+
     ```bash
-    for d in $(ls /db*/sm$uid -d); do rm -rf $d; done 
+    for d in $(ls /db*/sm${uid} -d); do rm -rf $d; done 
     ```
+
   - delete Actlog folder
+
     ```bash
-    rm -rf /actlog/sm$uid
+    rm -rf /actlog/sm${uid}
     ```
+
   - delete Archlog folder
+
     ```bash
-    rm -rf /archlog/sm$uid
+    rm -rf /archlog/sm${uid}
     ```
+
   - delete staging folders (if not located on network share)
+
     ```bash
     rm -rf /stage*/sm{$uid}*
     ```
+
   - delete user and group association
+
     ```bash
     deluser --force --remove-home <UID>
     ```
+
   - delete init scripts and systemd services
+
     ```bash
-    rm /etc/init.d/sm$uid
-    rm /etc/systemd/system/sm$uid.servicename
-    rm /usr/lib/systemd/system/sm$uid.servicename 
+    rm /etc/init.d/sm${uid}
+    rm /etc/systemd/system/sm${uid}.servicename
+    rm /usr/lib/systemd/system/sm${uid}.servicename 
     sudo systemctl daemon-reload
     ```
 
 *run this on **NEW server***
 
 - delete temporary `RECOVDir`
+
   ```bash
-  rm -rf /rst/sm$uid/*
+  rm -rf /rst/sm${uid}/*
   ```
 
 ### [ TODO ] Increase TTL for CName or A-Record to former value
