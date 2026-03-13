@@ -3,6 +3,7 @@
 ##############################################################################
 # changelog
 # date          version remark
+# 2026-03-13    0.0.3.4 fix some more linter warnings
 # 2026-03-13    0.0.3.3 changed "sm$uid" to "sm${uid}", fix some linter warnings
 # 2026-03-13    0.0.3.2 some typos fixed, SQL statement for locking Admins fixed 
 # 2024-10-12    0.0.3.1 some indents fixed, "beautifications"
@@ -65,13 +66,11 @@ If you use an a-record instead of an c-name, you've to change that.
 
 ---
 
-# Step-by-Step schedule
-
 ## SOME DAYS BEFORE MIGRATION
 
 ### [ TODO ] create instance user, it's ${HOME} folder and additional folders for the ISP instance
 
-*run this on NEW server*
+> *run this on NEW server*
 
 ```bash
 uid=215
@@ -119,7 +118,7 @@ su -c "mkdir /sm${uid}/config/planfiles -p" -l sm${uid}
 
 ### [ TODO ] create (temporary) SP instance
 
-*run this on NEW server*
+> *run this on NEW server*
 
 - automatically by script does not work by now
   
@@ -128,7 +127,8 @@ su -c "mkdir /sm${uid}/config/planfiles -p" -l sm${uid}
     - UID  => `sm${uid}`
     - Instance Directory: => `/sm${uid}/config`
     - The database directories are listed in this file: => `/sm${uid}/dbdirs.txt`
-    - Active log size (GB): => `16`<br>
+    - Active log size (GB): => `16`
+
       💡 16 GB is enough for the installation, can be changed later
     - Active log directory:  => `/actlog/sm${uid}`
     - Primary Archive log directory:  => `/archlog/sm${uid}`
@@ -136,16 +136,21 @@ su -c "mkdir /sm${uid}/config/planfiles -p" -l sm${uid}
     - Secondary archive log directory:  => *keep empty*
     - Server Name: => `SM${uid}`
     - When the machine boots:
-      => `Start the server automatically using the instance user ID`<br>
+
+      => `Start the server automatically using the instance user ID`
+
       💡 this creates `initd`-scripts and/or systemd services
-    - Administrator Name : => `<some user, that should have SYSTEM privileges>`<br>
+
+    - Administrator Name : => `<some user, that should have SYSTEM privileges>`
+
       💡 useful to take one that will be used in production, too
+
 - manually or by playbook
   - 🚧 T.B.D. 🚧
 
 ### [ TODO ] extend file `dsm.sys` with settings for this new instance
 
-*run this on NEW server*
+> *run this on NEW server*
 
 ```bash
 uid=215
@@ -167,7 +172,7 @@ echo "ENABLEINSTRUMENTATION   No"                                          >> /o
 
 ### [ TODO ] stop (temporary) SP instance
 
-*run this on NEW server*
+> *run this on NEW server*
 
 ```bash
 dsmadmc -se=sm${uid} -id=<Admin-UID> -pa "<PW>" halt
@@ -175,7 +180,7 @@ dsmadmc -se=sm${uid} -id=<Admin-UID> -pa "<PW>" halt
 
 ### [ TODO ] delete Db2 database of temporary ISP instance
 
-*run this on NEW server*
+> *run this on NEW server*
 
 ```bash
 su - <instuser>
@@ -211,7 +216,7 @@ for example
 
 ### [ TODO ] disable access to old instance and lock admin users
 
-*run this on **OLD server** inside TSM*
+> *run this on **OLD server** inside TSM*
 
 e.g.
 
