@@ -193,9 +193,16 @@ rm -rf /db*/$USER/* -rf
 for example
 
 - reduce number of scratch volumes for FILEPools
-  `upd stg <Pool name> maxscr=<lower number>`
+
+  ```dsmadmc
+  upd stg <Pool name> maxscr=<lower number>
+  ```
+  
 - set `hi` and `lo` watermark to lower values
-  `upd stg <Pool name> hi=<lower number> lo=<lower number>` 
+
+  ```dsmadmc
+  upd stg <Pool name> hi=<lower number> lo=<lower number>
+  ```
 
 ---
 
@@ -214,10 +221,8 @@ LOCK ADMIN <Admin3>
 ```
 Assuming you've set up a RBAC, so monitoring admins, Sysop Admin, etc **are not using SYSTEM privileges**, you can just lock *all admins not having SYSTEM privileges*.
 
-🚧 I have to check the SQL statement! 🚧
-
 ```dsmadmc
-select 'LOCK ADMIN' || ADMIN_NAME from ADMINS where SYSTEM_PRIV='NO'
+select 'LOCK ADMIN ' || ADMIN_NAME from ADMINS where SYSTEM_PRIV='No'
 ```
 
 
@@ -267,17 +272,17 @@ Cross check on LibMan all Volumes are really unmounted
 LM2XX: Query MOunt
 ```
 > [!CAUTION]
-> as long as tapes are DISMOUNTING the LibMan wants to reply the SM-Instance => do not stop SM until umount is finished **completely**!
+> as long as tapes are DISMOUNTING the LibMan wants to reply the LibClient Instance => do not stop LibClient until umount is finished **completely**!
 
-### [ TODO ] *SPECIAL TASK for LIBMAN instances*
+### [ TODO ] *SPECIAL TASK for Library Managerr instances*
 
-Disable Libclients from accessing tapes using
+Disable LibClients from accessing tapes using
 
 ```dsmadmc
 PERForm LIBACTion <Library Name> ACTion=QUIesce
 ```
 
-unfortunately this also sets path to the libman and the drives offline. Lateron you need both online to run a `AUDIT LIBRary` command.
+unfortunately this also sets path to the LibMan and the drives offline. Lateron you need both online to run a `AUDIT LIBRary` command.
 
 Alternatively you can set all paths manually offline 
 ```dsmadmc
@@ -387,11 +392,11 @@ REORGBEGINTime  <hh:mm>
 [ ] create temporary `RECOVerydir` folder, e.g. on a separate volume or within the staging area ... using a symlink shortes the following command and allows to use the same on all server whereever the folder is located.
 
 ```bash
-mkdir /<storage/rst
-ln -s /<storage/rst /rst
+mkdir /<storage>/rst
+ln -s /<storage>/rst /rst
 
 rm -rf /rst/*
-su -c 'mkdir /rst/sm$uid' -l sm$uid
+su -c 'mkdir /rst/sm${uid}' -l sm${uid}
 ```
 
 [ ] Do the Db2 restore
