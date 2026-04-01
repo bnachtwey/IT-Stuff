@@ -8,30 +8,20 @@ _An attribution statement identifies not only the presence of AI involvement, bu
 
 | Abbreviated statement | Full statement | expanded statement |
 | :-------------------: | :------------: | :----------------- |
-| `AIA No AI v1.0` | `AIA No AI v1.0` | _This work was entirely human-created, without the use of AI._ |
-| `AIA Ph Se Hin R v1.0` | `AIA Primarily human, Stylistic edits, Human-initiated, Reviewed v1.0` | _This work was primarily human-created. AI was used to make stylistic edits, such as changes to structure, wording, and clarity. AI was prompted for its contributions, or AI assistance was enabled. AI-generated content was reviewed and approved._ |
+| `No AI`               | `No AI`        | _This work was entirely human-created, without the use of AI._ |
+| `Ph Se Hin R`         | `Primarily human, Stylistic edits, Human-initiated, Reviewed` | _This work was primarily human-created. AI was used to make stylistic edits, such as changes to structure, wording, and clarity. AI was prompted for its contributions, or AI assistance was enabled. AI-generated content was reviewed and approved._ |
+| `PAI Ce Hin R`        | `Primarily AI, Content edits, Human-initiated, Reviewed` | _This work was primarily AI-generated. AI was used to make content edits, such as changes to scope, information, and ideas. AI was prompted for its contributions, or AI assistance was enabled. AI-generated content was reviewed and approved._ |
 
-### Examples for Markdown
+### Examples for Markdown / Shell scripting
 
 ```bash
 <!--
 AIA Primarily AI, Content edits, Human-initiated, Reviewed v1.0
 
 # changelog
-# date          version    remark
-# 2026-01-13    0.1        initial coding: take suggestion from *copilot*, verify and fix it ;-)
-#                          approach with xss-lock does not work, besides xss-lock and resolvectl run in different user scopes ...
-
--->
-```
-
-```bash
-<!--
-AIA No AI, _This work was entirely human-created, without the use of AI._
-
-# changelog
-# date          version    remark
-# 2026-01-13    0.1        initial coding
+# date          version    AIA          remark
+# 2026-01-13    0.1        No AI        initial coding: take suggestion from *copilot*, verify and fix it ;-)
+#                                       approach with xss-lock does not work, besides xss-lock and resolvectl run in different user scopes ...
 
 -->
 ```
