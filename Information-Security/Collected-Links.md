@@ -15,6 +15,9 @@
 - [Cybersecurity & Infrastructure Security Agency (CISA)](https://www.cisa.gov/)
   - [CISA Known Exploited Vulnerabilities Catalog (KEV)](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
   - [Zero Trust Maturity Model](https://www.cisa.gov/sites/default/files/2023-04/zero_trust_maturity_model_v2_508.pdf)
+- [The Institute for Security and Open Methodologies (ISECOM)](https://isecom.org/)
+
+  *The Institute for Security and Open Methodologies (ISECOM) is an open, security research community providing original resources, tools, and certifications in the field of security.*
 
 ## useful other ressources
 
