@@ -1,24 +1,22 @@
 # Comparing Two Approaches for DB2 Reorganization in the Scope of IBM Spectrum Protect
-🚧 IN PROGRESS 🚧
-This is an update to my article first published in my former employee's customer magazine [GWDG Nachrichten, p. 16f](https://gwdg.de/about-us/gwdg-news/2021/GN_5-2021_www.pdf)
 
-*Running IBM Spectrum Protect for some time, you will face fragmentation of the internal DB2 database as old entries vanish and new occur. 
-Due to the growth of the database, increasing disk space is required. In addition, several processes – e.g. performing the database backup – last longer. 
-IBM, therefore, recommends using database reorganization for reclaiming such gaps. 
-In this article, we will have a look at two different approaches for a database reorganization, comparing the efforts and savings on a 1.3 TB database.*
+🚧 IN PROGRESS 🚧
+
+This is an update to my article first published in my former employee's customer magazine [GWDG Nachrichten, (Page 16f)](https://gwdg.de/about-us/gwdg-news/2021/GN_5-2021_www.pdf) in 2021. Altough some time has passed in the meanwhile, the key points will be still valid.
+
+*Running IBM Spectrum Protect for some time, you will face fragmentation of the internal DB2 database as old entries vanish and new occur. Due to the growth of the database, increasing disk space is required. In addition, several processes – e.g. performing the database backup – last longer. IBM, therefore, recommends using database reorganization for reclaiming such gaps. In this article, we will have a look at two different approaches for a database reorganization, comparing the efforts and savings on a 1.3 TB database.*
 
 ## MOTIVATION
-After analyzing and reorganizing the database of different Spectrum Protect (SP) instances, the author was shown another approach to clean up the database gaps: extract and insert the
-database again. Doing it for the first time, it seems the savings are much more extensive as running an offline reorganization.
+
+After analyzing and reorganizing the database of different Spectrum Protect (SP) instances, the author was shown another approach to clean up the database gaps: extract and insert the database again. Doing it for the first time, it seems the savings are much more extensive as running an offline reorganization.
 
 Therefore, the idea was born to do a comparison of both approaches. Fortunately, the largest database has not been reorganized yet, so a clone copy could be done. This clone allows freezing
-the database, meaning neither having new ingests nor any changes as expiration and online reorganization is disabled. The connection to the real data was prevented by renaming the instance
-to SM131T and setting the Library Manager’s LLA (so called “low level adress“) to a wrong port number. 
+the database, meaning neither having new ingests nor any changes as expiration and online reorganization is disabled. The connection to the real data was prevented by renaming the instance to `SMxyzT` and setting the Library Manager’s LLA (so called “low level adress“) to a wrong port number.
 
 ## SOME WORDS ABOUT THE TEST ENVIRONMENT
 
-The example system was originially a SP7.1.7-500 instance initially set up in October 2014 as TSM 7.1.1-100 -– and already uses the DB2-9.7 format. In this nearly six years, the database has
-reached a size of nearly 1.4 TB:
+The example system was originially a SP7.1.7-500 instance initially set up in October 2014 as TSM 7.1.1-100 – and already uses the DB2-9.7 format. In this nearly six years, the database has reached a size of nearly 1.4 TB:
+
 ```dsmadmc
 sm: SMXYZ>q db f=d
 
@@ -49,16 +47,18 @@ te different departments; the default policy includes 355 versions in 95 days.
 
 In the last years, several updates were done, but due to some complexity in the whole TSM/SP setup, the upgrade to SP 8 was postponed at the GWDG.
 
-For this comparison the instance was moved to a new server with two Intel 4112 CPUs (8 Cores @ 2.60 GHz, HyperThreading disabled), 128 GB RAM and local SSD storage running SuSE Linux 
-Enterprise 12: 2 x 480 GB (RAID-1) for Operating System and Actlog, 2 x 960 GB (RAID-1) for Archlog, 2 x 3.84 TB (two single SSDs, no RAID nor JBOD) for the database and 2 x 3.84 TB (two 
+For this comparison the instance was moved to a new server with two Intel 4112 CPUs (8 Cores @ 2.60 GHz, HyperThreading disabled), 128 GB RAM and local SSD storage running SuSE Linux
+Enterprise 12: 2 x 480 GB (RAID-1) for Operating System and Actlog, 2 x 960 GB (RAID-1) for Archlog, 2 x 3.84 TB (two single SSDs, no RAID nor JBOD) for the database and 2 x 3.84 TB (two
 single SSDs) for database backup, extraction files (*.ost) and temporary reorganization space. All SSDs are “read-intensive”. Sure, this setup does not follow the blueprint suggestions, but it is much more affordable.
 
 For each approach, the system is restored to the initial set-up without having to run the alter tablespace command mentioned below.
 
 ## ESTIMATING THE POTENTIAL OF A DB2 REORGANIZATION
-Different DB2 commands allow measuring the amount of space used by the so-called “gaps in the DB2”. The more easy way to do this is by using a Perl™ script `analyse_DB2_formulas.pl`
-provided by IBM [1]. Just logging in as the instance user and running that script shows the potential of a DB2 reorganization. For 
-this example Spectrum Protect instance the result is as shown:
+
+Different DB2 commands allow measuring the amount of space used by the so-called “gaps in the DB2”. The more easy way to do this is by using a Perl™ script `analyse_DB2_formulas.pl` provided by IBM [1]. Just logging in as the instance user and running that script shows the potential of a DB2 reorganization.
+
+For this example Spectrum Protect instance the result is as shown:
+
 ```dsmadmc
 BEGIN SUMMARY
 "db2 alter tablespace BACKOBJIDXSPACE reduce max" will return =174.2G to the operating system file system
@@ -77,9 +77,8 @@ END SUMMARY
 
 ## FEEING DATABASE SPACE BY `“alter tabespace”`
 
-Of special interest is the first line of the summary file, as 174.2 GB can be freed just by altering the tablespace “BACKOBJIDXSPACE” – this can be done while the instance 
-(at least the database according to the instance) is running. It is recommended not to perform a database backup, expiration, or online reorganization 
-when entering the command:
+Of special interest is the first line of the summary file, as 174.2 GB can be freed just by altering the tablespace “BACKOBJIDXSPACE” – this can be done while the instance (at least the database according to the instance) is running. It is recommended not to perform a database backup, expiration, or online reorganization when entering the command:
+
 ```dsmadmc
 q db f=d
                     Database Name: TSMDB1 
@@ -103,6 +102,9 @@ Number of Database Backup Streams: 1
         Compress Database Backups: No 
     Protect Master Encryption Key: No
 ```
+
 > [!TIP]
-> The number of `Total Pages` decreased from `71,581,744` to `65,873,176` <br>
+>
+> The number of `Total Pages` decreased from `71,581,744` to `65,873,176`
+>
 > and the `Space Used on File System(MB):` from `1,344,338` to `1,165,969`.
