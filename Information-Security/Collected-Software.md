@@ -24,3 +24,9 @@
   Parts are available in the [*free Basic Edition*](https://www.pingcastle.com/thank_you_for_downloading_free_pingcastle_basic/), e.g.
   - AD HealthCheck
   - AD map
+
+## Date Restore / Recovery
+
+- [SystemRescue](https://www.system-rescue.org/)
+
+  *SystemRescue (formerly known as SystemRescueCd) is a Linux system rescue toolkit available as a bootable medium for administrating or repairing your system and data after a crash.*
